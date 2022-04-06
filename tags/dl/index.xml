@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DL on Cyan</title>
+    <link>https://cyan-ripple.github.io/tags/dl/</link>
+    <description>Recent content in DL on Cyan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 05 Apr 2022 22:43:07 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/tags/dl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Optimizer</title>
+      <link>https://cyan-ripple.github.io/post/optimizer/</link>
+      <pubDate>Tue, 05 Apr 2022 22:43:07 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/optimizer/</guid>
+      <description>前言 参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。
+资料 一个框架看懂优化算法之异同 SGD/AdaGrad/Adam - 知乎 (zhihu.com)
+Adam那么棒，为什么还对SGD念念不忘 (2)—— Adam的两宗罪 - 知乎 (zhihu.com)
+Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略 - 知乎 (zhihu.com)
+综述 Adam自带优化，会调整learning_rate（所以自己再用schedule, 微调learning_rate貌似没啥用了……
+大神都用SGD手调参数</description>
+    </item>
+    
+  </channel>
+</rss>

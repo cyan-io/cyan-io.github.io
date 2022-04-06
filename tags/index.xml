@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Cyan</title>
+    <link>https://cyan-ripple.github.io/tags/</link>
+    <description>Recent content in Tags on Cyan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Apr 2022 21:08:15 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NLP</title>
+      <link>https://cyan-ripple.github.io/tags/nlp/</link>
+      <pubDate>Wed, 06 Apr 2022 21:08:15 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ADB</title>
+      <link>https://cyan-ripple.github.io/tags/adb/</link>
+      <pubDate>Tue, 05 Apr 2022 22:45:04 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/tags/adb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://cyan-ripple.github.io/tags/windows/</link>
+      <pubDate>Tue, 05 Apr 2022 22:45:04 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DL</title>
+      <link>https://cyan-ripple.github.io/tags/dl/</link>
+      <pubDate>Tue, 05 Apr 2022 22:43:07 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/tags/dl/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

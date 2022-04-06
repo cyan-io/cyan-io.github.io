@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://cyan-ripple.github.io/sitemap.xml
