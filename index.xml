@@ -5,7 +5,20 @@
     <link>https://cyan-ripple.github.io/</link>
     <description>Recent content on Cyan</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Apr 2022 21:35:22 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Apr 2022 22:44:06 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python OI 基础（语言篇）</title>
+      <link>https://cyan-ripple.github.io/post/pythonoibasis/</link>
+      <pubDate>Fri, 08 Apr 2022 22:44:06 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/pythonoibasis/</guid>
+      <description>基本 输入 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input.split())) # 输入一个常数 n, = cin() # 注意&amp;#39;,&amp;#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
+python script.py &amp;lt; input &amp;gt; output Python 与 STL Python 标准库 — Python 3.8.12 文档
+本人出身于C/C++，这里用类STL表示Python中可利用的built in lib
+priority queue (heap)  优先队列往往用堆来实现。优先队列 - 维基百科
+ from heapq import * vector arr = list() arr = [0]*n arr = [[0]*n for _ in range(m)] set set_ = set() set_ = {1, 2, 3} map from collections import Counter, defaultdict arr = [1, 1, 2, 2] counter = Counter(arr) # 计数 defaultdict_ = defaultdict(lambda: -1) # 默认字典 dict_ = dict() dict_ = { 1: 2, 2: 4 } dict_ = {i: i for i in range(5)} stack  5.</description>
+    </item>
+    
     <item>
       <title>背包问题</title>
       <link>https://cyan-ripple.github.io/post/knapsackproblem/</link>
