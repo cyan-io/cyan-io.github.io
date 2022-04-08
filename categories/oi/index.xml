@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>OI on Cyan</title>
+    <link>https://cyan-ripple.github.io/categories/oi/</link>
+    <description>Recent content in OI on Cyan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 08 Apr 2022 21:35:22 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/categories/oi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>背包问题</title>
+      <link>https://cyan-ripple.github.io/post/knapsackproblem/</link>
+      <pubDate>Fri, 08 Apr 2022 21:35:22 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/knapsackproblem/</guid>
+      <description>前言 在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。
+实际上，有很多问题可以规约为一个背包问题。
+背包问题的三类  01背包：某物品选 or 不选； 完全背包：某物品无限多可选； 多重背包：某物品有n[i]件可选。   👇以下内容主要摘自：希望用一种规律搞定背包问题 - 组合总和 Ⅳ - 力扣（LeetCode） (leetcode-cn.com)
+样题（LeetCode）  组合问题：  377. 组合总和 Ⅳ 378. 目标和 379. 零钱兑换 II True、False问题：  377. 单词拆分 378. 分割等和子集 最大最小问题：  377. 一和零 378. 零钱兑换 公式一览  组合问题公式  dp[i] += dp[i-num] True、False问题公式  dp[i] = dp[i] or dp[i-num] 最大最小问题公式  dp[i] = min(dp[i], dp[i-num]+1) dp[i] = max(dp[i], dp[i-num]+1) 问题几步骤  分析是否为背包问题。 是以上三种背包问题中的哪一种。 是0-1背包问题还是完全背包问题。也就是题目给的nums数组中的元素是否可以重复使用。 如果是组合问题，是否需要考虑元素之间的顺序。需要考虑顺序有顺序的解法，不需要考虑顺序又有对应的解法。  背包问题的判定 背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。</description>
+    </item>
+    
+  </channel>
+</rss>

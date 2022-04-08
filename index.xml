@@ -5,7 +5,19 @@
     <link>https://cyan-ripple.github.io/</link>
     <description>Recent content on Cyan</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 06 Apr 2022 21:08:15 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Apr 2022 21:35:22 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>背包问题</title>
+      <link>https://cyan-ripple.github.io/post/knapsackproblem/</link>
+      <pubDate>Fri, 08 Apr 2022 21:35:22 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/knapsackproblem/</guid>
+      <description>前言 在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。
+实际上，有很多问题可以规约为一个背包问题。
+背包问题的三类  01背包：某物品选 or 不选； 完全背包：某物品无限多可选； 多重背包：某物品有n[i]件可选。   👇以下内容主要摘自：希望用一种规律搞定背包问题 - 组合总和 Ⅳ - 力扣（LeetCode） (leetcode-cn.com)
+样题（LeetCode）  组合问题：  377. 组合总和 Ⅳ 378. 目标和 379. 零钱兑换 II True、False问题：  377. 单词拆分 378. 分割等和子集 最大最小问题：  377. 一和零 378. 零钱兑换 公式一览  组合问题公式  dp[i] += dp[i-num] True、False问题公式  dp[i] = dp[i] or dp[i-num] 最大最小问题公式  dp[i] = min(dp[i], dp[i-num]+1) dp[i] = max(dp[i], dp[i-num]+1) 问题几步骤  分析是否为背包问题。 是以上三种背包问题中的哪一种。 是0-1背包问题还是完全背包问题。也就是题目给的nums数组中的元素是否可以重复使用。 如果是组合问题，是否需要考虑元素之间的顺序。需要考虑顺序有顺序的解法，不需要考虑顺序又有对应的解法。  背包问题的判定 背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。</description>
+    </item>
+    
     <item>
       <title>BERT</title>
       <link>https://cyan-ripple.github.io/post/bert/</link>
@@ -64,7 +76,25 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
       <pubDate>Sat, 19 Mar 2022 13:55:33 +0800</pubDate>
       
       <guid>https://cyan-ripple.github.io/about/</guid>
-      <description>About 平凡的大学生</description>
+      <description>⠄⠄⠄⠄⢠⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⣯⢻⣿⣿⣿⣿⣆⠄⠄⠄ ⠄⠄⣼⢀⣿⣿⣿⣿⣏⡏⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢻⣿⣿⣿⣿⡆⠄⠄ ⠄⠄⡟⣼⣿⣿⣿⣿⣿⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣿⣇⢻⣿⣿⣿⣿⠄⠄ ⠄⢰⠃⣿⣿⠿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠙⠿⣿⣿⣿⣿⣿⠄⢿⣿⣿⣿⡄⠄ ⠄⢸⢠⣿⣿⣧⡙⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠈⠛⢿⣿⣿⡇⠸⣿⡿⣸⡇⠄ ⠄⠈⡆⣿⣿⣿⣿⣦⡙⠳⠄⠄⠄⠄⠄⠄⢀⣠⣤⣀⣈⠙⠃⠄⠿⢇⣿⡇⠄ ⠄⠄⡇⢿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⣠⣶⣿⣿⣿⣿⣿⣿⣷⣆⡀⣼⣿⡇⠄ ⠄⠄⢹⡘⣿⣿⣿⢿⣷⡀⠄⢀⣴⣾⣟⠉⠉⠉⠉⣽⣿⣿⣿⣿⠇⢹⣿⠃⠄ ⠄⠄⠄⢷⡘⢿⣿⣎⢻⣷⠰⣿⣿⣿⣿⣦⣀⣀⣴⣿⣿⣿⠟⢫⡾⢸⡟⠄. ⠄⠄⠄⠄⠻⣦⡙⠿⣧⠙⢷⠙⠻⠿⢿⡿⠿⠿⠛⠋⠉⠄⠂⠘⠁⠞⠄⠄⠄ ⠄⠄⠄⠄⠄⠈⠙⠑⣠⣤⣴⡖⠄⠿⣋⣉⣉⡁⠄⢾⣦⠄⠄⠄⠄⠄⠄⠄⠄ 
+普通大学生，喜欢做有意义的事情。
+
+🌑**Coolapk**
+🌕**CSDN**</description>
+    </item>
+    
+    <item>
+      <title>Python Requests库代理</title>
+      <link>https://cyan-ripple.github.io/post/requestsproxy/</link>
+      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/requestsproxy/</guid>
+      <description> 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
+ 问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
+查了很多资料，大部分是 更换使用的包到urllib、降低requests库版本……
+解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
+ 然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
+import requests headers = { &amp;#39;user-agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&amp;#39; } sys_proxies = {&amp;#39;https&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;, &amp;#39;http&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 </description>
     </item>
     
     <item>

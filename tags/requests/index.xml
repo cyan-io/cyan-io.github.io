@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>requests on Cyan</title>
+    <link>https://cyan-ripple.github.io/tags/requests/</link>
+    <description>Recent content in requests on Cyan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 14 Sep 2021 08:26:00 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/tags/requests/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Requests库代理</title>
+      <link>https://cyan-ripple.github.io/post/requestsproxy/</link>
+      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/requestsproxy/</guid>
+      <description> 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
+ 问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
+查了很多资料，大部分是 更换使用的包到urllib、降低requests库版本……
+解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
+ 然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
+import requests headers = { &amp;#39;user-agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&amp;#39; } sys_proxies = {&amp;#39;https&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;, &amp;#39;http&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 </description>
+    </item>
+    
+  </channel>
+</rss>

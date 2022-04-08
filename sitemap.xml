@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cyan-ripple.github.io/post/bert/</loc>
-    <lastmod>2022-04-06T21:08:15+08:00</lastmod>
-  </url><url>
     <loc>https://cyan-ripple.github.io/categories/</loc>
-    <lastmod>2022-04-06T21:08:15+08:00</lastmod>
+    <lastmod>2022-04-08T21:35:22+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/</loc>
+    <lastmod>2022-04-08T21:35:22+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/categories/oi/</loc>
+    <lastmod>2022-04-08T21:35:22+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/</loc>
+    <lastmod>2022-04-08T21:35:22+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/knapsackproblem/</loc>
+    <lastmod>2022-04-08T21:35:22+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/bert/</loc>
     <lastmod>2022-04-06T21:08:15+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/tags/nlp/</loc>
     <lastmod>2022-04-06T21:08:15+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/categories/nlp/</loc>
-    <lastmod>2022-04-06T21:08:15+08:00</lastmod>
-  </url><url>
-    <loc>https://cyan-ripple.github.io/post/</loc>
     <lastmod>2022-04-06T21:08:15+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/tags/</loc>
@@ -49,6 +55,18 @@
   </url><url>
     <loc>https://cyan-ripple.github.io/about/</loc>
     <lastmod>2022-03-19T13:55:33+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/python/</loc>
+    <lastmod>2021-09-14T08:26:00+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/categories/python/</loc>
+    <lastmod>2021-09-14T08:26:00+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/requestsproxy/</loc>
+    <lastmod>2021-09-14T08:26:00+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/requests/</loc>
+    <lastmod>2021-09-14T08:26:00+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/post/adbonlan/</loc>
     <lastmod>2021-03-14T01:23:00+08:00</lastmod>

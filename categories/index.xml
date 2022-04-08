@@ -5,7 +5,16 @@
     <link>https://cyan-ripple.github.io/categories/</link>
     <description>Recent content in Categories on Cyan</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 06 Apr 2022 21:08:15 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Apr 2022 21:35:22 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OI</title>
+      <link>https://cyan-ripple.github.io/categories/oi/</link>
+      <pubDate>Fri, 08 Apr 2022 21:35:22 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/categories/oi/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>NLP</title>
       <link>https://cyan-ripple.github.io/categories/nlp/</link>
@@ -30,6 +39,15 @@
       <pubDate>Tue, 05 Apr 2022 22:43:07 +0800</pubDate>
       
       <guid>https://cyan-ripple.github.io/categories/dl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://cyan-ripple.github.io/categories/python/</link>
+      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/categories/python/</guid>
       <description></description>
     </item>
     

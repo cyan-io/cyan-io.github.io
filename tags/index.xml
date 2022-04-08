@@ -42,5 +42,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Python</title>
+      <link>https://cyan-ripple.github.io/tags/python/</link>
+      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>requests</title>
+      <link>https://cyan-ripple.github.io/tags/requests/</link>
+      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/tags/requests/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
