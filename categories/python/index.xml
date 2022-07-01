@@ -5,14 +5,23 @@
     <link>https://cyan-ripple.github.io/categories/python/</link>
     <description>Recent content in Python on Cyan</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Apr 2022 22:44:06 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 May 2022 19:21:32 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 常识入门(?)</title>
+      <link>https://cyan-ripple.github.io/post/python_builtin/</link>
+      <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/python_builtin/</guid>
+      <description>list, tuple, set, dict [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) def myFunc(e): return e[&amp;#39;year&amp;#39;] cars = [ {&amp;#39;car&amp;#39;: &amp;#39;Porsche&amp;#39;, &amp;#39;year&amp;#39;: 1963}, {&amp;#39;car&amp;#39;: &amp;#39;Audi&amp;#39;, &amp;#39;year&amp;#39;: 2010}, {&amp;#39;car&amp;#39;: &amp;#39;BMW&amp;#39;, &amp;#39;year&amp;#39;: 2019}, {&amp;#39;car&amp;#39;: &amp;#39;Volvo&amp;#39;, &amp;#39;year&amp;#39;: 2013} ] cars.sort(key=myFunc) cars.sort(key=lambda e: e[&amp;#39;year&amp;#39;]) cache  可以用于记忆化搜索。</description>
+    </item>
+    
     <item>
       <title>Python OI 基础（语言篇）</title>
       <link>https://cyan-ripple.github.io/post/pythonoibasis/</link>
       <pubDate>Fri, 08 Apr 2022 22:44:06 +0800</pubDate>
       
       <guid>https://cyan-ripple.github.io/post/pythonoibasis/</guid>
-      <description>基本 输入 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input.split())) # 输入一个常数 n, = cin() # 注意&amp;#39;,&amp;#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
+      <description>基本 输入 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&amp;#39;,&amp;#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
 python script.py &amp;lt; input &amp;gt; output Python 与 STL Python 标准库 — Python 3.8.12 文档
 本人出身于C/C++，这里用类STL表示Python中可利用的built in lib
 priority queue (heap)  优先队列往往用堆来实现。优先队列 - 维基百科
@@ -31,6 +40,17 @@ priority queue (heap)  优先队列往往用堆来实现。优先队列 - 维基
 解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
  然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
 import requests headers = { &amp;#39;user-agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&amp;#39; } sys_proxies = {&amp;#39;https&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;, &amp;#39;http&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 </description>
+    </item>
+    
+    <item>
+      <title>matplotlib中文绘图</title>
+      <link>https://cyan-ripple.github.io/post/plt_zhcn/</link>
+      <pubDate>Mon, 13 Sep 2021 07:18:00 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/plt_zhcn/</guid>
+      <description>在默认情况下，中文在plt中会被绘制成▯，猜测应该是因为默认字体不包含中文；
+可以通过配置字体的方法支持中文，大部分博客给出的字体是SimHei（黑体），但是渲染出来并不美观，经过我的测试，个人最推荐SimSun（宋体）。
+from matplotlib import pyplot as plt &amp;#39;&amp;#39;&amp;#39;👇两行配置&amp;#39;&amp;#39;&amp;#39; plt.rcParams[&amp;#39;font.sans-serif&amp;#39;] = [&amp;#39;SimSun&amp;#39;] # 修改字体为宋体 plt.rcParams[&amp;#39;axes.unicode_minus&amp;#39;] = False	# 正常显示 &amp;#39;-&amp;#39; </description>
     </item>
     
   </channel>

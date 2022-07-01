@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ubuntu on Cyan</title>
+    <link>https://cyan-ripple.github.io/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on Cyan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 27 Apr 2022 14:55:51 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>树莓派4B × Ubuntu</title>
+      <link>https://cyan-ripple.github.io/post/pi4b_system/</link>
+      <pubDate>Wed, 27 Apr 2022 14:55:51 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/pi4b_system/</guid>
+      <description>Ubuntu 20.04 LTS ARM64  at least 4G RAM
+ 默认账户密码 ubuntu
+ubuntu
+apt源 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&amp;#34; WiFi network:ethernets:eth0:dhcp4:trueoptional:trueversion:2wifis:wlan0:dhcp4:trueaccess-points:&amp;#34;你的wifi的ssid&amp;#34;:password:&amp;#34;你的密码&amp;#34;netplan try netplan apply </description>
+    </item>
+    
+  </channel>
+</rss>

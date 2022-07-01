@@ -20,5 +20,15 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
 大神都用SGD手调参数</description>
     </item>
     
+    <item>
+      <title>tensorflow1、2设置不占满显存</title>
+      <link>https://cyan-ripple.github.io/post/tf_mem/</link>
+      <pubDate>Thu, 16 Sep 2021 18:46:00 +0800</pubDate>
+      
+      <guid>https://cyan-ripple.github.io/post/tf_mem/</guid>
+      <description>tensorflow的默认调度策略是吃满显存，如果我们模型较小、显存较大、占用率不足40%（自己估计的）时，是可以利用GPU同时训练两个模型的。
+tensorflow 1 config = tf.ConfigProto() config.gpu_options.allow_growth = True sess = tf.Session(config=config) tensorflow 2 gpus = tf.config.list_physical_devices(device_type=&amp;#39;GPU&amp;#39;) for gpu in gpus: tf.config.experimental.set_memory_growth(gpu, True) </description>
+    </item>
+    
   </channel>
 </rss>

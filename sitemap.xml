@@ -3,19 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cyan-ripple.github.io/categories/</loc>
-    <lastmod>2022-04-08T22:44:06+08:00</lastmod>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/cuda_cudnn/</loc>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/</loc>
-    <lastmod>2022-04-08T22:44:06+08:00</lastmod>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
   </url><url>
-    <loc>https://cyan-ripple.github.io/categories/oi/</loc>
-    <lastmod>2022-04-08T22:44:06+08:00</lastmod>
+    <loc>https://cyan-ripple.github.io/categories/dl/</loc>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/oi/</loc>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/post/</loc>
-    <lastmod>2022-04-08T22:44:06+08:00</lastmod>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/python/</loc>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/categories/python/</loc>
-    <lastmod>2022-04-08T22:44:06+08:00</lastmod>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/python_builtin/</loc>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/</loc>
+    <lastmod>2022-05-21T19:21:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/categories/oi/</loc>
+    <lastmod>2022-05-21T18:57:41+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/dp/</loc>
+    <lastmod>2022-05-21T18:57:41+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/linux/</loc>
+    <lastmod>2022-04-27T14:55:51+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/raspi/</loc>
+    <lastmod>2022-04-27T14:55:51+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/tags/ubuntu/</loc>
+    <lastmod>2022-04-27T14:55:51+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/pi4b_system/</loc>
+    <lastmod>2022-04-27T14:55:51+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/post/pythonoibasis/</loc>
     <lastmod>2022-04-08T22:44:06+08:00</lastmod>
@@ -30,9 +63,6 @@
     <lastmod>2022-04-06T21:08:15+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/categories/nlp/</loc>
-    <lastmod>2022-04-06T21:08:15+08:00</lastmod>
-  </url><url>
-    <loc>https://cyan-ripple.github.io/tags/</loc>
     <lastmod>2022-04-06T21:08:15+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/post/lstmandgru/</loc>
@@ -53,23 +83,32 @@
     <loc>https://cyan-ripple.github.io/tags/dl/</loc>
     <lastmod>2022-04-05T22:43:07+08:00</lastmod>
   </url><url>
-    <loc>https://cyan-ripple.github.io/categories/dl/</loc>
-    <lastmod>2022-04-05T22:43:07+08:00</lastmod>
-  </url><url>
     <loc>https://cyan-ripple.github.io/post/optimizer/</loc>
     <lastmod>2022-04-05T22:43:07+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/about/</loc>
     <lastmod>2022-03-19T13:55:33+08:00</lastmod>
   </url><url>
-    <loc>https://cyan-ripple.github.io/tags/python/</loc>
-    <lastmod>2021-09-14T08:26:00+08:00</lastmod>
+    <loc>https://cyan-ripple.github.io/post/primenumber/</loc>
+    <lastmod>2022-01-17T14:09:06+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/categories/windows/</loc>
+    <lastmod>2021-09-30T02:18:00+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/rdp/</loc>
+    <lastmod>2021-09-30T02:18:00+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/tf_mem/</loc>
+    <lastmod>2021-09-16T18:46:00+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/post/requestsproxy/</loc>
     <lastmod>2021-09-14T08:26:00+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/tags/requests/</loc>
     <lastmod>2021-09-14T08:26:00+08:00</lastmod>
+  </url><url>
+    <loc>https://cyan-ripple.github.io/post/plt_zhcn/</loc>
+    <lastmod>2021-09-13T07:18:00+08:00</lastmod>
   </url><url>
     <loc>https://cyan-ripple.github.io/post/adbonlan/</loc>
     <lastmod>2021-03-14T01:23:00+08:00</lastmod>
