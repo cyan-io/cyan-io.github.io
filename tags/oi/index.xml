@@ -12,7 +12,7 @@
       <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
       
       <guid>https://cyan-ripple.github.io/post/python_builtin/</guid>
-      <description>list, tuple, set, dict [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) def myFunc(e): return e[&amp;#39;year&amp;#39;] cars = [ {&amp;#39;car&amp;#39;: &amp;#39;Porsche&amp;#39;, &amp;#39;year&amp;#39;: 1963}, {&amp;#39;car&amp;#39;: &amp;#39;Audi&amp;#39;, &amp;#39;year&amp;#39;: 2010}, {&amp;#39;car&amp;#39;: &amp;#39;BMW&amp;#39;, &amp;#39;year&amp;#39;: 2019}, {&amp;#39;car&amp;#39;: &amp;#39;Volvo&amp;#39;, &amp;#39;year&amp;#39;: 2013} ] cars.sort(key=myFunc) cars.sort(key=lambda e: e[&amp;#39;year&amp;#39;]) cache  可以用于记忆化搜索。</description>
+      <description>list, tuple, set, dict [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) def myFunc(e): return e[&amp;#39;year&amp;#39;] cars = [ {&amp;#39;car&amp;#39;: &amp;#39;Porsche&amp;#39;, &amp;#39;year&amp;#39;: 1963}, {&amp;#39;car&amp;#39;: &amp;#39;Audi&amp;#39;, &amp;#39;year&amp;#39;: 2010}, {&amp;#39;car&amp;#39;: &amp;#39;BMW&amp;#39;, &amp;#39;year&amp;#39;: 2019}, {&amp;#39;car&amp;#39;: &amp;#39;Volvo&amp;#39;, &amp;#39;year&amp;#39;: 2013} ] cars.sort(key=myFunc) cars.sort(key=lambda e: e[&amp;#39;year&amp;#39;]) cache 可以用于记忆化搜索。</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@
 以“数字三角形”为例，初始状态就是底边数字，值就是底边数字值。
 确定状态转移方程
 定义出什么是“状态”，以及在该“状态”下的“值”后，就要找出不同的状态之间如何迁移――即如何从一个或多个“值”已知的“状态”，求出另一个“状态”的“值”(递推型)。状态的迁移可以用递推公式表示，此递推公式也可被称作“状态转移方程”。
-graph LR; 子问题分解--&amp;gt;确定状态 确定状态--&amp;gt;确定初始状态值 确定初始状态值--&amp;gt;确定状态转移方程 能用动规解决的问题的特点  问题具有最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。  递归到动规的一般转化方法 递归函数有n个参数，就定义一个n维的数组，数组的下标是递归函数参数的取值范围，数组元素的值是递归函数的返回值;
+graph LR;子问题分解--&amp;gt;确定状态确定状态--&amp;gt;确定初始状态值确定初始状态值--&amp;gt;确定状态转移方程 能用动规解决的问题的特点 问题具有最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。 递归到动规的一般转化方法 递归函数有n个参数，就定义一个n维的数组，数组的下标是递归函数参数的取值范围，数组元素的值是递归函数的返回值;
 这样就可以从边界值开始，逐步填充数组，相当于计算递归函数值的逆过程。</description>
     </item>
     

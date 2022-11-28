@@ -12,7 +12,7 @@
       <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
       
       <guid>https://cyan-ripple.github.io/post/python_builtin/</guid>
-      <description>list, tuple, set, dict [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) def myFunc(e): return e[&amp;#39;year&amp;#39;] cars = [ {&amp;#39;car&amp;#39;: &amp;#39;Porsche&amp;#39;, &amp;#39;year&amp;#39;: 1963}, {&amp;#39;car&amp;#39;: &amp;#39;Audi&amp;#39;, &amp;#39;year&amp;#39;: 2010}, {&amp;#39;car&amp;#39;: &amp;#39;BMW&amp;#39;, &amp;#39;year&amp;#39;: 2019}, {&amp;#39;car&amp;#39;: &amp;#39;Volvo&amp;#39;, &amp;#39;year&amp;#39;: 2013} ] cars.sort(key=myFunc) cars.sort(key=lambda e: e[&amp;#39;year&amp;#39;]) cache  可以用于记忆化搜索。</description>
+      <description>list, tuple, set, dict [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) def myFunc(e): return e[&amp;#39;year&amp;#39;] cars = [ {&amp;#39;car&amp;#39;: &amp;#39;Porsche&amp;#39;, &amp;#39;year&amp;#39;: 1963}, {&amp;#39;car&amp;#39;: &amp;#39;Audi&amp;#39;, &amp;#39;year&amp;#39;: 2010}, {&amp;#39;car&amp;#39;: &amp;#39;BMW&amp;#39;, &amp;#39;year&amp;#39;: 2019}, {&amp;#39;car&amp;#39;: &amp;#39;Volvo&amp;#39;, &amp;#39;year&amp;#39;: 2013} ] cars.sort(key=myFunc) cars.sort(key=lambda e: e[&amp;#39;year&amp;#39;]) cache 可以用于记忆化搜索。</description>
     </item>
     
     <item>
@@ -24,8 +24,8 @@
       <description>基本 输入 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&amp;#39;,&amp;#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
 python script.py &amp;lt; input &amp;gt; output Python 与 STL Python 标准库 — Python 3.8.12 文档
 本人出身于C/C++，这里用类STL表示Python中可利用的built in lib
-priority queue (heap)  优先队列往往用堆来实现。优先队列 - 维基百科
- from heapq import * vector arr = list() arr = [0]*n arr = [[0]*n for _ in range(m)] set set_ = set() set_ = {1, 2, 3} map from collections import Counter, defaultdict arr = [1, 1, 2, 2] counter = Counter(arr) # 计数 defaultdict_ = defaultdict(lambda: -1) # 默认字典 dict_ = dict() dict_ = { 1: 2, 2: 4 } dict_ = {i: i for i in range(5)} stack  5.</description>
+priority queue (heap) 优先队列往往用堆来实现。优先队列 - 维基百科
+from heapq import * vector arr = list() arr = [0]*n arr = [[0]*n for _ in range(m)] set set_ = set() set_ = {1, 2, 3} map from collections import Counter, defaultdict arr = [1, 1, 2, 2] counter = Counter(arr) # 计数 defaultdict_ = defaultdict(lambda: -1) # 默认字典 dict_ = dict() dict_ = { 1: 2, 2: 4 } dict_ = {i: i for i in range(5)} stack 5.</description>
     </item>
     
     <item>
@@ -35,10 +35,10 @@ priority queue (heap)  优先队列往往用堆来实现。优先队列 - 维基
       
       <guid>https://cyan-ripple.github.io/post/requestsproxy/</guid>
       <description> 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
- 问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
+问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
 查了很多资料，大部分是 更换使用的包到urllib、降低requests库版本……
 解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
- 然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
+然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
 import requests headers = { &amp;#39;user-agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&amp;#39; } sys_proxies = {&amp;#39;https&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;, &amp;#39;http&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 </description>
     </item>
     

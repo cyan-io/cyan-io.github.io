@@ -17,14 +17,14 @@ CUDA_百度百科 (baidu.com)
 CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
 参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
 NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
- NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？  驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&amp;gt;=runtime版本号
+NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&amp;gt;=runtime版本号
 多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
 安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
-手动安装  Linux建议直接CONDA安装
- 下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
+手动安装 Linux建议直接CONDA安装
+下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
 CUDNN：NVIDIA cuDNN | NVIDIA Developer
-安装  建议看下面的博客，讲的很好
- cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
+安装 建议看下面的博客，讲的很好
+cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
 使用CONDA安装 CUDA
 conda install cudatoolkit=&amp;lt;版本&amp;gt; cuDNN
 conda install cudnn=&amp;lt;版本&amp;gt; </description>
