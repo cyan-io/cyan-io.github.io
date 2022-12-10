@@ -1,100 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Tags on Cyan</title>
-    <link>https://cyan-ripple.github.io/tags/</link>
-    <description>Recent content in Tags on Cyan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 21 May 2022 19:21:32 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>OI</title>
-      <link>https://cyan-ripple.github.io/tags/oi/</link>
-      <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/oi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://cyan-ripple.github.io/tags/python/</link>
-      <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://cyan-ripple.github.io/tags/linux/</link>
-      <pubDate>Wed, 27 Apr 2022 14:55:51 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>raspi</title>
-      <link>https://cyan-ripple.github.io/tags/raspi/</link>
-      <pubDate>Wed, 27 Apr 2022 14:55:51 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/raspi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>https://cyan-ripple.github.io/tags/ubuntu/</link>
-      <pubDate>Wed, 27 Apr 2022 14:55:51 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NLP</title>
-      <link>https://cyan-ripple.github.io/tags/nlp/</link>
-      <pubDate>Wed, 06 Apr 2022 21:08:15 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/nlp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ADB</title>
-      <link>https://cyan-ripple.github.io/tags/adb/</link>
-      <pubDate>Tue, 05 Apr 2022 22:45:04 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/adb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>https://cyan-ripple.github.io/tags/windows/</link>
-      <pubDate>Tue, 05 Apr 2022 22:45:04 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DL</title>
-      <link>https://cyan-ripple.github.io/tags/dl/</link>
-      <pubDate>Tue, 05 Apr 2022 22:43:07 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/dl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>requests</title>
-      <link>https://cyan-ripple.github.io/tags/requests/</link>
-      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/tags/requests/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+    <title>Tags - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/</link>
+    <description>Tags - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>Python</title>
+  <link>/tags/python/</link>
+  <pubDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/python/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>OI</title>
+  <link>/tags/oi/</link>
+  <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/oi/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Linux</title>
+  <link>/tags/linux/</link>
+  <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/linux/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>raspi</title>
+  <link>/tags/raspi/</link>
+  <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/raspi/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>ubuntu</title>
+  <link>/tags/ubuntu/</link>
+  <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/ubuntu/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>NLP</title>
+  <link>/tags/nlp/</link>
+  <pubDate>Wed, 06 Apr 2022 21:08:15 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/nlp/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>ADB</title>
+  <link>/tags/adb/</link>
+  <pubDate>Tue, 05 Apr 2022 22:45:04 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/adb/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Windows</title>
+  <link>/tags/windows/</link>
+  <pubDate>Tue, 05 Apr 2022 22:45:04 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/windows/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>DL</title>
+  <link>/tags/dl/</link>
+  <pubDate>Tue, 05 Apr 2022 22:43:07 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/dl/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>requests</title>
+  <link>/tags/requests/</link>
+  <pubDate>Tue, 14 Sep 2021 08:26:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/requests/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

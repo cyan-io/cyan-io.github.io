@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Windows on Cyan</title>
-    <link>https://cyan-ripple.github.io/categories/windows/</link>
-    <description>Recent content in Windows on Cyan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Sep 2021 02:18:00 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Win清理Remote Desktop记录</title>
-      <link>https://cyan-ripple.github.io/post/rdp/</link>
-      <pubDate>Thu, 30 Sep 2021 02:18:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/rdp/</guid>
-      <description>注册表：
-HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default </description>
-    </item>
-    
-  </channel>
+    <title>Windows - 分类 - Cyan&#39;s Notebook</title>
+    <link>/categories/windows/</link>
+    <description>Windows - 分类 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 30 Sep 2021 02:18:00 &#43;0800</lastBuildDate><atom:link href="/categories/windows/" rel="self" type="application/rss+xml" /><item>
+  <title>Win清理Remote Desktop记录</title>
+  <link>/posts/rdp/</link>
+  <pubDate>Thu, 30 Sep 2021 02:18:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/rdp/</guid>
+  <description><![CDATA[注册表：
+1 HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default ]]></description>
+</item>
+</channel>
 </rss>

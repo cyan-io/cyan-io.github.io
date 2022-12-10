@@ -1,33 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>ADB on Cyan</title>
-    <link>https://cyan-ripple.github.io/tags/adb/</link>
-    <description>Recent content in ADB on Cyan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 05 Apr 2022 22:45:04 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/tags/adb/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>WSA 安装与使用</title>
-      <link>https://cyan-ripple.github.io/post/wsa/</link>
-      <pubDate>Tue, 05 Apr 2022 22:45:04 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/wsa/</guid>
-      <description>Installation 准备 启用Hyper-V 和 虚拟机平台 配置好 ADB 下载WSA package [Microsoft Store - Generation Project (v1.2.3) by @rgadguard &amp;amp; mkuba50] (rg-adguard.net) https://www.microsoft.com/store/productId/9P3395VX91NR 下载最大的那个（1G+） 安装 截止日前，不需要修改区域（中国区），仅亚马逊商店不提供服务
-管理员运行Power Shell Add-AppxPackage -Path &amp;lt;path to downloaded file&amp;gt; 在Windows中打开开发者模式 连接到ADB adb connect [::1]:58526 安装程序 adb -s [::1]:58526 install &amp;#34;D:\HandShaker.apk&amp;#34; 推荐 Item Intro HandShaker 锤子遗产、子系统和电脑互传文件 权限狗 给应用添加权限，比如 Ｖ** 微软桌面 App 启动器 https://apkpure.com/ Apk 下载 代理 宿主机器安装应用，并allow lan，端口修改为自己的配置
-@echo off adb connect [::1]:58526 &amp;amp;&amp;amp; adb shell &amp;#34;settings put global http_proxy `ip route list match 0 table all scope global | cut -F3`:7890&amp;#34; pause Ref Windows11 安装 WSA 简单上手一试_姜戈12的博客-CSDN博客</description>
-    </item>
-    
-    <item>
-      <title>局域网安卓ABD调试</title>
-      <link>https://cyan-ripple.github.io/post/adbonlan/</link>
-      <pubDate>Sun, 14 Mar 2021 01:23:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/adbonlan/</guid>
-      <description>前言 Google对于ADB的描述：
+    <title>ADB - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/adb/</link>
+    <description>ADB - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 05 Apr 2022 22:45:04 &#43;0800</lastBuildDate><atom:link href="/tags/adb/" rel="self" type="application/rss+xml" /><item>
+  <title>WSA 安装与使用</title>
+  <link>/posts/wsa/</link>
+  <pubDate>Tue, 05 Apr 2022 22:45:04 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/wsa/</guid>
+  <description><![CDATA[Installation 准备 启用Hyper-V 和 虚拟机平台 配置好 ADB 下载WSA package [Microsoft Store - Generation Project (v1.2.3) by @rgadguard &amp; mkuba50] (rg-adguard.net) https://www.microsoft.com/store/productId/9P3395VX91NR 下载最大的那个（1G+） 安装 截止日前，不需要修改区域（中国区），仅亚马逊商店不提供服务
+管理员运行Power Shell 1 Add-AppxPackage -Path &lt;path to downloaded file&gt; 在Windows中打开开发者模式 连接到ADB 1 adb connect [::1]:58526 安装程序 1 adb -s [::1]:58526 install &#34;D:\HandShaker.apk&#34; 推荐 Item Intro HandShaker 锤子遗产、子系统和电脑互传文件 权限狗 给应用添加权限，比如 Ｖ** 微软桌面 App 启动器 https://apkpure.com/ Apk 下载 代理 宿主机器安装应用，并allow lan，端口修改为自己的配置
+1 2 3 4 5 @echo off adb connect [::1]:58526 &amp;&amp; adb shell &#34;settings put global http_proxy `ip route list match 0 table all scope global | cut -F3`:7890&#34; pause Ref Windows11 安装 WSA 简单上手一试_姜戈12的博客-CSDN博客]]></description>
+</item>
+<item>
+  <title>局域网安卓ABD调试</title>
+  <link>/posts/adbonlan/</link>
+  <pubDate>Sun, 14 Mar 2021 01:23:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/adbonlan/</guid>
+  <description><![CDATA[前言 Google对于ADB的描述：
 Android 调试桥 (adb) 是一种功能多样的命令行工具，可让您与设备进行通信。adb 命令可用于执行各种设备操作（例如安装和调试应用），并提供对 Unix shell（可用来在设备上运行各种命令）的访问权限。
 无线ADB和USB连接原理相同，只是传输介质不同
-简单流程 手机通过USB连接到电脑，处于开发者模式 CMD输入adb tcpip &amp;lt;端口号&amp;gt;（adb.exe已配置好path） CMD输入adb connect &amp;lt;手机IP&amp;gt;:&amp;lt;端口号&amp;gt; tips 一般情况下，只要手机没有重启，已经完成上面操作的，再次连接只需要第3步 Windows Android Studio的Terminal本质也是CMD </description>
-    </item>
-    
-  </channel>
+简单流程 手机通过USB连接到电脑，处于开发者模式 CMD输入adb tcpip &lt;端口号&gt;（adb.exe已配置好path） CMD输入adb connect &lt;手机IP&gt;:&lt;端口号&gt; tips 一般情况下，只要手机没有重启，已经完成上面操作的，再次连接只需要第3步 Windows Android Studio的Terminal本质也是CMD ]]></description>
+</item>
+</channel>
 </rss>

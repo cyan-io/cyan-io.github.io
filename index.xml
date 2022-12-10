@@ -1,23 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Cyan</title>
-    <link>https://cyan-ripple.github.io/</link>
-    <description>Recent content on Cyan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 21 May 2022 19:21:32 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <title>Cyan&#39;s Notebook</title>
+    <link>/</link>
+    <description>Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</lastBuildDate>
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CUDA、CUDNN</title>
-      <link>https://cyan-ripple.github.io/post/cuda_cudnn/</link>
-      <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/cuda_cudnn/</guid>
-      <description>CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
+  <title>Python处理剪贴板</title>
+  <link>/posts/clipboard/</link>
+  <pubDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/clipboard/</guid>
+  <description><![CDATA[去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.]]></description>
+</item>
+<item>
+  <title>自动打卡</title>
+  <link>/posts/auto_clock_in/</link>
+  <pubDate>Mon, 28 Nov 2022 12:16:58 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/auto_clock_in/</guid>
+  <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 import requests import json null = &#39;&#39; data = # 抓取 def sender(): global data url = &#39;https://app.xiaoyuan.ccb.com/channelManage/outbreak/addOutbreak&#39; headers = { &#39;Host&#39;: &#39;app.xiaoyuan.ccb.com&#39;, &#39;Connection&#39;: &#39;keep-alive&#39;, &#39;Content-Length&#39;: &#39;1184&#39;, &#39;Accept&#39;: &#39;application/json, text/plain, */*&#39;, &#39;Origin&#39;: &#39;https://app.xiaoyuan.ccb.com&#39;, &#39;User-Agent&#39;: &#39;Mozilla/5.]]></description>
+</item>
+<item>
+  <title>CUDA、CUDNN</title>
+  <link>/posts/cuda_cudnn/</link>
+  <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/cuda_cudnn/</guid>
+  <description><![CDATA[CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
 CUDA_百度百科 (baidu.com)
 CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
 参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
 NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
-NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&amp;gt;=runtime版本号
+NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&gt;=runtime版本号
 多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
 安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
 手动安装 Linux建议直接CONDA安装
@@ -26,26 +41,24 @@ CUDNN：NVIDIA cuDNN | NVIDIA Developer
 安装 建议看下面的博客，讲的很好
 cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
 使用CONDA安装 CUDA
-conda install cudatoolkit=&amp;lt;版本&amp;gt; cuDNN
-conda install cudnn=&amp;lt;版本&amp;gt; </description>
-    </item>
-    
-    <item>
-      <title>Python 常识入门(?)</title>
-      <link>https://cyan-ripple.github.io/post/python_builtin/</link>
-      <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/python_builtin/</guid>
-      <description>list, tuple, set, dict [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) def myFunc(e): return e[&amp;#39;year&amp;#39;] cars = [ {&amp;#39;car&amp;#39;: &amp;#39;Porsche&amp;#39;, &amp;#39;year&amp;#39;: 1963}, {&amp;#39;car&amp;#39;: &amp;#39;Audi&amp;#39;, &amp;#39;year&amp;#39;: 2010}, {&amp;#39;car&amp;#39;: &amp;#39;BMW&amp;#39;, &amp;#39;year&amp;#39;: 2019}, {&amp;#39;car&amp;#39;: &amp;#39;Volvo&amp;#39;, &amp;#39;year&amp;#39;: 2013} ] cars.sort(key=myFunc) cars.sort(key=lambda e: e[&amp;#39;year&amp;#39;]) cache 可以用于记忆化搜索。</description>
-    </item>
-    
-    <item>
-      <title>动态规划</title>
-      <link>https://cyan-ripple.github.io/post/dp/</link>
-      <pubDate>Sat, 21 May 2022 18:57:41 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/dp/</guid>
-      <description>动规解题的一般思路 将原问题分解为子问题
+1 conda install cudatoolkit=&lt;版本&gt; cuDNN
+1 conda install cudnn=&lt;版本&gt; ]]></description>
+</item>
+<item>
+  <title>Python 常识入门(?)</title>
+  <link>/posts/python_builtin/</link>
+  <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/python_builtin/</guid>
+  <description><![CDATA[list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.]]></description>
+</item>
+<item>
+  <title>动态规划</title>
+  <link>/posts/dp/</link>
+  <pubDate>Sat, 21 May 2022 18:57:41 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/dp/</guid>
+  <description><![CDATA[动规解题的一般思路 将原问题分解为子问题
 把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。 子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。
 确定状态
 在用动态规划解题时，我们往往将和子问题相关的各个变量的一组取值，称之为一个“状态”。一个“状态”对应于一个或多个子问题，所谓某个“状态”下的“值”，就是这个“状态”所对应的子问题的解。 所有“状态”的集合，构成问题的“状态空间”。“状态空间”的大小，与用动态规划解决问题的时间复杂度直接相关。在数字三角形的例子里，一共有N×(N+1)/2个数字，所以这个问题的状态空间里一共就有N×(N+1)/2个状态。 整个问题的时间复杂度是状态数目乘以计算每个状态所需时间。在数字三角形里每个“状态”只需要经过一次，且在每个状态上作计算所花的时间都是和N无关的常数。
@@ -53,177 +66,146 @@ conda install cudnn=&amp;lt;版本&amp;gt; </description>
 以“数字三角形”为例，初始状态就是底边数字，值就是底边数字值。
 确定状态转移方程
 定义出什么是“状态”，以及在该“状态”下的“值”后，就要找出不同的状态之间如何迁移――即如何从一个或多个“值”已知的“状态”，求出另一个“状态”的“值”(递推型)。状态的迁移可以用递推公式表示，此递推公式也可被称作“状态转移方程”。
-graph LR;子问题分解--&amp;gt;确定状态确定状态--&amp;gt;确定初始状态值确定初始状态值--&amp;gt;确定状态转移方程 能用动规解决的问题的特点 问题具有最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。 递归到动规的一般转化方法 递归函数有n个参数，就定义一个n维的数组，数组的下标是递归函数参数的取值范围，数组元素的值是递归函数的返回值;
-这样就可以从边界值开始，逐步填充数组，相当于计算递归函数值的逆过程。</description>
-    </item>
-    
-    <item>
-      <title>树莓派4B × Ubuntu</title>
-      <link>https://cyan-ripple.github.io/post/pi4b_system/</link>
-      <pubDate>Wed, 27 Apr 2022 14:55:51 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/pi4b_system/</guid>
-      <description>Ubuntu 20.04 LTS ARM64 at least 4G RAM
+1 2 3 4 graph LR; 子问题分解--&gt;确定状态 确定状态--&gt;确定初始状态值 确定初始状态值--&gt;确定状态转移方程 能用动规解决的问题的特点 问题具有最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。 递归到动规的一般转化方法 递归函数有n个参数，就定义一个n维的数组，数组的下标是递归函数参数的取值范围，数组元素的值是递归函数的返回值;
+这样就可以从边界值开始，逐步填充数组，相当于计算递归函数值的逆过程。]]></description>
+</item>
+<item>
+  <title>树莓派4B × Ubuntu</title>
+  <link>/posts/pi4b_system/</link>
+  <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pi4b_system/</guid>
+  <description><![CDATA[Ubuntu 20.04 LTS ARM64 at least 4G RAM
 默认账户密码 ubuntu
 ubuntu
-apt源 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&amp;#34; WiFi network: ethernets: eth0: dhcp4: true optional: true version: 2 wifis: wlan0: dhcp4: true access-points: &amp;#34;你的wifi的ssid&amp;#34;: password: &amp;#34;你的密码&amp;#34; netplan try netplan apply </description>
-    </item>
-    
-    <item>
-      <title>Python OI 基础（语言篇）</title>
-      <link>https://cyan-ripple.github.io/post/pythonoibasis/</link>
-      <pubDate>Fri, 08 Apr 2022 22:44:06 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/pythonoibasis/</guid>
-      <description>基本 输入 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&amp;#39;,&amp;#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
-python script.py &amp;lt; input &amp;gt; output Python 与 STL Python 标准库 — Python 3.8.12 文档
-本人出身于C/C++，这里用类STL表示Python中可利用的built in lib
-priority queue (heap) 优先队列往往用堆来实现。优先队列 - 维基百科
-from heapq import * vector arr = list() arr = [0]*n arr = [[0]*n for _ in range(m)] set set_ = set() set_ = {1, 2, 3} map from collections import Counter, defaultdict arr = [1, 1, 2, 2] counter = Counter(arr) # 计数 defaultdict_ = defaultdict(lambda: -1) # 默认字典 dict_ = dict() dict_ = { 1: 2, 2: 4 } dict_ = {i: i for i in range(5)} stack 5.</description>
-    </item>
-    
-    <item>
-      <title>背包问题</title>
-      <link>https://cyan-ripple.github.io/post/knapsackproblem/</link>
-      <pubDate>Fri, 08 Apr 2022 21:35:22 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/knapsackproblem/</guid>
-      <description>前言 在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。
+apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&#34; WiFi 1 2 3 4 5 6 7 8 9 10 11 12 network: ethernets: eth0: dhcp4: true optional: true version: 2 wifis: wlan0: dhcp4: true access-points: &#34;你的wifi的ssid&#34;: password: &#34;你的密码&#34; 1 2 netplan try netplan apply ]]></description>
+</item>
+<item>
+  <title>Python OI 基础（语言篇）</title>
+  <link>/posts/pythonoibasis/</link>
+  <pubDate>Fri, 08 Apr 2022 22:44:06 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pythonoibasis/</guid>
+  <description><![CDATA[基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
+1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.]]></description>
+</item>
+<item>
+  <title>背包问题</title>
+  <link>/posts/knapsackproblem/</link>
+  <pubDate>Fri, 08 Apr 2022 21:35:22 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/knapsackproblem/</guid>
+  <description><![CDATA[前言 在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。
 实际上，有很多问题可以规约为一个背包问题。
 背包问题的三类 01背包：某物品选 or 不选； 完全背包：某物品无限多可选； 多重背包：某物品有n[i]件可选。 👇以下内容主要摘自：希望用一种规律搞定背包问题 - 组合总和 Ⅳ - 力扣（LeetCode） (leetcode-cn.com)
-样题（LeetCode） 组合问题： 377. 组合总和 Ⅳ378. 目标和379. 零钱兑换 II True、False问题： 377. 单词拆分378. 分割等和子集 最大最小问题： 377. 一和零378. 零钱兑换 公式一览 组合问题公式 dp[i] += dp[i-num] True、False问题公式 dp[i] = dp[i] or dp[i-num] 最大最小问题公式 dp[i] = min(dp[i], dp[i-num]+1) dp[i] = max(dp[i], dp[i-num]+1) 问题几步骤 分析是否为背包问题。 是以上三种背包问题中的哪一种。 是0-1背包问题还是完全背包问题。也就是题目给的nums数组中的元素是否可以重复使用。 如果是组合问题，是否需要考虑元素之间的顺序。需要考虑顺序有顺序的解法，不需要考虑顺序又有对应的解法。 背包问题的判定 背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。
-背包问题技巧： 如果是0-1背包，即数组中的元素不可重复使用，nums放在外循环，target在内循环，且内循环倒序； for num in nums: for i in range(target, nums-1, -1): 如果是完全背包，即数组中的元素可重复使用，nums放在外循环，target在内循环。且内循环正序。 for num in nums: for i in range(nums, target+1): 如果组合问题需考虑元素之间的顺序，需将target放在外循环，将nums放在内循环。 for i in range(1, target+1): for num in nums: 参考 希望用一种规律搞定背包问题 - 组合总和 Ⅳ - 力扣（LeetCode） (leetcode-cn.</description>
-    </item>
-    
-    <item>
-      <title>BERT</title>
-      <link>https://cyan-ripple.github.io/post/bert/</link>
-      <pubDate>Wed, 06 Apr 2022 21:08:15 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/bert/</guid>
-      <description>前言 研究BERT（无果），记录些好的参考（减轻浏览器收藏夹的压力……）
+样题（LeetCode） 组合问题： 1 2 3 377. 组合总和 Ⅳ 378. 目标和 379. 零钱兑换 II True、False问题： 1 2 377. 单词拆分 378. 分割等和子集 最大最小问题： 1 2 377. 一和零 378. 零钱兑换 公式一览 组合问题公式 1 dp[i] += dp[i-num] True、False问题公式 1 dp[i] = dp[i] or dp[i-num] 最大最小问题公式 1 2 dp[i] = min(dp[i], dp[i-num]+1) dp[i] = max(dp[i], dp[i-num]+1) 问题几步骤 分析是否为背包问题。 是以上三种背包问题中的哪一种。 是0-1背包问题还是完全背包问题。也就是题目给的nums数组中的元素是否可以重复使用。 如果是组合问题，是否需要考虑元素之间的顺序。需要考虑顺序有顺序的解法，不需要考虑顺序又有对应的解法。 背包问题的判定 背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。]]></description>
+</item>
+<item>
+  <title>BERT</title>
+  <link>/posts/bert/</link>
+  <pubDate>Wed, 06 Apr 2022 21:08:15 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/bert/</guid>
+  <description><![CDATA[前言 研究BERT（无果），记录些好的参考（减轻浏览器收藏夹的压力……）
 参考 论文解读:BERT模型及fine-tuning - 知乎 (zhihu.com)
 LeeMeng - 進擊的 BERT：NLP 界的巨人之力與遷移學習
 google-research/bert: TensorFlow code and pre-trained models for BERT (github.com)
-LeeMeng - 淺談神經機器翻譯 &amp;amp; 用 Transformer 與 TensorFlow 2 英翻中</description>
-    </item>
-    
-    <item>
-      <title>LSTM and GRU</title>
-      <link>https://cyan-ripple.github.io/post/lstmandgru/</link>
-      <pubDate>Tue, 05 Apr 2022 23:01:41 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/lstmandgru/</guid>
-      <description>前言 曾经天真的以为LSTM&amp;gt;GRU
+LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻中]]></description>
+</item>
+<item>
+  <title>LSTM and GRU</title>
+  <link>/posts/lstmandgru/</link>
+  <pubDate>Tue, 05 Apr 2022 23:01:41 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/lstmandgru/</guid>
+  <description><![CDATA[前言 曾经天真的以为LSTM&gt;GRU
 实际上GRU的出现时间晚于LSTM（值得深究不是吗？）
 References GRU及双向RNN介绍_幸福诗歌的博客-CSDN博客_双向gru
-GRU与LSTM总结_lreaderl的博客-CSDN博客_gru lstm</description>
-    </item>
-    
-    <item>
-      <title>WSA 安装与使用</title>
-      <link>https://cyan-ripple.github.io/post/wsa/</link>
-      <pubDate>Tue, 05 Apr 2022 22:45:04 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/wsa/</guid>
-      <description>Installation 准备 启用Hyper-V 和 虚拟机平台 配置好 ADB 下载WSA package [Microsoft Store - Generation Project (v1.2.3) by @rgadguard &amp;amp; mkuba50] (rg-adguard.net) https://www.microsoft.com/store/productId/9P3395VX91NR 下载最大的那个（1G+） 安装 截止日前，不需要修改区域（中国区），仅亚马逊商店不提供服务
-管理员运行Power Shell Add-AppxPackage -Path &amp;lt;path to downloaded file&amp;gt; 在Windows中打开开发者模式 连接到ADB adb connect [::1]:58526 安装程序 adb -s [::1]:58526 install &amp;#34;D:\HandShaker.apk&amp;#34; 推荐 Item Intro HandShaker 锤子遗产、子系统和电脑互传文件 权限狗 给应用添加权限，比如 Ｖ** 微软桌面 App 启动器 https://apkpure.com/ Apk 下载 代理 宿主机器安装应用，并allow lan，端口修改为自己的配置
-@echo off adb connect [::1]:58526 &amp;amp;&amp;amp; adb shell &amp;#34;settings put global http_proxy `ip route list match 0 table all scope global | cut -F3`:7890&amp;#34; pause Ref Windows11 安装 WSA 简单上手一试_姜戈12的博客-CSDN博客</description>
-    </item>
-    
-    <item>
-      <title>Optimizer</title>
-      <link>https://cyan-ripple.github.io/post/optimizer/</link>
-      <pubDate>Tue, 05 Apr 2022 22:43:07 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/optimizer/</guid>
-      <description>前言 参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。
+GRU与LSTM总结_lreaderl的博客-CSDN博客_gru lstm]]></description>
+</item>
+<item>
+  <title>WSA 安装与使用</title>
+  <link>/posts/wsa/</link>
+  <pubDate>Tue, 05 Apr 2022 22:45:04 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/wsa/</guid>
+  <description><![CDATA[Installation 准备 启用Hyper-V 和 虚拟机平台 配置好 ADB 下载WSA package [Microsoft Store - Generation Project (v1.2.3) by @rgadguard &amp; mkuba50] (rg-adguard.net) https://www.microsoft.com/store/productId/9P3395VX91NR 下载最大的那个（1G+） 安装 截止日前，不需要修改区域（中国区），仅亚马逊商店不提供服务
+管理员运行Power Shell 1 Add-AppxPackage -Path &lt;path to downloaded file&gt; 在Windows中打开开发者模式 连接到ADB 1 adb connect [::1]:58526 安装程序 1 adb -s [::1]:58526 install &#34;D:\HandShaker.apk&#34; 推荐 Item Intro HandShaker 锤子遗产、子系统和电脑互传文件 权限狗 给应用添加权限，比如 Ｖ** 微软桌面 App 启动器 https://apkpure.com/ Apk 下载 代理 宿主机器安装应用，并allow lan，端口修改为自己的配置
+1 2 3 4 5 @echo off adb connect [::1]:58526 &amp;&amp; adb shell &#34;settings put global http_proxy `ip route list match 0 table all scope global | cut -F3`:7890&#34; pause Ref Windows11 安装 WSA 简单上手一试_姜戈12的博客-CSDN博客]]></description>
+</item>
+<item>
+  <title>Optimizer</title>
+  <link>/posts/optimizer/</link>
+  <pubDate>Tue, 05 Apr 2022 22:43:07 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/optimizer/</guid>
+  <description><![CDATA[前言 参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。
 资料 一个框架看懂优化算法之异同 SGD/AdaGrad/Adam - 知乎 (zhihu.com)
 Adam那么棒，为什么还对SGD念念不忘 (2)—— Adam的两宗罪 - 知乎 (zhihu.com)
 Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略 - 知乎 (zhihu.com)
 综述 Adam自带优化，会调整learning_rate（所以自己再用schedule, 微调learning_rate貌似没啥用了……
-大神都用SGD手调参数</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://cyan-ripple.github.io/about/</link>
-      <pubDate>Sat, 19 Mar 2022 13:55:33 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/about/</guid>
-      <description>⠄⠄⠄⠄⢠⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⣯⢻⣿⣿⣿⣿⣆⠄⠄⠄⠄⠄⣼⢀⣿⣿⣿⣿⣏⡏⠄⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢻⣿⣿⣿⣿⡆⠄⠄⠄⠄⡟⣼⣿⣿⣿⣿⣿⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣿⣇⢻⣿⣿⣿⣿⠄⠄⠄⢰⠃⣿⣿⠿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠙⠿⣿⣿⣿⣿⣿⠄⢿⣿⣿⣿⡄⠄⠄⢸⢠⣿⣿⣧⡙⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠈⠛⢿⣿⣿⡇⠸⣿⡿⣸⡇⠄⠄⠈⡆⣿⣿⣿⣿⣦⡙⠳⠄⠄⠄⠄⠄⠄⢀⣠⣤⣀⣈⠙⠃⠄⠿⢇⣿⡇⠄⠄⠄⡇⢿⣿⣿⣿⣿⡇⠄⠄⠄⠄⠄⣠⣶⣿⣿⣿⣿⣿⣿⣷⣆⡀⣼⣿⡇⠄⠄⠄⢹⡘⣿⣿⣿⢿⣷⡀⠄⢀⣴⣾⣟⠉⠉⠉⠉⣽⣿⣿⣿⣿⠇⢹⣿⠃⠄⠄⠄⠄⢷⡘⢿⣿⣎⢻⣷⠰⣿⣿⣿⣿⣦⣀⣀⣴⣿⣿⣿⠟⢫⡾⢸⡟⠄.⠄⠄⠄⠄⠻⣦⡙⠿⣧⠙⢷⠙⠻⠿⢿⡿⠿⠿⠛⠋⠉⠄⠂⠘⠁⠞⠄⠄⠄⠄⠄⠄⠄⠄⠈⠙⠑⣠⣤⣴⡖⠄⠿⣋⣉⣉⡁⠄⢾⣦⠄⠄⠄⠄⠄⠄⠄⠄ 普通大学生，喜欢做有意义的事情。
-🌑**Coolapk**
-🌕**CSDN**</description>
-    </item>
-    
-    <item>
-      <title>素数</title>
-      <link>https://cyan-ripple.github.io/post/primenumber/</link>
-      <pubDate>Mon, 17 Jan 2022 14:09:06 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/primenumber/</guid>
-      <description>检验 from math import * def is_prime(n): if n &amp;lt; 2: return False for i in range(2, int(sqrt(n))+1): if n % i == 0: return False return True 打表(欧式筛法) 0、1不是素数，素数的倍数不是素数（质因数分解）
-def prime(MAX_N): lst = [True for _ in range(MAX_N+1)] lst[0] = lst[1] = False for i in range(2, MAX_N//2): if lst[i]: for j in range(2*i, MAX_N+1, i): lst[j] = False return lst #define MAX 10005 bool prime[MAX]; void init_prime(){ memset(prime,true,sizeof(prime)); prime[0]=prime[1]=false; for(int i=2;i&amp;lt;=MAX/2;i++){ if(!</description>
-    </item>
-    
-    <item>
-      <title>Win清理Remote Desktop记录</title>
-      <link>https://cyan-ripple.github.io/post/rdp/</link>
-      <pubDate>Thu, 30 Sep 2021 02:18:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/rdp/</guid>
-      <description>注册表：
-HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default </description>
-    </item>
-    
-    <item>
-      <title>tensorflow1、2设置不占满显存</title>
-      <link>https://cyan-ripple.github.io/post/tf_mem/</link>
-      <pubDate>Thu, 16 Sep 2021 18:46:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/tf_mem/</guid>
-      <description>tensorflow的默认调度策略是吃满显存，如果我们模型较小、显存较大、占用率不足40%（自己估计的）时，是可以利用GPU同时训练两个模型的。
-tensorflow 1 config = tf.ConfigProto() config.gpu_options.allow_growth = True sess = tf.Session(config=config) tensorflow 2 gpus = tf.config.list_physical_devices(device_type=&amp;#39;GPU&amp;#39;) for gpu in gpus: tf.config.experimental.set_memory_growth(gpu, True) </description>
-    </item>
-    
-    <item>
-      <title>Python Requests库代理</title>
-      <link>https://cyan-ripple.github.io/post/requestsproxy/</link>
-      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/requestsproxy/</guid>
-      <description> 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
+大神都用SGD手调参数]]></description>
+</item>
+<item>
+  <title>素数</title>
+  <link>/posts/primenumber/</link>
+  <pubDate>Mon, 17 Jan 2022 14:09:06 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/primenumber/</guid>
+  <description><![CDATA[检验 1 2 3 4 5 6 7 8 9 10 from math import * def is_prime(n): if n &lt; 2: return False for i in range(2, int(sqrt(n))+1): if n % i == 0: return False return True 打表(欧式筛法) 0、1不是素数，素数的倍数不是素数（质因数分解）
+1 2 3 4 5 6 7 8 9 def prime(MAX_N): lst = [True for _ in range(MAX_N+1)] lst[0] = lst[1] = False for i in range(2, MAX_N//2): if lst[i]: for j in range(2*i, MAX_N+1, i): lst[j] = False return lst 1 2 3 4 5 6 7 8 9 10 11 12 13 #define MAX 10005 bool prime[MAX]; void init_prime(){ memset(prime,true,sizeof(prime)); prime[0]=prime[1]=false; for(int i=2;i&lt;=MAX/2;i++){ if(!]]></description>
+</item>
+<item>
+  <title>Win清理Remote Desktop记录</title>
+  <link>/posts/rdp/</link>
+  <pubDate>Thu, 30 Sep 2021 02:18:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/rdp/</guid>
+  <description><![CDATA[注册表：
+1 HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default ]]></description>
+</item>
+<item>
+  <title>tensorflow1、2设置不占满显存</title>
+  <link>/posts/tf_mem/</link>
+  <pubDate>Thu, 16 Sep 2021 18:46:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/tf_mem/</guid>
+  <description><![CDATA[tensorflow的默认调度策略是吃满显存，如果我们模型较小、显存较大、占用率不足40%（自己估计的）时，是可以利用GPU同时训练两个模型的。
+tensorflow 1 1 2 3 config = tf.ConfigProto() config.gpu_options.allow_growth = True sess = tf.Session(config=config) tensorflow 2 1 2 3 gpus = tf.config.list_physical_devices(device_type=&#39;GPU&#39;) for gpu in gpus: tf.config.experimental.set_memory_growth(gpu, True) ]]></description>
+</item>
+<item>
+  <title>Python Requests库代理</title>
+  <link>/posts/requestsproxy/</link>
+  <pubDate>Tue, 14 Sep 2021 08:26:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/requestsproxy/</guid>
+  <description><![CDATA[ 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
 问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
 查了很多资料，大部分是 更换使用的包到urllib、降低requests库版本……
 解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
 然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
-import requests headers = { &amp;#39;user-agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&amp;#39; } sys_proxies = {&amp;#39;https&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;, &amp;#39;http&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 </description>
-    </item>
-    
-    <item>
-      <title>matplotlib中文绘图</title>
-      <link>https://cyan-ripple.github.io/post/plt_zhcn/</link>
-      <pubDate>Mon, 13 Sep 2021 07:18:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/plt_zhcn/</guid>
-      <description>在默认情况下，中文在plt中会被绘制成▯，猜测应该是因为默认字体不包含中文；
+1 2 3 4 5 6 7 8 9 10 import requests headers = { &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&#39; } sys_proxies = {&#39;https&#39;: &#39;http://127.0.0.1:7890&#39;, &#39;http&#39;: &#39;http://127.0.0.1:7890&#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 ]]></description>
+</item>
+<item>
+  <title>matplotlib中文绘图</title>
+  <link>/posts/plt_zhcn/</link>
+  <pubDate>Mon, 13 Sep 2021 07:18:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/plt_zhcn/</guid>
+  <description><![CDATA[在默认情况下，中文在plt中会被绘制成▯，猜测应该是因为默认字体不包含中文；
 可以通过配置字体的方法支持中文，大部分博客给出的字体是SimHei（黑体），但是渲染出来并不美观，经过我的测试，个人最推荐SimSun（宋体）。
-from matplotlib import pyplot as plt &amp;#39;&amp;#39;&amp;#39;👇两行配置&amp;#39;&amp;#39;&amp;#39; plt.rcParams[&amp;#39;font.sans-serif&amp;#39;] = [&amp;#39;SimSun&amp;#39;] # 修改字体为宋体 plt.rcParams[&amp;#39;axes.unicode_minus&amp;#39;] = False	# 正常显示 &amp;#39;-&amp;#39; </description>
-    </item>
-    
-    <item>
-      <title>局域网安卓ABD调试</title>
-      <link>https://cyan-ripple.github.io/post/adbonlan/</link>
-      <pubDate>Sun, 14 Mar 2021 01:23:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/adbonlan/</guid>
-      <description>前言 Google对于ADB的描述：
+1 2 3 4 from matplotlib import pyplot as plt &#39;&#39;&#39;👇两行配置&#39;&#39;&#39; plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimSun&#39;] # 修改字体为宋体 plt.rcParams[&#39;axes.unicode_minus&#39;] = False	# 正常显示 &#39;-&#39; ]]></description>
+</item>
+<item>
+  <title>局域网安卓ABD调试</title>
+  <link>/posts/adbonlan/</link>
+  <pubDate>Sun, 14 Mar 2021 01:23:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/adbonlan/</guid>
+  <description><![CDATA[前言 Google对于ADB的描述：
 Android 调试桥 (adb) 是一种功能多样的命令行工具，可让您与设备进行通信。adb 命令可用于执行各种设备操作（例如安装和调试应用），并提供对 Unix shell（可用来在设备上运行各种命令）的访问权限。
 无线ADB和USB连接原理相同，只是传输介质不同
-简单流程 手机通过USB连接到电脑，处于开发者模式 CMD输入adb tcpip &amp;lt;端口号&amp;gt;（adb.exe已配置好path） CMD输入adb connect &amp;lt;手机IP&amp;gt;:&amp;lt;端口号&amp;gt; tips 一般情况下，只要手机没有重启，已经完成上面操作的，再次连接只需要第3步 Windows Android Studio的Terminal本质也是CMD </description>
-    </item>
-    
-    
-    
-  </channel>
+简单流程 手机通过USB连接到电脑，处于开发者模式 CMD输入adb tcpip &lt;端口号&gt;（adb.exe已配置好path） CMD输入adb connect &lt;手机IP&gt;:&lt;端口号&gt; tips 一般情况下，只要手机没有重启，已经完成上面操作的，再次连接只需要第3步 Windows Android Studio的Terminal本质也是CMD ]]></description>
+</item>
+</channel>
 </rss>

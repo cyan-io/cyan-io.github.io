@@ -1,57 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Python on Cyan</title>
-    <link>https://cyan-ripple.github.io/categories/python/</link>
-    <description>Recent content in Python on Cyan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 21 May 2022 19:21:32 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python 常识入门(?)</title>
-      <link>https://cyan-ripple.github.io/post/python_builtin/</link>
-      <pubDate>Sat, 21 May 2022 19:21:32 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/python_builtin/</guid>
-      <description>list, tuple, set, dict [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) def myFunc(e): return e[&amp;#39;year&amp;#39;] cars = [ {&amp;#39;car&amp;#39;: &amp;#39;Porsche&amp;#39;, &amp;#39;year&amp;#39;: 1963}, {&amp;#39;car&amp;#39;: &amp;#39;Audi&amp;#39;, &amp;#39;year&amp;#39;: 2010}, {&amp;#39;car&amp;#39;: &amp;#39;BMW&amp;#39;, &amp;#39;year&amp;#39;: 2019}, {&amp;#39;car&amp;#39;: &amp;#39;Volvo&amp;#39;, &amp;#39;year&amp;#39;: 2013} ] cars.sort(key=myFunc) cars.sort(key=lambda e: e[&amp;#39;year&amp;#39;]) cache 可以用于记忆化搜索。</description>
-    </item>
-    
-    <item>
-      <title>Python OI 基础（语言篇）</title>
-      <link>https://cyan-ripple.github.io/post/pythonoibasis/</link>
-      <pubDate>Fri, 08 Apr 2022 22:44:06 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/pythonoibasis/</guid>
-      <description>基本 输入 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&amp;#39;,&amp;#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
-python script.py &amp;lt; input &amp;gt; output Python 与 STL Python 标准库 — Python 3.8.12 文档
-本人出身于C/C++，这里用类STL表示Python中可利用的built in lib
-priority queue (heap) 优先队列往往用堆来实现。优先队列 - 维基百科
-from heapq import * vector arr = list() arr = [0]*n arr = [[0]*n for _ in range(m)] set set_ = set() set_ = {1, 2, 3} map from collections import Counter, defaultdict arr = [1, 1, 2, 2] counter = Counter(arr) # 计数 defaultdict_ = defaultdict(lambda: -1) # 默认字典 dict_ = dict() dict_ = { 1: 2, 2: 4 } dict_ = {i: i for i in range(5)} stack 5.</description>
-    </item>
-    
-    <item>
-      <title>Python Requests库代理</title>
-      <link>https://cyan-ripple.github.io/post/requestsproxy/</link>
-      <pubDate>Tue, 14 Sep 2021 08:26:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/requestsproxy/</guid>
-      <description> 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
+    <title>Python - 分类 - Cyan&#39;s Notebook</title>
+    <link>/categories/python/</link>
+    <description>Python - 分类 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 May 2022 19:21:32 &#43;0800</lastBuildDate><atom:link href="/categories/python/" rel="self" type="application/rss+xml" /><item>
+  <title>Python 常识入门(?)</title>
+  <link>/posts/python_builtin/</link>
+  <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/python_builtin/</guid>
+  <description><![CDATA[list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.]]></description>
+</item>
+<item>
+  <title>Python OI 基础（语言篇）</title>
+  <link>/posts/pythonoibasis/</link>
+  <pubDate>Fri, 08 Apr 2022 22:44:06 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pythonoibasis/</guid>
+  <description><![CDATA[基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
+1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.]]></description>
+</item>
+<item>
+  <title>Python Requests库代理</title>
+  <link>/posts/requestsproxy/</link>
+  <pubDate>Tue, 14 Sep 2021 08:26:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/requestsproxy/</guid>
+  <description><![CDATA[ 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
 问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
 查了很多资料，大部分是 更换使用的包到urllib、降低requests库版本……
 解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
 然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
-import requests headers = { &amp;#39;user-agent&amp;#39;: &amp;#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&amp;#39; } sys_proxies = {&amp;#39;https&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;, &amp;#39;http&amp;#39;: &amp;#39;http://127.0.0.1:7890&amp;#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 </description>
-    </item>
-    
-    <item>
-      <title>matplotlib中文绘图</title>
-      <link>https://cyan-ripple.github.io/post/plt_zhcn/</link>
-      <pubDate>Mon, 13 Sep 2021 07:18:00 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/plt_zhcn/</guid>
-      <description>在默认情况下，中文在plt中会被绘制成▯，猜测应该是因为默认字体不包含中文；
+1 2 3 4 5 6 7 8 9 10 import requests headers = { &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&#39; } sys_proxies = {&#39;https&#39;: &#39;http://127.0.0.1:7890&#39;, &#39;http&#39;: &#39;http://127.0.0.1:7890&#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 ]]></description>
+</item>
+<item>
+  <title>matplotlib中文绘图</title>
+  <link>/posts/plt_zhcn/</link>
+  <pubDate>Mon, 13 Sep 2021 07:18:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/plt_zhcn/</guid>
+  <description><![CDATA[在默认情况下，中文在plt中会被绘制成▯，猜测应该是因为默认字体不包含中文；
 可以通过配置字体的方法支持中文，大部分博客给出的字体是SimHei（黑体），但是渲染出来并不美观，经过我的测试，个人最推荐SimSun（宋体）。
-from matplotlib import pyplot as plt &amp;#39;&amp;#39;&amp;#39;👇两行配置&amp;#39;&amp;#39;&amp;#39; plt.rcParams[&amp;#39;font.sans-serif&amp;#39;] = [&amp;#39;SimSun&amp;#39;] # 修改字体为宋体 plt.rcParams[&amp;#39;axes.unicode_minus&amp;#39;] = False	# 正常显示 &amp;#39;-&amp;#39; </description>
-    </item>
-    
-  </channel>
+1 2 3 4 from matplotlib import pyplot as plt &#39;&#39;&#39;👇两行配置&#39;&#39;&#39; plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimSun&#39;] # 修改字体为宋体 plt.rcParams[&#39;axes.unicode_minus&#39;] = False	# 正常显示 &#39;-&#39; ]]></description>
+</item>
+</channel>
 </rss>

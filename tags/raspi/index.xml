@@ -1,22 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>raspi on Cyan</title>
-    <link>https://cyan-ripple.github.io/tags/raspi/</link>
-    <description>Recent content in raspi on Cyan</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Apr 2022 14:55:51 +0800</lastBuildDate><atom:link href="https://cyan-ripple.github.io/tags/raspi/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>树莓派4B × Ubuntu</title>
-      <link>https://cyan-ripple.github.io/post/pi4b_system/</link>
-      <pubDate>Wed, 27 Apr 2022 14:55:51 +0800</pubDate>
-      
-      <guid>https://cyan-ripple.github.io/post/pi4b_system/</guid>
-      <description>Ubuntu 20.04 LTS ARM64 at least 4G RAM
+    <title>raspi - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/raspi/</link>
+    <description>raspi - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</lastBuildDate><atom:link href="/tags/raspi/" rel="self" type="application/rss+xml" /><item>
+  <title>树莓派4B × Ubuntu</title>
+  <link>/posts/pi4b_system/</link>
+  <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pi4b_system/</guid>
+  <description><![CDATA[Ubuntu 20.04 LTS ARM64 at least 4G RAM
 默认账户密码 ubuntu
 ubuntu
-apt源 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiversedeb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&amp;#34; WiFi network: ethernets: eth0: dhcp4: true optional: true version: 2 wifis: wlan0: dhcp4: true access-points: &amp;#34;你的wifi的ssid&amp;#34;: password: &amp;#34;你的密码&amp;#34; netplan try netplan apply </description>
-    </item>
-    
-  </channel>
+apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&#34; WiFi 1 2 3 4 5 6 7 8 9 10 11 12 network: ethernets: eth0: dhcp4: true optional: true version: 2 wifis: wlan0: dhcp4: true access-points: &#34;你的wifi的ssid&#34;: password: &#34;你的密码&#34; 1 2 netplan try netplan apply ]]></description>
+</item>
+</channel>
 </rss>

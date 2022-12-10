@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Series on Cyan</title>
+    <title>Series - series - Cyan</title>
     <link>https://cyan-ripple.github.io/series/</link>
-    <description>Recent content in Series on Cyan</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://cyan-ripple.github.io/series/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+    <description>Series - series - Cyan</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://cyan-ripple.github.io/series/" rel="self" type="application/rss+xml" /></channel>
 </rss>
