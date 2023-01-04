@@ -17,7 +17,7 @@
   <pubDate>Mon, 28 Nov 2022 12:16:58 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/auto_clock_in/</guid>
-  <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 import requests import json null = &#39;&#39; data = # 抓取 def sender(): global data url = &#39;https://app.xiaoyuan.ccb.com/channelManage/outbreak/addOutbreak&#39; headers = { &#39;Host&#39;: &#39;app.xiaoyuan.ccb.com&#39;, &#39;Connection&#39;: &#39;keep-alive&#39;, &#39;Content-Length&#39;: &#39;1184&#39;, &#39;Accept&#39;: &#39;application/json, text/plain, */*&#39;, &#39;Origin&#39;: &#39;https://app.xiaoyuan.ccb.com&#39;, &#39;User-Agent&#39;: &#39;Mozilla/5.]]></description>
+  <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Python 常识入门(?)</title>
@@ -50,12 +50,7 @@
   <pubDate>Tue, 14 Sep 2021 08:26:00 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/requestsproxy/</guid>
-  <description><![CDATA[ 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
-问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
-查了很多资料，大部分是 更换使用的包到urllib、降低requests库版本……
-解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
-然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
-1 2 3 4 5 6 7 8 9 10 import requests headers = { &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&#39; } sys_proxies = {&#39;https&#39;: &#39;http://127.0.0.1:7890&#39;, &#39;http&#39;: &#39;http://127.0.0.1:7890&#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 ]]></description>
+  <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>

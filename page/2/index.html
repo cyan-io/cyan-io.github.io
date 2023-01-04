@@ -198,6 +198,19 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
     <a href="/posts/rdp/">阅读全文</a></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/re/">正则零宽断言</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2021-09-30 02:18:00'>发布于 <time datetime="2021-09-30">2021-09-30</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content"><h2 id="1前言">1.前言</h2>
+<p>对匹配内容的上下文加以限定且限定的规则不参与匹配结果</p></div><div class="post-footer">
+    <a href="/posts/re/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/tf_mem/">tensorflow1、2设置不占满显存</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -219,12 +232,7 @@ tensorflow 1 1 2 3 config = tf.ConfigProto() config.gpu_options.allow_growth = T
     data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
     data-sizes="auto"
     alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2021-09-14 08:26:00'>发布于 <time datetime="2021-09-14">2021-09-14</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content"> 并不是关于IP池，而是用于本地挂代理爬需要翻墙的数据
-问题的发现与解决 在requests库较新版本，通过挂系统代理来爬取HTTPS会报SSL错误。
-查了很多资料，大部分是 更换使用的包到urllib、降低requests库版本……
-解决不了问题，就解决发现问题的东西吗(ﾟДﾟ*)ﾉ
-然后自己思考了一会，想起来爬虫有个IP池的操作，本质上也是使用别人的代理，那么，把代理指向本地呢——问题完美解决
-1 2 3 4 5 6 7 8 9 10 import requests headers = { &#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36 Edg/92.0.902.78&#39; } sys_proxies = {&#39;https&#39;: &#39;http://127.0.0.1:7890&#39;, &#39;http&#39;: &#39;http://127.0.0.1:7890&#39;}	# 指向本地代理 response = requests.get(json_url(tag, page), headers=headers, proxies=sys_proxies) # 配置代理 </div><div class="post-footer">
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2021-09-14 08:26:00'>发布于 <time datetime="2021-09-14">2021-09-14</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content"></div><div class="post-footer">
     <a href="/posts/requestsproxy/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/requests/">requests</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
