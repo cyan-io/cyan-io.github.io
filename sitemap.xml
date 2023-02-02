@@ -2,45 +2,48 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>/</loc><lastmod>2022-11-29T17:27:55&#43;08:00</lastmod></url><url>
-      <loc>/posts/</loc><lastmod>2022-11-29T17:27:55&#43;08:00</lastmod></url><url>
-      <loc>/tags/python/</loc><lastmod>2022-11-29T17:27:55&#43;08:00</lastmod></url><url>
+      <loc>/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/docker-basic/</loc><lastmod>2023-02-02T03:28:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/mklink/</loc><lastmod>2023-01-17T22:54:00&#43;08:00</lastmod></url><url>
+      <loc>/tags/python/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
       <loc>/posts/clipboard/</loc><lastmod>2022-11-29T17:27:55&#43;08:00</lastmod></url><url>
-      <loc>/tags/</loc><lastmod>2022-11-29T17:27:55&#43;08:00</lastmod></url><url>
-      <loc>/posts/auto_clock_in/</loc><lastmod>2022-11-28T12:16:58&#43;08:00</lastmod></url><url>
-      <loc>/categories/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
-      <loc>/posts/cuda_cudnn/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
+      <loc>/tags/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/auto-clock-in/</loc><lastmod>2022-11-28T12:16:58&#43;08:00</lastmod></url><url>
+      <loc>/categories/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/cuda-cudnn/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
       <loc>/categories/dl/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
       <loc>/tags/oi/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
-      <loc>/categories/python/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
-      <loc>/posts/python_builtin/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
+      <loc>/categories/python/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/python-builtin/</loc><lastmod>2022-05-21T19:21:32&#43;08:00</lastmod></url><url>
       <loc>/categories/oi/</loc><lastmod>2022-05-21T18:57:41&#43;08:00</lastmod></url><url>
       <loc>/posts/dp/</loc><lastmod>2022-05-21T18:57:41&#43;08:00</lastmod></url><url>
       <loc>/tags/linux/</loc><lastmod>2022-04-27T14:55:51&#43;08:00</lastmod></url><url>
       <loc>/tags/raspi/</loc><lastmod>2022-04-27T14:55:51&#43;08:00</lastmod></url><url>
       <loc>/tags/ubuntu/</loc><lastmod>2022-04-27T14:55:51&#43;08:00</lastmod></url><url>
-      <loc>/posts/pi4b_system/</loc><lastmod>2022-04-27T14:55:51&#43;08:00</lastmod></url><url>
-      <loc>/posts/pythonoibasis/</loc><lastmod>2022-04-08T22:44:06&#43;08:00</lastmod></url><url>
-      <loc>/posts/knapsackproblem/</loc><lastmod>2022-04-08T21:35:22&#43;08:00</lastmod></url><url>
+      <loc>/posts/pi4b-system/</loc><lastmod>2022-04-27T14:55:51&#43;08:00</lastmod></url><url>
+      <loc>/posts/python-oi-basis/</loc><lastmod>2022-04-08T22:44:06&#43;08:00</lastmod></url><url>
+      <loc>/posts/knapsack-problem/</loc><lastmod>2022-04-08T21:35:22&#43;08:00</lastmod></url><url>
       <loc>/posts/bert/</loc><lastmod>2022-04-06T21:08:15&#43;08:00</lastmod></url><url>
       <loc>/tags/nlp/</loc><lastmod>2022-04-06T21:08:15&#43;08:00</lastmod></url><url>
       <loc>/categories/nlp/</loc><lastmod>2022-04-06T21:08:15&#43;08:00</lastmod></url><url>
-      <loc>/posts/lstmandgru/</loc><lastmod>2022-04-05T23:01:41&#43;08:00</lastmod></url><url>
+      <loc>/posts/lstm-and-gru/</loc><lastmod>2022-04-05T23:01:41&#43;08:00</lastmod></url><url>
       <loc>/tags/adb/</loc><lastmod>2022-04-05T22:45:04&#43;08:00</lastmod></url><url>
       <loc>/categories/android/</loc><lastmod>2022-04-05T22:45:04&#43;08:00</lastmod></url><url>
       <loc>/tags/windows/</loc><lastmod>2022-04-05T22:45:04&#43;08:00</lastmod></url><url>
-      <loc>/posts/wsa/</loc><lastmod>2022-04-05T22:45:04&#43;08:00</lastmod></url><url>
+      <loc>/posts/wsa-installation/</loc><lastmod>2022-04-05T22:45:04&#43;08:00</lastmod></url><url>
       <loc>/tags/dl/</loc><lastmod>2022-04-05T22:43:07&#43;08:00</lastmod></url><url>
       <loc>/posts/optimizer/</loc><lastmod>2022-04-05T22:43:07&#43;08:00</lastmod></url><url>
-      <loc>/about/</loc><lastmod>2022-03-19T13:55:33&#43;08:00</lastmod></url><url>
-      <loc>/posts/primenumber/</loc><lastmod>2022-01-17T14:09:06&#43;08:00</lastmod></url><url>
+      <loc>/posts/prime-number/</loc><lastmod>2022-01-17T14:09:06&#43;08:00</lastmod></url><url>
       <loc>/categories/windows/</loc><lastmod>2021-09-30T02:18:00&#43;08:00</lastmod></url><url>
       <loc>/posts/rdp/</loc><lastmod>2021-09-30T02:18:00&#43;08:00</lastmod></url><url>
       <loc>/posts/re/</loc><lastmod>2021-09-30T02:18:00&#43;08:00</lastmod></url><url>
-      <loc>/posts/tf_mem/</loc><lastmod>2021-09-16T18:46:00&#43;08:00</lastmod></url><url>
-      <loc>/posts/requestsproxy/</loc><lastmod>2021-09-14T08:26:00&#43;08:00</lastmod></url><url>
-      <loc>/tags/requests/</loc><lastmod>2021-09-14T08:26:00&#43;08:00</lastmod></url><url>
-      <loc>/posts/plt_zhcn/</loc><lastmod>2021-09-13T07:18:00&#43;08:00</lastmod></url><url>
-      <loc>/posts/adbonlan/</loc><lastmod>2021-03-14T01:23:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/tf-gpu-memory/</loc><lastmod>2021-09-16T18:46:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/requests-proxy/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
+      <loc>/tags/requests/</loc><lastmod>2023-02-02T15:29:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/plt-zhcn/</loc><lastmod>2021-09-13T07:18:00&#43;08:00</lastmod></url><url>
+      <loc>/posts/adb-over-lan/</loc><lastmod>2021-03-14T01:23:00&#43;08:00</lastmod></url><url>
       <loc>/archives/</loc></url><url>
-      <loc>/search/</loc></url></urlset>
+      <loc>/search/</loc></url><url>
+      <loc>/about/</loc></url><url>
+      <loc>/friends/</loc></url></urlset>

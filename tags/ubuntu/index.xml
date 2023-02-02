@@ -5,10 +5,10 @@
     <description>ubuntu - 标签 - Cyan&#39;s Notebook</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</lastBuildDate><atom:link href="/tags/ubuntu/" rel="self" type="application/rss+xml" /><item>
   <title>树莓派4B × Ubuntu</title>
-  <link>/posts/pi4b_system/</link>
+  <link>/posts/pi4b-system/</link>
   <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/pi4b_system/</guid>
+  <guid>/posts/pi4b-system/</guid>
   <description><![CDATA[Ubuntu 20.04 LTS ARM64 at least 4G RAM
 默认账户密码 ubuntu
 ubuntu

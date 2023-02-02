@@ -13,18 +13,18 @@
 </item>
 <item>
   <title>自动打卡</title>
-  <link>/posts/auto_clock_in/</link>
+  <link>/posts/auto-clock-in/</link>
   <pubDate>Mon, 28 Nov 2022 12:16:58 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/auto_clock_in/</guid>
+  <guid>/posts/auto-clock-in/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Python 常识入门(?)</title>
-  <link>/posts/python_builtin/</link>
+  <link>/posts/python-builtin/</link>
   <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/python_builtin/</guid>
+  <guid>/posts/python-builtin/</guid>
   <description><![CDATA[list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.]]></description>
 </item>
 <item>
@@ -33,23 +33,17 @@
   <pubDate>Sat, 21 May 2022 18:57:41 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/dp/</guid>
-  <description><![CDATA[动规解题的一般思路 将原问题分解为子问题
-把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。 子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。
-确定状态
-在用动态规划解题时，我们往往将和子问题相关的各个变量的一组取值，称之为一个“状态”。一个“状态”对应于一个或多个子问题，所谓某个“状态”下的“值”，就是这个“状态”所对应的子问题的解。 所有“状态”的集合，构成问题的“状态空间”。“状态空间”的大小，与用动态规划解决问题的时间复杂度直接相关。在数字三角形的例子里，一共有N×(N+1)/2个数字，所以这个问题的状态空间里一共就有N×(N+1)/2个状态。 整个问题的时间复杂度是状态数目乘以计算每个状态所需时间。在数字三角形里每个“状态”只需要经过一次，且在每个状态上作计算所花的时间都是和N无关的常数。
-确定一些初始状态（边界状态）的值
-以“数字三角形”为例，初始状态就是底边数字，值就是底边数字值。
-确定状态转移方程
-定义出什么是“状态”，以及在该“状态”下的“值”后，就要找出不同的状态之间如何迁移――即如何从一个或多个“值”已知的“状态”，求出另一个“状态”的“值”(递推型)。状态的迁移可以用递推公式表示，此递推公式也可被称作“状态转移方程”。
-1 2 3 4 graph LR; 子问题分解--&gt;确定状态 确定状态--&gt;确定初始状态值 确定初始状态值--&gt;确定状态转移方程 能用动规解决的问题的特点 问题具有最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。 递归到动规的一般转化方法 递归函数有n个参数，就定义一个n维的数组，数组的下标是递归函数参数的取值范围，数组元素的值是递归函数的返回值;
-这样就可以从边界值开始，逐步填充数组，相当于计算递归函数值的逆过程。]]></description>
+  <description><![CDATA[<h2 id="动规解题的一般思路">动规解题的一般思路</h2>
+<p><strong>将原问题分解为子问题</strong></p>
+<p>把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。
+子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。</p>]]></description>
 </item>
 <item>
   <title>Python Requests库代理</title>
-  <link>/posts/requestsproxy/</link>
+  <link>/posts/requests-proxy/</link>
   <pubDate>Tue, 14 Sep 2021 08:26:00 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/requestsproxy/</guid>
+  <guid>/posts/requests-proxy/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

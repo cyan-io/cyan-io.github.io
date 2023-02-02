@@ -5,18 +5,18 @@
     <description>Python - 分类 - Cyan&#39;s Notebook</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 May 2022 19:21:32 &#43;0800</lastBuildDate><atom:link href="/categories/python/" rel="self" type="application/rss+xml" /><item>
   <title>Python 常识入门(?)</title>
-  <link>/posts/python_builtin/</link>
+  <link>/posts/python-builtin/</link>
   <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/python_builtin/</guid>
+  <guid>/posts/python-builtin/</guid>
   <description><![CDATA[list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.]]></description>
 </item>
 <item>
   <title>Python OI 基础（语言篇）</title>
-  <link>/posts/pythonoibasis/</link>
+  <link>/posts/python-oi-basis/</link>
   <pubDate>Fri, 08 Apr 2022 22:44:06 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/pythonoibasis/</guid>
+  <guid>/posts/python-oi-basis/</guid>
   <description><![CDATA[基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
 1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.]]></description>
 </item>
@@ -31,21 +31,20 @@
 </item>
 <item>
   <title>Python Requests库代理</title>
-  <link>/posts/requestsproxy/</link>
+  <link>/posts/requests-proxy/</link>
   <pubDate>Tue, 14 Sep 2021 08:26:00 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/requestsproxy/</guid>
+  <guid>/posts/requests-proxy/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>matplotlib中文绘图</title>
-  <link>/posts/plt_zhcn/</link>
+  <link>/posts/plt-zhcn/</link>
   <pubDate>Mon, 13 Sep 2021 07:18:00 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/plt_zhcn/</guid>
-  <description><![CDATA[在默认情况下，中文在plt中会被绘制成▯，猜测应该是因为默认字体不包含中文；
-可以通过配置字体的方法支持中文，大部分博客给出的字体是SimHei（黑体），但是渲染出来并不美观，经过我的测试，个人最推荐SimSun（宋体）。
-1 2 3 4 from matplotlib import pyplot as plt &#39;&#39;&#39;👇两行配置&#39;&#39;&#39; plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimSun&#39;] # 修改字体为宋体 plt.rcParams[&#39;axes.unicode_minus&#39;] = False	# 正常显示 &#39;-&#39; ]]></description>
+  <guid>/posts/plt-zhcn/</guid>
+  <description><![CDATA[<p>在<code>默认</code>情况下，中文在<code>plt</code>中会被绘制成<code>▯</code>，猜测应该是因为默认字体不包含中文；</p>
+<p>可以通过<strong>配置字体</strong>的方法支持中文，大部分博客给出的字体是<code>SimHei</code>（黑体），但是渲染出来并不美观，经过我的测试，个人最推荐<code>SimSun</code>（宋体）。</p>]]></description>
 </item>
 </channel>
 </rss>

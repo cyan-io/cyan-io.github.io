@@ -17,10 +17,10 @@ LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻
 </item>
 <item>
   <title>LSTM and GRU</title>
-  <link>/posts/lstmandgru/</link>
+  <link>/posts/lstm-and-gru/</link>
   <pubDate>Tue, 05 Apr 2022 23:01:41 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/lstmandgru/</guid>
+  <guid>/posts/lstm-and-gru/</guid>
   <description><![CDATA[前言 曾经天真的以为LSTM&gt;GRU
 实际上GRU的出现时间晚于LSTM（值得深究不是吗？）
 References GRU及双向RNN介绍_幸福诗歌的博客-CSDN博客_双向gru

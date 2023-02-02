@@ -3,7 +3,7 @@
   <head>
 	<meta name="generator" content="Hugo 0.107.0">
     
-      <meta name="theme" content='FixIt v0.2.16'>
+      <meta name="theme" content='FixIt v0.2.17'>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -56,7 +56,19 @@
                 href="/tags/"
                 
                 
-              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
@@ -120,7 +132,21 @@
                   href="/tags/"
                   
                   
-                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item theme-switch" title="切换主题">
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item theme-switch" title="切换主题">
           <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
@@ -141,6 +167,30 @@
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/docker-basic/">Docker</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-02-02 03:28:00'>发布于 <time datetime="2023-02-02">2023-02-02</time></span></div><div class="content"><p>更新中</p></div><div class="post-footer">
+    <a href="/posts/docker-basic/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/mklink/">Windows 符号链接</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-01-17 22:54:00'>发布于 <time datetime="2023-01-17">2023-01-17</time></span></div><div class="content"></div><div class="post-footer">
+    <a href="/posts/mklink/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/clipboard/">Python处理剪贴板</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -150,10 +200,10 @@
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-11-29 17:27:55'>发布于 <time datetime="2022-11-29">2022-11-29</time></span></div><div class="content">去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.</div><div class="post-footer">
-    <a href="/posts/clipboard/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a></div></div>
+    <a href="/posts/clipboard/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/auto_clock_in/">自动打卡</a>
+    <a href="/posts/auto-clock-in/">自动打卡</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -162,10 +212,10 @@
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-11-28 12:16:58'>发布于 <time datetime="2022-11-28">2022-11-28</time></span></div><div class="content"></div><div class="post-footer">
-    <a href="/posts/auto_clock_in/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a></div></div>
+    <a href="/posts/auto-clock-in/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/cuda_cudnn/">CUDA、CUDNN</a>
+    <a href="/posts/cuda-cudnn/">CUDA、CUDNN</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -189,10 +239,10 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
 使用CONDA安装 CUDA
 1 conda install cudatoolkit=&lt;版本&gt; cuDNN
 1 conda install cudnn=&lt;版本&gt; </div><div class="post-footer">
-    <a href="/posts/cuda_cudnn/">阅读全文</a></div>
+    <a href="/posts/cuda-cudnn/">阅读全文</a></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/python_builtin/">Python 常识入门(?)</a>
+    <a href="/posts/python-builtin/">Python 常识入门(?)</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -201,7 +251,7 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-05-21 19:21:32'>发布于 <time datetime="2022-05-21">2022-05-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content">list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.</div><div class="post-footer">
-    <a href="/posts/python_builtin/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/oi/">OI</a></div></div>
+    <a href="/posts/python-builtin/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a><a href='/tags/oi/' class="post-tag">OI</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/dp/">动态规划</a>
@@ -212,20 +262,14 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
     data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
     data-sizes="auto"
     alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-05-21 18:57:41'>发布于 <time datetime="2022-05-21">2022-05-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content">动规解题的一般思路 将原问题分解为子问题
-把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。 子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。
-确定状态
-在用动态规划解题时，我们往往将和子问题相关的各个变量的一组取值，称之为一个“状态”。一个“状态”对应于一个或多个子问题，所谓某个“状态”下的“值”，就是这个“状态”所对应的子问题的解。 所有“状态”的集合，构成问题的“状态空间”。“状态空间”的大小，与用动态规划解决问题的时间复杂度直接相关。在数字三角形的例子里，一共有N×(N+1)/2个数字，所以这个问题的状态空间里一共就有N×(N+1)/2个状态。 整个问题的时间复杂度是状态数目乘以计算每个状态所需时间。在数字三角形里每个“状态”只需要经过一次，且在每个状态上作计算所花的时间都是和N无关的常数。
-确定一些初始状态（边界状态）的值
-以“数字三角形”为例，初始状态就是底边数字，值就是底边数字值。
-确定状态转移方程
-定义出什么是“状态”，以及在该“状态”下的“值”后，就要找出不同的状态之间如何迁移――即如何从一个或多个“值”已知的“状态”，求出另一个“状态”的“值”(递推型)。状态的迁移可以用递推公式表示，此递推公式也可被称作“状态转移方程”。
-1 2 3 4 graph LR; 子问题分解--&gt;确定状态 确定状态--&gt;确定初始状态值 确定初始状态值--&gt;确定状态转移方程 能用动规解决的问题的特点 问题具有最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。 递归到动规的一般转化方法 递归函数有n个参数，就定义一个n维的数组，数组的下标是递归函数参数的取值范围，数组元素的值是递归函数的返回值;
-这样就可以从边界值开始，逐步填充数组，相当于计算递归函数值的逆过程。</div><div class="post-footer">
-    <a href="/posts/dp/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/oi/">OI</a></div></div>
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-05-21 18:57:41'>发布于 <time datetime="2022-05-21">2022-05-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content"><h2 id="动规解题的一般思路">动规解题的一般思路</h2>
+<p><strong>将原问题分解为子问题</strong></p>
+<p>把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。
+子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。</p></div><div class="post-footer">
+    <a href="/posts/dp/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a><a href='/tags/oi/' class="post-tag">OI</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/pi4b_system/">树莓派4B × Ubuntu</a>
+    <a href="/posts/pi4b-system/">树莓派4B × Ubuntu</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -237,10 +281,10 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
 默认账户密码 ubuntu
 ubuntu
 apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&#34; WiFi 1 2 3 4 5 6 7 8 9 10 11 12 network: ethernets: eth0: dhcp4: true optional: true version: 2 wifis: wlan0: dhcp4: true access-points: &#34;你的wifi的ssid&#34;: password: &#34;你的密码&#34; 1 2 netplan try netplan apply </div><div class="post-footer">
-    <a href="/posts/pi4b_system/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/raspi/">raspi</a>,&nbsp;<a href="/tags/ubuntu/">ubuntu</a>,&nbsp;<a href="/tags/linux/">Linux</a></div></div>
+    <a href="/posts/pi4b-system/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/raspi/' class="post-tag">raspi</a><a href='/tags/ubuntu/' class="post-tag">ubuntu</a><a href='/tags/linux/' class="post-tag">Linux</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/pythonoibasis/">Python OI 基础（语言篇）</a>
+    <a href="/posts/python-oi-basis/">Python OI 基础（语言篇）</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -250,10 +294,10 @@ apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal mai
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-08 22:44:06'>发布于 <time datetime="2022-04-08">2022-04-08</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a>&ensp;<a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content">基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
 1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.</div><div class="post-footer">
-    <a href="/posts/pythonoibasis/">阅读全文</a></div>
+    <a href="/posts/python-oi-basis/">阅读全文</a></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/knapsackproblem/">背包问题</a>
+    <a href="/posts/knapsack-problem/">背包问题</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -261,42 +305,10 @@ apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal mai
     data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
     data-sizes="auto"
     alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-08 21:35:22'>发布于 <time datetime="2022-04-08">2022-04-08</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content">前言 在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。
-实际上，有很多问题可以规约为一个背包问题。
-背包问题的三类 01背包：某物品选 or 不选； 完全背包：某物品无限多可选； 多重背包：某物品有n[i]件可选。 👇以下内容主要摘自：希望用一种规律搞定背包问题 - 组合总和 Ⅳ - 力扣（LeetCode） (leetcode-cn.com)
-样题（LeetCode） 组合问题： 1 2 3 377. 组合总和 Ⅳ 378. 目标和 379. 零钱兑换 II True、False问题： 1 2 377. 单词拆分 378. 分割等和子集 最大最小问题： 1 2 377. 一和零 378. 零钱兑换 公式一览 组合问题公式 1 dp[i] += dp[i-num] True、False问题公式 1 dp[i] = dp[i] or dp[i-num] 最大最小问题公式 1 2 dp[i] = min(dp[i], dp[i-num]+1) dp[i] = max(dp[i], dp[i-num]+1) 问题几步骤 分析是否为背包问题。 是以上三种背包问题中的哪一种。 是0-1背包问题还是完全背包问题。也就是题目给的nums数组中的元素是否可以重复使用。 如果是组合问题，是否需要考虑元素之间的顺序。需要考虑顺序有顺序的解法，不需要考虑顺序又有对应的解法。 背包问题的判定 背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。</div><div class="post-footer">
-    <a href="/posts/knapsackproblem/">阅读全文</a></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/bert/">BERT</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-06 21:08:15'>发布于 <time datetime="2022-04-06">2022-04-06</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/nlp/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> NLP</a></span></div><div class="content">前言 研究BERT（无果），记录些好的参考（减轻浏览器收藏夹的压力……）
-参考 论文解读:BERT模型及fine-tuning - 知乎 (zhihu.com)
-LeeMeng - 進擊的 BERT：NLP 界的巨人之力與遷移學習
-google-research/bert: TensorFlow code and pre-trained models for BERT (github.com)
-LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻中</div><div class="post-footer">
-    <a href="/posts/bert/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nlp/">NLP</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/lstmandgru/">LSTM and GRU</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-05 23:01:41'>发布于 <time datetime="2022-04-05">2022-04-05</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/nlp/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> NLP</a></span></div><div class="content">前言 曾经天真的以为LSTM&gt;GRU
-实际上GRU的出现时间晚于LSTM（值得深究不是吗？）
-References GRU及双向RNN介绍_幸福诗歌的博客-CSDN博客_双向gru
-GRU与LSTM总结_lreaderl的博客-CSDN博客_gru lstm</div><div class="post-footer">
-    <a href="/posts/lstmandgru/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nlp/">NLP</a></div></div>
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-08 21:35:22'>发布于 <time datetime="2022-04-08">2022-04-08</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content"><h2 id="前言">前言</h2>
+<p>在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。</p>
+<p><strong>实际上，有很多问题可以规约为一个背包问题。</strong></p></div><div class="post-footer">
+    <a href="/posts/knapsack-problem/">阅读全文</a></div>
 </article>
 <ul class="pagination"><li class="page-item active">
           <span class="page-link">
@@ -305,6 +317,10 @@ GRU与LSTM总结_lreaderl的博客-CSDN博客_gru lstm</div><div class="post-foo
         </li><li class="page-item">
           <span class="page-link">
             <a href="/page/2/">2</a>
+          </span>
+        </li><li class="page-item">
+          <span class="page-link">
+            <a href="/page/3/">3</a>
           </span>
         </li></ul></div></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>

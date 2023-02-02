@@ -3,7 +3,23 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Docker</title>
+  <link>/posts/docker-basic/</link>
+  <pubDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/docker-basic/</guid>
+  <description><![CDATA[<p>更新中</p>]]></description>
+</item>
+<item>
+  <title>Windows 符号链接</title>
+  <link>/posts/mklink/</link>
+  <pubDate>Tue, 17 Jan 2023 22:54:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/mklink/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Python处理剪贴板</title>
   <link>/posts/clipboard/</link>
   <pubDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</pubDate>
@@ -13,18 +29,18 @@
 </item>
 <item>
   <title>自动打卡</title>
-  <link>/posts/auto_clock_in/</link>
+  <link>/posts/auto-clock-in/</link>
   <pubDate>Mon, 28 Nov 2022 12:16:58 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/auto_clock_in/</guid>
+  <guid>/posts/auto-clock-in/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>CUDA、CUDNN</title>
-  <link>/posts/cuda_cudnn/</link>
+  <link>/posts/cuda-cudnn/</link>
   <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/cuda_cudnn/</guid>
+  <guid>/posts/cuda-cudnn/</guid>
   <description><![CDATA[CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
 CUDA_百度百科 (baidu.com)
 CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
@@ -44,10 +60,10 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
 </item>
 <item>
   <title>Python 常识入门(?)</title>
-  <link>/posts/python_builtin/</link>
+  <link>/posts/python-builtin/</link>
   <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/python_builtin/</guid>
+  <guid>/posts/python-builtin/</guid>
   <description><![CDATA[list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.]]></description>
 </item>
 <item>
@@ -56,23 +72,17 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
   <pubDate>Sat, 21 May 2022 18:57:41 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/dp/</guid>
-  <description><![CDATA[动规解题的一般思路 将原问题分解为子问题
-把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。 子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。
-确定状态
-在用动态规划解题时，我们往往将和子问题相关的各个变量的一组取值，称之为一个“状态”。一个“状态”对应于一个或多个子问题，所谓某个“状态”下的“值”，就是这个“状态”所对应的子问题的解。 所有“状态”的集合，构成问题的“状态空间”。“状态空间”的大小，与用动态规划解决问题的时间复杂度直接相关。在数字三角形的例子里，一共有N×(N+1)/2个数字，所以这个问题的状态空间里一共就有N×(N+1)/2个状态。 整个问题的时间复杂度是状态数目乘以计算每个状态所需时间。在数字三角形里每个“状态”只需要经过一次，且在每个状态上作计算所花的时间都是和N无关的常数。
-确定一些初始状态（边界状态）的值
-以“数字三角形”为例，初始状态就是底边数字，值就是底边数字值。
-确定状态转移方程
-定义出什么是“状态”，以及在该“状态”下的“值”后，就要找出不同的状态之间如何迁移――即如何从一个或多个“值”已知的“状态”，求出另一个“状态”的“值”(递推型)。状态的迁移可以用递推公式表示，此递推公式也可被称作“状态转移方程”。
-1 2 3 4 graph LR; 子问题分解--&gt;确定状态 确定状态--&gt;确定初始状态值 确定初始状态值--&gt;确定状态转移方程 能用动规解决的问题的特点 问题具有最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，我们就称该问题具有最优子结构性质。 无后效性。当前的若干个状态值一旦确定，则此后过程的演变就只和这若干个状态的值有关，和之前是采取哪种手段或经过哪条路径演变到当前的这若干个状态，没有关系。 递归到动规的一般转化方法 递归函数有n个参数，就定义一个n维的数组，数组的下标是递归函数参数的取值范围，数组元素的值是递归函数的返回值;
-这样就可以从边界值开始，逐步填充数组，相当于计算递归函数值的逆过程。]]></description>
+  <description><![CDATA[<h2 id="动规解题的一般思路">动规解题的一般思路</h2>
+<p><strong>将原问题分解为子问题</strong></p>
+<p>把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。
+子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。</p>]]></description>
 </item>
 <item>
   <title>树莓派4B × Ubuntu</title>
-  <link>/posts/pi4b_system/</link>
+  <link>/posts/pi4b-system/</link>
   <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/pi4b_system/</guid>
+  <guid>/posts/pi4b-system/</guid>
   <description><![CDATA[Ubuntu 20.04 LTS ARM64 at least 4G RAM
 默认账户密码 ubuntu
 ubuntu
@@ -80,46 +90,22 @@ apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal mai
 </item>
 <item>
   <title>Python OI 基础（语言篇）</title>
-  <link>/posts/pythonoibasis/</link>
+  <link>/posts/python-oi-basis/</link>
   <pubDate>Fri, 08 Apr 2022 22:44:06 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/pythonoibasis/</guid>
+  <guid>/posts/python-oi-basis/</guid>
   <description><![CDATA[基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
 1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.]]></description>
 </item>
 <item>
   <title>背包问题</title>
-  <link>/posts/knapsackproblem/</link>
+  <link>/posts/knapsack-problem/</link>
   <pubDate>Fri, 08 Apr 2022 21:35:22 &#43;0800</pubDate>
   <author>Cyan</author>
-  <guid>/posts/knapsackproblem/</guid>
-  <description><![CDATA[前言 在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。
-实际上，有很多问题可以规约为一个背包问题。
-背包问题的三类 01背包：某物品选 or 不选； 完全背包：某物品无限多可选； 多重背包：某物品有n[i]件可选。 👇以下内容主要摘自：希望用一种规律搞定背包问题 - 组合总和 Ⅳ - 力扣（LeetCode） (leetcode-cn.com)
-样题（LeetCode） 组合问题： 1 2 3 377. 组合总和 Ⅳ 378. 目标和 379. 零钱兑换 II True、False问题： 1 2 377. 单词拆分 378. 分割等和子集 最大最小问题： 1 2 377. 一和零 378. 零钱兑换 公式一览 组合问题公式 1 dp[i] += dp[i-num] True、False问题公式 1 dp[i] = dp[i] or dp[i-num] 最大最小问题公式 1 2 dp[i] = min(dp[i], dp[i-num]+1) dp[i] = max(dp[i], dp[i-num]+1) 问题几步骤 分析是否为背包问题。 是以上三种背包问题中的哪一种。 是0-1背包问题还是完全背包问题。也就是题目给的nums数组中的元素是否可以重复使用。 如果是组合问题，是否需要考虑元素之间的顺序。需要考虑顺序有顺序的解法，不需要考虑顺序又有对应的解法。 背包问题的判定 背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。]]></description>
-</item>
-<item>
-  <title>BERT</title>
-  <link>/posts/bert/</link>
-  <pubDate>Wed, 06 Apr 2022 21:08:15 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/bert/</guid>
-  <description><![CDATA[前言 研究BERT（无果），记录些好的参考（减轻浏览器收藏夹的压力……）
-参考 论文解读:BERT模型及fine-tuning - 知乎 (zhihu.com)
-LeeMeng - 進擊的 BERT：NLP 界的巨人之力與遷移學習
-google-research/bert: TensorFlow code and pre-trained models for BERT (github.com)
-LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻中]]></description>
-</item>
-<item>
-  <title>LSTM and GRU</title>
-  <link>/posts/lstmandgru/</link>
-  <pubDate>Tue, 05 Apr 2022 23:01:41 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/lstmandgru/</guid>
-  <description><![CDATA[前言 曾经天真的以为LSTM&gt;GRU
-实际上GRU的出现时间晚于LSTM（值得深究不是吗？）
-References GRU及双向RNN介绍_幸福诗歌的博客-CSDN博客_双向gru
-GRU与LSTM总结_lreaderl的博客-CSDN博客_gru lstm]]></description>
+  <guid>/posts/knapsack-problem/</guid>
+  <description><![CDATA[<h2 id="前言">前言</h2>
+<p>在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。</p>
+<p><strong>实际上，有很多问题可以规约为一个背包问题。</strong></p>]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>CUDA、CUDNN - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+<meta name="author-link" content="">
+<meta name="description" content="CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
+CUDA_百度百科 (baidu.com)
+CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
+参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
+NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
+NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&gt;=runtime版本号
+多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
+安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
+手动安装 Linux建议直接CONDA安装
+下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
+CUDNN：NVIDIA cuDNN | NVIDIA Developer
+安装 建议看下面的博客，讲的很好
+cuda安装教程&#43;cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
+使用CONDA安装 CUDA
+1 conda install cudatoolkit=&lt;版本&gt; cuDNN
+1 conda install cudnn=&lt;版本&gt; " /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="CUDA、CUDNN">
+<meta itemprop="description" content="CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
+CUDA_百度百科 (baidu.com)
+CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
+参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
+NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
+NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&gt;=runtime版本号
+多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
+安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
+手动安装 Linux建议直接CONDA安装
+下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
+CUDNN：NVIDIA cuDNN | NVIDIA Developer
+安装 建议看下面的博客，讲的很好
+cuda安装教程&#43;cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
+使用CONDA安装 CUDA
+1 conda install cudatoolkit=&lt;版本&gt; cuDNN
+1 conda install cudnn=&lt;版本&gt; "><meta itemprop="datePublished" content="2022-05-21T19:21:32+08:00" />
+<meta itemprop="dateModified" content="2022-05-21T19:21:32+08:00" />
+<meta itemprop="wordCount" content="58">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="CUDA、CUDNN" />
+<meta property="og:description" content="CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
+CUDA_百度百科 (baidu.com)
+CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
+参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
+NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
+NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&gt;=runtime版本号
+多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
+安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
+手动安装 Linux建议直接CONDA安装
+下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
+CUDNN：NVIDIA cuDNN | NVIDIA Developer
+安装 建议看下面的博客，讲的很好
+cuda安装教程&#43;cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
+使用CONDA安装 CUDA
+1 conda install cudatoolkit=&lt;版本&gt; cuDNN
+1 conda install cudnn=&lt;版本&gt; " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/cuda-cudnn/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-21T19:21:32+08:00" />
+<meta property="article:modified_time" content="2022-05-21T19:21:32+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CUDA、CUDNN"/>
+<meta name="twitter:description" content="CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
+CUDA_百度百科 (baidu.com)
+CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
+参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
+NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
+NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&gt;=runtime版本号
+多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
+安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
+手动安装 Linux建议直接CONDA安装
+下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
+CUDNN：NVIDIA cuDNN | NVIDIA Developer
+安装 建议看下面的博客，讲的很好
+cuda安装教程&#43;cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
+使用CONDA安装 CUDA
+1 conda install cudatoolkit=&lt;版本&gt; cuDNN
+1 conda install cudnn=&lt;版本&gt; "/>
+<meta name="application-name" content="Cyan&#39;s Notebook">
+<meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/cuda-cudnn/" /><link rel="prev" href="/posts/python-builtin/" /><link rel="next" href="/posts/auto-clock-in/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "CUDA、CUDNN",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "\/posts\/cuda-cudnn\/"
+    },"genre": "posts","wordcount":  58 ,
+    "url": "\/posts\/cuda-cudnn\/","datePublished": "2022-05-21T19:21:32+08:00","dateModified": "2022-05-21T19:21:32+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Cyan"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Cyan&#39;s Notebook"><span class="header-title-text">Cyan&#39;s Notebook</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Cyan&#39;s Notebook"><span class="header-title-text">Cyan&#39;s Notebook</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>CUDA、CUDNN</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>
+          <span class="post-category">收录于 <a href="/categories/dl/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DL</a></span></div>
+      <div class="post-meta-line"><span title=2022-05-21&#32;19:21:32><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-05-21">2022-05-21</time></span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#cuda与cudnn">CUDA与CUDNN</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#cuda">CUDA</a></li>
+            <li><a href="#cudnn">CUDNN</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#nvidia的驱动与cuda版本">NVIDIA的驱动与<code>CUDA</code>版本</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#驱动版本与cuda版本">驱动版本与<code>CUDA</code>版本</a></li>
+            <li><a href="#多版本共存">多版本共存</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#手动安装">手动安装</a></li>
+            <li><a href="#下载地址">下载地址</a></li>
+            <li><a href="#安装-1">安装</a></li>
+            <li><a href="#使用conda安装">使用CONDA安装</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><div class="details admonition warning open">
+      <div class="details-summary admonition-title">
+        <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      </div>
+      <div class="details-content">
+        <div class="admonition-content">本文最后更新于 2022-05-21，文中内容可能已过时。</div>
+      </div>
+    </div><h2 id="cuda与cudnn">CUDA与CUDNN</h2>
+<h4 id="cuda">CUDA</h4>
+<p><code>CUDA</code>（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 <code>CUDA</code>™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。</p>
+<p><a href="https://baike.baidu.com/item/CUDA/1186262"target="_blank" rel="external nofollow noopener noreferrer">CUDA_百度百科 (baidu.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h4 id="cudnn">CUDNN</h4>
+<p>NVIDIA <code>cuDNN</code>是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA <code>cuDNN</code>可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的<strong>插入式设计</strong>可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。</p>
+<p>参考（强烈推荐）：<a href="https://www.jianshu.com/p/622f47f94784"target="_blank" rel="external nofollow noopener noreferrer">CUDA与cuDNN - 简书 (jianshu.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h2 id="nvidia的驱动与cuda版本">NVIDIA的驱动与<code>CUDA</code>版本</h2>
+<p>在第一次装的时候，满脑子？？？</p>
+<ul>
+<li>NVDIA驱动安装的有个<code>CUDA</code>了，版本和需要的不对怎么办，难道重装驱动吗？</li>
+<li>需要多个<code>CUDA</code>怎么办？</li>
+</ul>
+<h4 id="驱动版本与cuda版本">驱动版本与<code>CUDA</code>版本</h4>
+<p>随驱动安装的叫做<code>driver</code>版本，自己后续安装的叫做<code>runtime</code>版本，可以随意安装多个版本的<code>CUDA</code>，但是<strong>保证driver版本号&gt;=runtime版本号</strong></p>
+<h4 id="多版本共存">多版本共存</h4>
+<p>程序在调用<code>CUDA</code>的时候一般是利用<code>path</code>（或者说是windows环境变量）去加载<code>dll</code>等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。</p>
+<h2 id="安装">安装</h2>
+<p>首先要确定需要安装的版本。<code>tensorflow</code>可以在<a href="https://tensorflow.google.cn/install/source#linux"target="_blank" rel="external nofollow noopener noreferrer">从源代码构建  | TensorFlow (google.cn)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>查看</p>
+<h4 id="手动安装">手动安装</h4>
+<blockquote>
+<p>Linux建议直接CONDA安装</p>
+</blockquote>
+<h4 id="下载地址">下载地址</h4>
+<p>CUDA：<a href="https://developer.nvidia.com/cuda-toolkit-archive"target="_blank" rel="external nofollow noopener noreferrer">CUDA Toolkit Archive | NVIDIA Developer<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p>CUDNN：<a href="https://developer.nvidia.com/cudnn"target="_blank" rel="external nofollow noopener noreferrer">NVIDIA cuDNN | NVIDIA Developer<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h4 id="安装-1">安装</h4>
+<blockquote>
+<p>建议看下面的博客，讲的很好</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/sinat_23619409/article/details/84202651"target="_blank" rel="external nofollow noopener noreferrer">cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h4 id="使用conda安装">使用CONDA安装</h4>
+<p><code>CUDA</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">conda install <span class="nv">cudatoolkit</span><span class="o">=</span>&lt;版本&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>cuDNN</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">conda install <span class="nv">cudnn</span><span class="o">=</span>&lt;版本&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-05-21&#32;19:21:32>更新于 2022-05-21&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/python-builtin/" class="post-nav-item" rel="prev" title="Python 常识入门(?)"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Python 常识入门(?)</a>
+      <a href="/posts/auto-clock-in/" class="post-nav-item" rel="next" title="自动打卡">自动打卡<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

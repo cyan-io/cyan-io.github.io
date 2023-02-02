@@ -7,27 +7,15 @@
     <meta name="robots" content="noodp" />
     <title>Optimizer - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
-<meta name="description" content="前言 参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。
-资料 一个框架看懂优化算法之异同 SGD/AdaGrad/Adam - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (2)—— Adam的两宗罪 - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略 - 知乎 (zhihu.com)
-综述 Adam自带优化，会调整learning_rate（所以自己再用schedule, 微调learning_rate貌似没啥用了……
-大神都用SGD手调参数" /><meta name="keywords" content='DL' /><meta itemprop="name" content="Optimizer">
-<meta itemprop="description" content="前言 参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。
-资料 一个框架看懂优化算法之异同 SGD/AdaGrad/Adam - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (2)—— Adam的两宗罪 - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略 - 知乎 (zhihu.com)
-综述 Adam自带优化，会调整learning_rate（所以自己再用schedule, 微调learning_rate貌似没啥用了……
-大神都用SGD手调参数"><meta itemprop="datePublished" content="2022-04-05T22:43:07+08:00" />
+<meta name="description" content="前言
+参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。" /><meta name="keywords" content='DL' /><meta itemprop="name" content="Optimizer">
+<meta itemprop="description" content="前言
+参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。"><meta itemprop="datePublished" content="2022-04-05T22:43:07+08:00" />
 <meta itemprop="dateModified" content="2022-04-05T22:43:07+08:00" />
 <meta itemprop="wordCount" content="25">
 <meta itemprop="keywords" content="DL," /><meta property="og:title" content="Optimizer" />
-<meta property="og:description" content="前言 参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。
-资料 一个框架看懂优化算法之异同 SGD/AdaGrad/Adam - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (2)—— Adam的两宗罪 - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略 - 知乎 (zhihu.com)
-综述 Adam自带优化，会调整learning_rate（所以自己再用schedule, 微调learning_rate貌似没啥用了……
-大神都用SGD手调参数" />
+<meta property="og:description" content="前言
+参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/optimizer/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-04-05T22:43:07+08:00" />
@@ -35,16 +23,12 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Optimizer"/>
-<meta name="twitter:description" content="前言 参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。
-资料 一个框架看懂优化算法之异同 SGD/AdaGrad/Adam - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (2)—— Adam的两宗罪 - 知乎 (zhihu.com)
-Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略 - 知乎 (zhihu.com)
-综述 Adam自带优化，会调整learning_rate（所以自己再用schedule, 微调learning_rate貌似没啥用了……
-大神都用SGD手调参数"/>
+<meta name="twitter:description" content="前言
+参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。"/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/optimizer/" /><link rel="prev" href="/posts/primenumber/" /><link rel="next" href="/posts/wsa/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/optimizer/" /><link rel="prev" href="/posts/prime-number/" /><link rel="next" href="/posts/wsa-installation/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -85,7 +69,19 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
                 href="/tags/"
                 
                 
-              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
             <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
             <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
               <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
@@ -149,7 +145,21 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
                   href="/tags/"
                   
                   
-                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item theme-switch" title="切换主题">
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item theme-switch" title="切换主题">
           <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li></ul>
     </nav>
@@ -163,8 +173,7 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
       <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
-    
-</aside>
+    </aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
@@ -179,7 +188,7 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>
           <span class="post-category">收录于 <a href="/categories/dl/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DL</a></span></div>
-      <div class="post-meta-line"><span title=2022-04-05&#32;22:43:07><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-04-05">2022-04-05</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 25 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 1 分钟</span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2022-04-05&#32;22:43:07><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-04-05">2022-04-05</time></span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -192,12 +201,7 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
     <li><a href="#综述">综述</a></li>
   </ul>
 </nav></div>
-      </div><div
-      class="content"
-      id="content"
-      
-      
-    ><div class="details admonition warning open">
+      </div><div class="content" id="content"><div class="details admonition warning open">
       <div class="details-summary admonition-title">
         <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>警告<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
       </div>
@@ -212,8 +216,7 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
 <p><a href="https://zhuanlan.zhihu.com/p/32338983"target="_blank" rel="external nofollow noopener noreferrer">Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择与使用策略 - 知乎 (zhihu.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <h2 id="综述">综述</h2>
 <p>Adam自带优化，会调整learning_rate（所以自己再用schedule, 微调learning_rate貌似没啥用了……</p>
-<p>大神都用SGD手调参数</p>
-</div><div class="post-footer" id="post-footer">
+<p>大神都用SGD手调参数</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -230,14 +233,14 @@ Adam那么棒，为什么还对SGD念念不忘 (3)—— 优化算法的选择�
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/dl/">DL</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/dl/' class="post-tag">DL</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/primenumber/" class="prev" rel="prev" title="素数"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>素数</a>
-      <a href="/posts/wsa/" class="next" rel="next" title="WSA 安装与使用">WSA 安装与使用<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/prime-number/" class="post-nav-item" rel="prev" title="素数"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>素数</a>
+      <a href="/posts/wsa-installation/" class="post-nav-item" rel="next" title="WSA 安装与使用">WSA 安装与使用<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>
