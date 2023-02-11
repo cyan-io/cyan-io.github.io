@@ -3,13 +3,25 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>7z 命令行</title>
+  <link>/posts/7zip/</link>
+  <pubDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/7zip/</guid>
+  <description><![CDATA[命令行 7-zip │ 7z.exe │ 7zFM.exe │ 7zG.exe
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 C:\Program Files\7-Zip&gt;7z -h 7-Zip 21.]]></description>
+</item>
+<item>
   <title>Docker</title>
   <link>/posts/docker-basic/</link>
   <pubDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/docker-basic/</guid>
-  <description><![CDATA[<p>更新中</p>]]></description>
+  <description><![CDATA[基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=always 【容器名】 no/on-failure/always/unless-stopped Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
+浅谈Linux Cgroups机制 - 知乎 (zhihu.com)
+docker Volume - 知乎 (zhihu.com)
+Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.com)]]></description>
 </item>
 <item>
   <title>Windows 符号链接</title>
@@ -96,16 +108,6 @@ apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal mai
   <guid>/posts/python-oi-basis/</guid>
   <description><![CDATA[基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
 1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.]]></description>
-</item>
-<item>
-  <title>背包问题</title>
-  <link>/posts/knapsack-problem/</link>
-  <pubDate>Fri, 08 Apr 2022 21:35:22 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/knapsack-problem/</guid>
-  <description><![CDATA[<h2 id="前言">前言</h2>
-<p>在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。</p>
-<p><strong>实际上，有很多问题可以规约为一个背包问题。</strong></p>]]></description>
 </item>
 </channel>
 </rss>

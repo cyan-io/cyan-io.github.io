@@ -3,7 +3,15 @@
     <title>Categories - 分类 - Cyan&#39;s Notebook</title>
     <link>/categories/</link>
     <description>Categories - 分类 - Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 May 2022 19:21:32 &#43;0800</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</lastBuildDate><atom:link href="/categories/" rel="self" type="application/rss+xml" /><item>
+  <title>Tool</title>
+  <link>/categories/tool/</link>
+  <pubDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/categories/tool/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>DL</title>
   <link>/categories/dl/</link>
   <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
