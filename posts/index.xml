@@ -29,7 +29,7 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
   <pubDate>Tue, 17 Jan 2023 22:54:00 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/mklink/</guid>
-  <description><![CDATA[]]></description>
+  <description><![CDATA[ 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 ]]></description>
 </item>
 <item>
   <title>Python处理剪贴板</title>
