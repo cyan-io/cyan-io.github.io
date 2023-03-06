@@ -68,18 +68,7 @@
                 href="/about/"
                 
                 
-              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
-            <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-desktop">
-            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
-            </a>
-            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
-            </a>
-            <span class="search-button search-loading" id="search-loading-desktop">
-              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-            </span>
-          </li><li class="menu-item theme-switch" title="切换主题">
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
           <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
         </li>
       </ul>
@@ -95,23 +84,7 @@
       </div>
     </div>
     <nav>
-      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
-            <div class="search mobile" id="search-mobile">
-              <input type="text" placeholder="搜索文章标题或内容 ..." id="search-input-mobile">
-              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
-              </a>
-              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
-              </a>
-              <span class="search-button search-loading" id="search-loading-mobile">
-                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-              </span>
-            </div>
-            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-              取消
-            </a>
-          </li><li
+      <ul class="menu" id="menu-mobile"><li
               class="menu-item"
             ><a
                   class="menu-link"
@@ -151,12 +124,7 @@
         </li></ul>
     </nav>
   </div>
-</header><div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-  </div>
-  <div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-  </div><main class="container-reverse" data-page-style="normal"><div class="page home posts"><div class="home-profile"><div class="home-avatar"><a href="/posts/" title="文章"><img
+</header><main class="container-reverse" data-page-style="normal"><div class="page home posts"><div class="home-profile"><div class="home-avatar"><a href="/posts/" title="文章"><img
     class="lazyload"
     src="/svg/loading.min.svg"
     data-src="/avatar.jpg"
@@ -177,6 +145,49 @@
     max-height: 100%;
   }
 </style></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/dp/">动态规划</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-05-21 18:57:41'>发布于 <time datetime="2022-05-21">2022-05-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content"><h2 id="动规解题的一般思路">动规解题的一般思路</h2>
+<p><strong>将原问题分解为子问题</strong></p>
+<p>把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。
+子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。</p></div><div class="post-footer">
+    <a href="/posts/dp/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a><a href='/tags/oi/' class="post-tag">OI</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/pi4b-system/">树莓派4B × Ubuntu</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-27 14:55:51'>发布于 <time datetime="2022-04-27">2022-04-27</time></span></div><div class="content">Ubuntu 20.04 LTS ARM64 at least 4G RAM
+默认账户密码 ubuntu
+ubuntu
+apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&#34; WiFi 1 2 3 4 5 6 7 8 9 10 11 12 network: ethernets: eth0: dhcp4: true optional: true version: 2 wifis: wlan0: dhcp4: true access-points: &#34;你的wifi的ssid&#34;: password: &#34;你的密码&#34; 1 2 netplan try netplan apply </div><div class="post-footer">
+    <a href="/posts/pi4b-system/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/raspi/' class="post-tag">raspi</a><a href='/tags/ubuntu/' class="post-tag">ubuntu</a><a href='/tags/linux/' class="post-tag">Linux</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/python-oi-basis/">Python OI 基础（语言篇）</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-08 22:44:06'>发布于 <time datetime="2022-04-08">2022-04-08</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a>&ensp;<a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content">基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
+1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.</div><div class="post-footer">
+    <a href="/posts/python-oi-basis/">阅读全文</a></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/knapsack-problem/">背包问题</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
@@ -273,43 +284,6 @@ LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻
 <p>对匹配内容的上下文加以限定且限定的规则不参与匹配结果</p></div><div class="post-footer">
     <a href="/posts/re/">阅读全文</a></div>
 </article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/tf-gpu-memory/">tensorflow1、2设置不占满显存</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2021-09-16 18:46:00'>发布于 <time datetime="2021-09-16">2021-09-16</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/dl/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DL</a></span></div><div class="content"><p>tensorflow的默认调度策略是吃满显存，如果我们模型较小、显存较大、占用率不足40%（自己估计的）时，是可以利用GPU同时训练两个模型的。</p></div><div class="post-footer">
-    <a href="/posts/tf-gpu-memory/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/dl/' class="post-tag">DL</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/requests-proxy/">Python Requests库代理</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2021-09-14 08:26:00'>发布于 <time datetime="2021-09-14">2021-09-14</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content"></div><div class="post-footer">
-    <a href="/posts/requests-proxy/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a><a href='/tags/requests/' class="post-tag">requests</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/plt-zhcn/">matplotlib中文绘图</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2021-09-13 07:18:00'>发布于 <time datetime="2021-09-13">2021-09-13</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content"><p>在<code>默认</code>情况下，中文在<code>plt</code>中会被绘制成<code>▯</code>，猜测应该是因为默认字体不包含中文；</p>
-<p>可以通过<strong>配置字体</strong>的方法支持中文，大部分博客给出的字体是<code>SimHei</code>（黑体），但是渲染出来并不美观，经过我的测试，个人最推荐<code>SimSun</code>（宋体）。</p></div><div class="post-footer">
-    <a href="/posts/plt-zhcn/">阅读全文</a></div>
-</article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">
             <a href="/">1</a>
@@ -326,5 +300,5 @@ LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻
         </div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-profile-subtitle":"有花堪折直须折，莫待无花空折枝。"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-profile-subtitle":["typeit-profile-subtitle"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"typeit-profile-subtitle":"有花堪折直须折，莫待无花空折枝。"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-profile-subtitle":["typeit-profile-subtitle"]},"duration":-1,"speed":100}};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

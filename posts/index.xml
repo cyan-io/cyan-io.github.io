@@ -3,7 +3,31 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Mar 2023 13:18:58 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux Timeline</title>
+  <link>/posts/linux-timeline/</link>
+  <pubDate>Mon, 06 Mar 2023 13:18:58 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/linux-timeline/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>PVE</title>
+  <link>/posts/pve/</link>
+  <pubDate>Sun, 05 Mar 2023 05:42:12 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pve/</guid>
+  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html]]></description>
+</item>
+<item>
+  <title>LXC容器</title>
+  <link>/posts/lxc/</link>
+  <pubDate>Sat, 04 Mar 2023 05:19:31 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/lxc/</guid>
+  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg]]></description>
+</item>
+<item>
   <title>7z 命令行</title>
   <link>/posts/7zip/</link>
   <pubDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</pubDate>
@@ -77,37 +101,6 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
   <author>Cyan</author>
   <guid>/posts/python-builtin/</guid>
   <description><![CDATA[list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.]]></description>
-</item>
-<item>
-  <title>动态规划</title>
-  <link>/posts/dp/</link>
-  <pubDate>Sat, 21 May 2022 18:57:41 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/dp/</guid>
-  <description><![CDATA[<h2 id="动规解题的一般思路">动规解题的一般思路</h2>
-<p><strong>将原问题分解为子问题</strong></p>
-<p>把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。
-子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。</p>]]></description>
-</item>
-<item>
-  <title>树莓派4B × Ubuntu</title>
-  <link>/posts/pi4b-system/</link>
-  <pubDate>Wed, 27 Apr 2022 14:55:51 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/pi4b-system/</guid>
-  <description><![CDATA[Ubuntu 20.04 LTS ARM64 at least 4G RAM
-默认账户密码 ubuntu
-ubuntu
-apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-updates main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-backports main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-security main restricted universe multiverse deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal-proposed main restricted universe multiverse&#34; WiFi 1 2 3 4 5 6 7 8 9 10 11 12 network: ethernets: eth0: dhcp4: true optional: true version: 2 wifis: wlan0: dhcp4: true access-points: &#34;你的wifi的ssid&#34;: password: &#34;你的密码&#34; 1 2 netplan try netplan apply ]]></description>
-</item>
-<item>
-  <title>Python OI 基础（语言篇）</title>
-  <link>/posts/python-oi-basis/</link>
-  <pubDate>Fri, 08 Apr 2022 22:44:06 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/python-oi-basis/</guid>
-  <description><![CDATA[基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
-1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.]]></description>
 </item>
 </channel>
 </rss>

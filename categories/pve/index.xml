@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>PVE - 分类 - Cyan&#39;s Notebook</title>
+    <link>/categories/pve/</link>
+    <description>PVE - 分类 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 Mar 2023 05:42:12 &#43;0000</lastBuildDate><atom:link href="/categories/pve/" rel="self" type="application/rss+xml" /><item>
+  <title>PVE</title>
+  <link>/posts/pve/</link>
+  <pubDate>Sun, 05 Mar 2023 05:42:12 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pve/</guid>
+  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html]]></description>
+</item>
+</channel>
+</rss>

@@ -3,9 +3,33 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Mar 2023 13:18:58 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Linux Timeline</title>
+  <link>/posts/linux-timeline/</link>
+  <pubDate>Mon, 06 Mar 2023 13:18:58 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/linux-timeline/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>PVE</title>
+  <link>/posts/pve/</link>
+  <pubDate>Sun, 05 Mar 2023 05:42:12 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pve/</guid>
+  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html]]></description>
+</item>
+<item>
+  <title>LXC容器</title>
+  <link>/posts/lxc/</link>
+  <pubDate>Sat, 04 Mar 2023 05:19:31 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/lxc/</guid>
+  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg]]></description>
+</item>
+<item>
   <title>7z 命令行</title>
   <link>/posts/7zip/</link>
   <pubDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</pubDate>
@@ -178,31 +202,6 @@ LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻
   <guid>/posts/re/</guid>
   <description><![CDATA[<h2 id="1前言">1.前言</h2>
 <p>对匹配内容的上下文加以限定且限定的规则不参与匹配结果</p>]]></description>
-</item>
-<item>
-  <title>tensorflow1、2设置不占满显存</title>
-  <link>/posts/tf-gpu-memory/</link>
-  <pubDate>Thu, 16 Sep 2021 18:46:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/tf-gpu-memory/</guid>
-  <description><![CDATA[<p>tensorflow的默认调度策略是吃满显存，如果我们模型较小、显存较大、占用率不足40%（自己估计的）时，是可以利用GPU同时训练两个模型的。</p>]]></description>
-</item>
-<item>
-  <title>Python Requests库代理</title>
-  <link>/posts/requests-proxy/</link>
-  <pubDate>Tue, 14 Sep 2021 08:26:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/requests-proxy/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>matplotlib中文绘图</title>
-  <link>/posts/plt-zhcn/</link>
-  <pubDate>Mon, 13 Sep 2021 07:18:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/plt-zhcn/</guid>
-  <description><![CDATA[<p>在<code>默认</code>情况下，中文在<code>plt</code>中会被绘制成<code>▯</code>，猜测应该是因为默认字体不包含中文；</p>
-<p>可以通过<strong>配置字体</strong>的方法支持中文，大部分博客给出的字体是<code>SimHei</code>（黑体），但是渲染出来并不美观，经过我的测试，个人最推荐<code>SimSun</code>（宋体）。</p>]]></description>
 </item>
 </channel>
 </rss>
