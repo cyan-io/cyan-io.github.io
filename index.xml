@@ -3,9 +3,18 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Mar 2023 13:18:58 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Nginx</title>
+  <link>/posts/nginx/</link>
+  <pubDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/nginx/</guid>
+  <description><![CDATA[ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
+创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客]]></description>
+</item>
+<item>
   <title>Linux Timeline</title>
   <link>/posts/linux-timeline/</link>
   <pubDate>Mon, 06 Mar 2023 13:18:58 &#43;0000</pubDate>
@@ -44,10 +53,11 @@
   <pubDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/docker-basic/</guid>
-  <description><![CDATA[基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=always 【容器名】 no/on-failure/always/unless-stopped Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
+  <description><![CDATA[基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=unless-stopped [容器名] no/on-failure/always/unless-stopped 进入容器命令行 1 docker exec -it [containerid] /bin/bash 映射 Example:
+1 docker run -p 80:8080 -v local_path:container_path Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
 浅谈Linux Cgroups机制 - 知乎 (zhihu.com)
 docker Volume - 知乎 (zhihu.com)
-Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.com)]]></description>
+Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.]]></description>
 </item>
 <item>
   <title>Windows 符号链接</title>
@@ -56,6 +66,15 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
   <author>Cyan</author>
   <guid>/posts/mklink/</guid>
   <description><![CDATA[ 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 ]]></description>
+</item>
+<item>
+  <title>Anaconda镜像</title>
+  <link>/posts/conda-source/</link>
+  <pubDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/conda-source/</guid>
+  <description><![CDATA[<p>修改用户目录下的 <code>.condarc</code> 文件；</p>
+<p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p>]]></description>
 </item>
 <item>
   <title>Python处理剪贴板</title>
@@ -184,24 +203,6 @@ LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻
   <guid>/posts/prime-number/</guid>
   <description><![CDATA[检验 1 2 3 4 5 6 7 8 9 10 from math import * def is_prime(n): if n &lt; 2: return False for i in range(2, int(sqrt(n))+1): if n % i == 0: return False return True 打表(欧式筛法) 0、1不是素数，素数的倍数不是素数（质因数分解）
 1 2 3 4 5 6 7 8 9 def prime(MAX_N): lst = [True for _ in range(MAX_N+1)] lst[0] = lst[1] = False for i in range(2, MAX_N//2): if lst[i]: for j in range(2*i, MAX_N+1, i): lst[j] = False return lst 1 2 3 4 5 6 7 8 9 10 11 12 13 #define MAX 10005 bool prime[MAX]; void init_prime(){ memset(prime,true,sizeof(prime)); prime[0]=prime[1]=false; for(int i=2;i&lt;=MAX/2;i++){ if(!]]></description>
-</item>
-<item>
-  <title>Win清理Remote Desktop记录</title>
-  <link>/posts/rdp/</link>
-  <pubDate>Thu, 30 Sep 2021 02:18:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/rdp/</guid>
-  <description><![CDATA[注册表：
-1 HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default ]]></description>
-</item>
-<item>
-  <title>正则零宽断言</title>
-  <link>/posts/re/</link>
-  <pubDate>Thu, 30 Sep 2021 02:18:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/re/</guid>
-  <description><![CDATA[<h2 id="1前言">1.前言</h2>
-<p>对匹配内容的上下文加以限定且限定的规则不参与匹配结果</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -3,7 +3,16 @@
     <title>Python - 分类 - Cyan&#39;s Notebook</title>
     <link>/categories/python/</link>
     <description>Python - 分类 - Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 May 2022 19:21:32 &#43;0800</lastBuildDate><atom:link href="/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</lastBuildDate><atom:link href="/categories/python/" rel="self" type="application/rss+xml" /><item>
+  <title>Anaconda镜像</title>
+  <link>/posts/conda-source/</link>
+  <pubDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/conda-source/</guid>
+  <description><![CDATA[<p>修改用户目录下的 <code>.condarc</code> 文件；</p>
+<p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p>]]></description>
+</item>
+<item>
   <title>Python 常识入门(?)</title>
   <link>/posts/python-builtin/</link>
   <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>

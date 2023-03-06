@@ -5,36 +5,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Linux Timeline - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+    <title>Anaconda镜像 - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
-<meta name="description" content="Cyan&#39;s Notebook" /><meta name="keywords" content='Linux' /><meta itemprop="name" content="Linux Timeline">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-03-06T13:18:58+00:00" />
-<meta itemprop="dateModified" content="2023-03-06T13:24:38+00:00" />
-<meta itemprop="wordCount" content="0">
-<meta itemprop="keywords" content="Linux," /><meta property="og:title" content="Linux Timeline" />
-<meta property="og:description" content="" />
+<meta name="description" content="修改用户目录下的 .condarc 文件；
+没有则执行 conda config --set show_channel_urls yes 生成。" /><meta name="keywords" content='conda' /><meta itemprop="name" content="Anaconda镜像">
+<meta itemprop="description" content="修改用户目录下的 .condarc 文件；
+没有则执行 conda config --set show_channel_urls yes 生成。"><meta itemprop="datePublished" content="2023-01-06T19:55:00+08:00" />
+<meta itemprop="dateModified" content="2023-03-06T16:50:19+00:00" />
+<meta itemprop="wordCount" content="62">
+<meta itemprop="keywords" content="conda," /><meta property="og:title" content="Anaconda镜像" />
+<meta property="og:description" content="修改用户目录下的 .condarc 文件；
+没有则执行 conda config --set show_channel_urls yes 生成。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/linux-timeline/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-06T13:18:58+00:00" />
-<meta property="article:modified_time" content="2023-03-06T13:24:38+00:00" />
+<meta property="og:url" content="/posts/conda-source/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-06T19:55:00+08:00" />
+<meta property="article:modified_time" content="2023-03-06T16:50:19+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux Timeline"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Anaconda镜像"/>
+<meta name="twitter:description" content="修改用户目录下的 .condarc 文件；
+没有则执行 conda config --set show_channel_urls yes 生成。"/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/linux-timeline/" /><link rel="prev" href="/posts/pve/" /><link rel="next" href="/posts/nginx/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/conda-source/" /><link rel="prev" href="/posts/clipboard/" /><link rel="next" href="/posts/mklink/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Linux Timeline",
+    "headline": "Anaconda镜像",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "\/posts\/linux-timeline\/"
-    },"genre": "posts","keywords": "Linux","wordcount":  0 ,
-    "url": "\/posts\/linux-timeline\/","datePublished": "2023-03-06T13:18:58+00:00","dateModified": "2023-03-06T13:24:38+00:00","publisher": {
+      "@id": "\/posts\/conda-source\/"
+    },"genre": "posts","keywords": "conda","wordcount":  62 ,
+    "url": "\/posts\/conda-source\/","datePublished": "2023-01-06T19:55:00+08:00","dateModified": "2023-03-06T16:50:19+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -141,7 +145,7 @@
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>Linux Timeline</span>
+        <span>Anaconda镜像</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -151,21 +155,51 @@
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>
-          <span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div>
-      <div class="post-meta-line"><span title=2023-03-06&#32;13:18:58><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-06">2023-03-06</time></span>&nbsp;</div>
-    </div><div class="content" id="content"><p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg"
-    data-srcset="http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg, http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg 1.5x, http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg 2x"
-    data-sizes="auto"
-    alt="https://github.com/FabioLolix/LinuxTimeline"
-    title="https://github.com/FabioLolix/LinuxTimeline"/></p>
-</div><div class="post-footer" id="post-footer">
+          <span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div>
+      <div class="post-meta-line"><span title=2023-01-06&#32;19:55:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-06">2023-01-06</time></span>&nbsp;</div>
+    </div><div class="content" id="content"><p>修改用户目录下的 <code>.condarc</code> 文件；</p>
+<p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">channels:
+</span></span><span class="line"><span class="cl">  - defaults
+</span></span><span class="line"><span class="cl">show_channel_urls: true
+</span></span><span class="line"><span class="cl">default_channels:
+</span></span><span class="line"><span class="cl">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+</span></span><span class="line"><span class="cl">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+</span></span><span class="line"><span class="cl">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+</span></span><span class="line"><span class="cl">custom_channels:
+</span></span><span class="line"><span class="cl">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span class="line"><span class="cl">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span class="line"><span class="cl">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span class="line"><span class="cl">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span class="line"><span class="cl">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span class="line"><span class="cl">  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span><span class="line"><span class="cl">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/"target="_blank" rel="external nofollow noopener noreferrer">anaconda | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-03-06&#32;13:24:38>更新于 2023-03-06&nbsp;</span>
+        <span title=2023-03-06&#32;16:50:19>更新于 2023-03-06&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -178,14 +212,14 @@
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">Linux</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/conda/' class="post-tag">conda</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/pve/" class="post-nav-item" rel="prev" title="PVE"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>PVE</a>
-      <a href="/posts/nginx/" class="post-nav-item" rel="next" title="Nginx">Nginx<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/clipboard/" class="post-nav-item" rel="prev" title="Python处理剪贴板"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Python处理剪贴板</a>
+      <a href="/posts/mklink/" class="post-nav-item" rel="next" title="Windows 符号链接">Windows 符号链接<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>

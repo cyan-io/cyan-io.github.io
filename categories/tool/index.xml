@@ -18,10 +18,11 @@
   <pubDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/posts/docker-basic/</guid>
-  <description><![CDATA[基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=always 【容器名】 no/on-failure/always/unless-stopped Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
+  <description><![CDATA[基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=unless-stopped [容器名] no/on-failure/always/unless-stopped 进入容器命令行 1 docker exec -it [containerid] /bin/bash 映射 Example:
+1 docker run -p 80:8080 -v local_path:container_path Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
 浅谈Linux Cgroups机制 - 知乎 (zhihu.com)
 docker Volume - 知乎 (zhihu.com)
-Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.com)]]></description>
+Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.]]></description>
 </item>
 </channel>
 </rss>

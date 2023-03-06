@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>conda - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/conda/</link>
+    <description>conda - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</lastBuildDate><atom:link href="/tags/conda/" rel="self" type="application/rss+xml" /><item>
+  <title>Anaconda镜像</title>
+  <link>/posts/conda-source/</link>
+  <pubDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/conda-source/</guid>
+  <description><![CDATA[<p>修改用户目录下的 <code>.condarc</code> 文件；</p>
+<p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p>]]></description>
+</item>
+</channel>
+</rss>

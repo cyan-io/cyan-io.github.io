@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Nginx - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/nginx/</link>
+    <description>Nginx - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</lastBuildDate><atom:link href="/tags/nginx/" rel="self" type="application/rss+xml" /><item>
+  <title>Nginx</title>
+  <link>/posts/nginx/</link>
+  <pubDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/nginx/</guid>
+  <description><![CDATA[ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
+创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客]]></description>
+</item>
+</channel>
+</rss>
