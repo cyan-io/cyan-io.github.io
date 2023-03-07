@@ -146,6 +146,18 @@
   }
 </style></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/clipboard/">Python处理剪贴板</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-11-29 17:27:55'>发布于 <time datetime="2022-11-29">2022-11-29</time></span></div><div class="content">去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.</div><div class="post-footer">
+    <a href="/posts/clipboard/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/auto-clock-in/">自动打卡</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -282,19 +294,6 @@ LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻
 管理员运行Power Shell 1 Add-AppxPackage -Path &lt;path to downloaded file&gt; 在Windows中打开开发者模式 连接到ADB 1 adb connect [::1]:58526 安装程序 1 adb -s [::1]:58526 install &#34;D:\HandShaker.apk&#34; 推荐 Item Intro HandShaker 锤子遗产、子系统和电脑互传文件 权限狗 给应用添加权限，比如 Ｖ** 微软桌面 App 启动器 https://apkpure.com/ Apk 下载 代理 宿主机器安装应用，并allow lan，端口修改为自己的配置
 1 2 3 4 5 @echo off adb connect [::1]:58526 &amp;&amp; adb shell &#34;settings put global http_proxy `ip route list match 0 table all scope global | cut -F3`:7890&#34; pause Ref Windows11 安装 WSA 简单上手一试_姜戈12的博客-CSDN博客</div><div class="post-footer">
     <a href="/posts/wsa-installation/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/adb/' class="post-tag">ADB</a><a href='/tags/windows/' class="post-tag">Windows</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/optimizer/">Optimizer</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-05 22:43:07'>发布于 <time datetime="2022-04-05">2022-04-05</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/dl/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DL</a></span></div><div class="content"><h2 id="前言">前言</h2>
-<p>参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。</p></div><div class="post-footer">
-    <a href="/posts/optimizer/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/dl/' class="post-tag">DL</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">

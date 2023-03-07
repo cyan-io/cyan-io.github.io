@@ -15,6 +15,14 @@ PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博
 ubuntu16.04驱动安装提示sign-file: certs/signing_key.]]></description>
 </item>
 <item>
+  <title>快速创建临时服务器</title>
+  <link>/posts/quick-server/</link>
+  <pubDate>Mon, 06 Mar 2023 16:48:58 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/quick-server/</guid>
+  <description><![CDATA[Node.js http 1 2 npm install -g serve serve folder_name Python http 1 python -m http.server port ftp 1 2 pip install pyftpdlib python -m pyftpdlib -p 21 REF Python一秒搭建ftp服务器，帮助你在局域网共享文件 - 知乎 (zhihu.com)]]></description>
+</item>
+<item>
   <title>Nginx</title>
   <link>/posts/nginx/</link>
   <pubDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</pubDate>
@@ -85,14 +93,6 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
   <guid>/posts/conda-source/</guid>
   <description><![CDATA[<p>修改用户目录下的 <code>.condarc</code> 文件；</p>
 <p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p>]]></description>
-</item>
-<item>
-  <title>Python处理剪贴板</title>
-  <link>/posts/clipboard/</link>
-  <pubDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/clipboard/</guid>
-  <description><![CDATA[去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.]]></description>
 </item>
 </channel>
 </rss>
