@@ -5,44 +5,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Nginx - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+    <title>PVE编译Realtek网卡驱动 - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
-<meta name="description" content="ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
-创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客
-Nginx 配置详解 | 菜鸟教程 (runoob." /><meta name="keywords" content='Docker, Nginx, Linux' /><meta itemprop="name" content="Nginx">
-<meta itemprop="description" content="ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
-创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客
-Nginx 配置详解 | 菜鸟教程 (runoob."><meta itemprop="datePublished" content="2023-03-06T15:11:39+00:00" />
-<meta itemprop="dateModified" content="2023-03-06T16:47:21+00:00" />
-<meta itemprop="wordCount" content="78">
-<meta itemprop="keywords" content="Docker,Nginx,Linux," /><meta property="og:title" content="Nginx" />
-<meta property="og:description" content="ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
-创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客
-Nginx 配置详解 | 菜鸟教程 (runoob." />
+<meta name="description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
+关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
+PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
+ubuntu16.04驱动安装提示sign-file: certs/signing_key." /><meta name="keywords" content='Linux' /><meta itemprop="name" content="PVE编译Realtek网卡驱动">
+<meta itemprop="description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
+关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
+PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
+ubuntu16.04驱动安装提示sign-file: certs/signing_key."><meta itemprop="datePublished" content="2023-03-07T14:43:48+00:00" />
+<meta itemprop="dateModified" content="2023-03-07T14:46:12+00:00" />
+<meta itemprop="wordCount" content="76">
+<meta itemprop="keywords" content="Linux," /><meta property="og:title" content="PVE编译Realtek网卡驱动" />
+<meta property="og:description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
+关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
+PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
+ubuntu16.04驱动安装提示sign-file: certs/signing_key." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/nginx/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-06T15:11:39+00:00" />
-<meta property="article:modified_time" content="2023-03-06T16:47:21+00:00" />
+<meta property="og:url" content="/posts/pve-realtek-driver/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-07T14:43:48+00:00" />
+<meta property="article:modified_time" content="2023-03-07T14:46:12+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Nginx"/>
-<meta name="twitter:description" content="ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
-创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客
-Nginx 配置详解 | 菜鸟教程 (runoob."/>
+<meta name="twitter:title" content="PVE编译Realtek网卡驱动"/>
+<meta name="twitter:description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
+关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
+PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
+ubuntu16.04驱动安装提示sign-file: certs/signing_key."/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/nginx/" /><link rel="prev" href="/posts/linux-timeline/" /><link rel="next" href="/posts/pve-realtek-driver/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/pve-realtek-driver/" /><link rel="prev" href="/posts/nginx/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Nginx",
+    "headline": "PVE编译Realtek网卡驱动",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "\/posts\/nginx\/"
-    },"genre": "posts","keywords": "Docker, Nginx, Linux","wordcount":  78 ,
-    "url": "\/posts\/nginx\/","datePublished": "2023-03-06T15:11:39+00:00","dateModified": "2023-03-06T16:47:21+00:00","publisher": {
+      "@id": "\/posts\/pve-realtek-driver\/"
+    },"genre": "posts","keywords": "Linux","wordcount":  76 ,
+    "url": "\/posts\/pve-realtek-driver\/","datePublished": "2023-03-07T14:43:48+00:00","dateModified": "2023-03-07T14:46:12+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -150,7 +154,7 @@ Nginx 配置详解 | 菜鸟教程 (runoob."/>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>Nginx</span>
+        <span>PVE编译Realtek网卡驱动</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -159,9 +163,8 @@ Nginx 配置详解 | 菜鸟教程 (runoob."/>
     data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
     data-sizes="auto"
     alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>
-          <span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div>
-      <div class="post-meta-line"><span title=2023-03-06&#32;15:11:39><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-06">2023-03-06</time></span>&nbsp;</div>
+    title="Cyan"/>&nbsp;Cyan</span></span></div>
+      <div class="post-meta-line"><span title=2023-03-07&#32;14:43:48><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-07">2023-03-07</time></span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -169,16 +172,13 @@ Nginx 配置详解 | 菜鸟教程 (runoob."/>
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#abcd">ABCD</a></li>
-    <li><a href="#在docker中部署">在Docker中部署</a>
+    <li><a href="#预准备">预准备</a>
       <ul>
         <li>
           <ul>
-            <li><a href="#先运行一下">先运行一下</a></li>
-            <li><a href="#创建卷">创建卷</a></li>
-            <li><a href="#复制配置文件">复制配置文件</a></li>
-            <li><a href="#过河拆桥">过河拆桥</a></li>
-            <li><a href="#运行">运行</a></li>
+            <li><a href="#下载内核源码">下载内核源码</a></li>
+            <li><a href="#创建链接">创建链接</a></li>
+            <li><a href="#生成证书">生成证书</a></li>
           </ul>
         </li>
       </ul>
@@ -186,75 +186,52 @@ Nginx 配置详解 | 菜鸟教程 (runoob."/>
     <li><a href="#ref">REF</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><h2 id="abcd">ABCD</h2>
-<h2 id="在docker中部署">在Docker中部署</h2>
-<h4 id="先运行一下">先运行一下</h4>
+      </div><div class="content" id="content"><h2 id="预准备">预准备</h2>
+<h4 id="下载内核源码">下载内核源码</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run --name nginx nginx
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><kbd>Ctrl</kbd><kbd>C</kbd></p>
-<h4 id="创建卷">创建卷</h4>
+</div><h4 id="创建链接">创建链接</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /home/docker-nginx
-</span></span><span class="line"><span class="cl">mkdir -p /home/docker-nginx/html
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s /boot/System.map-<span class="k">$(</span>uname -r<span class="k">)</span> /lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/build/System.map
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="复制配置文件">复制配置文件</h4>
+</div><h4 id="生成证书">生成证书</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker cp nginx:/etc/nginx /var
-</span></span><span class="line"><span class="cl">mv /var/nginx /home/docker-nginx/conf
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl req -new -nodes -utf8 -sha512 -days <span class="m">36500</span> -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="过河拆桥">过河拆桥</h4>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker stop nginx
-</span></span><span class="line"><span class="cl">docker rm nginx
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="运行">运行</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run  -p 80:80 -p 443:443 --name nginx --restart<span class="o">=</span>unless-stopped <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /home/docker-nginx/conf:/etc/nginx <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /home/docker-nginx/html:/usr/share/nginx/html <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d nginx
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp signing_key.pem signing_key.x509 /usr/src/linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span>/certs/
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="ref">REF</h2>
-<p><a href="https://blog.csdn.net/six_teen/article/details/112602577"target="_blank" rel="external nofollow noopener noreferrer">docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p><a href="https://www.runoob.com/w3cnote/nginx-setup-intro.html"target="_blank" rel="external nofollow noopener noreferrer">Nginx 配置详解 | 菜鸟教程 (runoob.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p><a href="https://hub.docker.com/_/nginx"target="_blank" rel="external nofollow noopener noreferrer">nginx - Official Image | Docker Hub<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software"target="_blank" rel="external nofollow noopener noreferrer">Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://blog.csdn.net/kuno_y/article/details/125407480"target="_blank" rel="external nofollow noopener noreferrer">关于 /lib/modules/<strong>内核版本号</strong>/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://www.cnblogs.com/ColoFly/p/17109514.html"target="_blank" rel="external nofollow noopener noreferrer">PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://blog.csdn.net/u011050845/article/details/125699628"target="_blank" rel="external nofollow noopener noreferrer">ubuntu16.04驱动安装提示sign-file: certs/signing_key.pem: No such file or directory_小码农9527的博客-CSDN博客<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-03-06&#32;16:47:21>更新于 2023-03-06&nbsp;</span>
+        <span title=2023-03-07&#32;14:46:12>更新于 2023-03-07&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -267,14 +244,13 @@ Nginx 配置详解 | 菜鸟教程 (runoob."/>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/docker/' class="post-tag">Docker</a><a href='/tags/nginx/' class="post-tag">Nginx</a><a href='/tags/linux/' class="post-tag">Linux</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">Linux</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/linux-timeline/" class="post-nav-item" rel="prev" title="Linux Timeline"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Linux Timeline</a>
-      <a href="/posts/pve-realtek-driver/" class="post-nav-item" rel="next" title="PVE编译Realtek网卡驱动">PVE编译Realtek网卡驱动<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/nginx/" class="post-nav-item" rel="prev" title="Nginx"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Nginx</a></div>
 </div>
 </article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>

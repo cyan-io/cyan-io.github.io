@@ -10,7 +10,8 @@
   <author>Cyan</author>
   <guid>/posts/nginx/</guid>
   <description><![CDATA[ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
-创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客]]></description>
+创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客
+Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
 </item>
 </channel>
 </rss>

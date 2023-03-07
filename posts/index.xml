@@ -3,14 +3,26 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>PVE编译Realtek网卡驱动</title>
+  <link>/posts/pve-realtek-driver/</link>
+  <pubDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/pve-realtek-driver/</guid>
+  <description><![CDATA[预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
+关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
+PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
+ubuntu16.04驱动安装提示sign-file: certs/signing_key.]]></description>
+</item>
+<item>
   <title>Nginx</title>
   <link>/posts/nginx/</link>
   <pubDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/nginx/</guid>
   <description><![CDATA[ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
-创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客]]></description>
+创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客
+Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
 </item>
 <item>
   <title>Linux Timeline</title>
@@ -81,14 +93,6 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
   <author>Cyan</author>
   <guid>/posts/clipboard/</guid>
   <description><![CDATA[去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.]]></description>
-</item>
-<item>
-  <title>自动打卡</title>
-  <link>/posts/auto-clock-in/</link>
-  <pubDate>Mon, 28 Nov 2022 12:16:58 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/auto-clock-in/</guid>
-  <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>
