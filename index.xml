@@ -3,9 +3,39 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Linux内核源码阅读、下载</title>
+  <link>/posts/linux-source/</link>
+  <pubDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/linux-source/</guid>
+  <description><![CDATA[在线阅读 https://elixir.bootlin.com/linux/0.11/source
+源码下载（Mirror） http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/Historic/old-versions/]]></description>
+</item>
+<item>
+  <title>Internet Protocol Stack</title>
+  <link>/posts/internet-protocol-stack/</link>
+  <pubDate>Wed, 15 Mar 2023 06:06:20 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/internet-protocol-stack/</guid>
+  <description><![CDATA[因特网协议栈中的层 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)
+人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
+7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
+4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 REF TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.]]></description>
+</item>
+<item>
+  <title>TUN TAP</title>
+  <link>/posts/tun-tap/</link>
+  <pubDate>Wed, 15 Mar 2023 05:56:20 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/tun-tap/</guid>
+  <description><![CDATA[TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
+REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
+TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)]]></description>
+</item>
+<item>
   <title>PVE编译Realtek网卡驱动</title>
   <link>/posts/pve-realtek-driver/</link>
   <pubDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</pubDate>
@@ -48,7 +78,7 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <pubDate>Sun, 05 Mar 2023 05:42:12 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/pve/</guid>
-  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html]]></description>
+  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html http://www.naxs.cn/zcjh/13705.html]]></description>
 </item>
 <item>
   <title>LXC容器</title>
@@ -56,7 +86,7 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <pubDate>Sat, 04 Mar 2023 05:19:31 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/lxc/</guid>
-  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg]]></description>
+  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container]]></description>
 </item>
 <item>
   <title>7z 命令行</title>
@@ -173,38 +203,6 @@ apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal mai
   <guid>/posts/python-oi-basis/</guid>
   <description><![CDATA[基本 输入 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 def cin1(): return [int(i) for i in input().split()] def cin2(): return map(int, input().split()) def cin3(): return list(map(int, input().split())) # 输入一个常数 n, = cin() # 注意&#39;,&#39; m, n = cin() # 输入一个数组 arr = cin() # 注意cin2会返回map对象 输入输出重定向 使用操作系统的重定向
 1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.]]></description>
-</item>
-<item>
-  <title>背包问题</title>
-  <link>/posts/knapsack-problem/</link>
-  <pubDate>Fri, 08 Apr 2022 21:35:22 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/knapsack-problem/</guid>
-  <description><![CDATA[<h2 id="前言">前言</h2>
-<p>在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。</p>
-<p><strong>实际上，有很多问题可以规约为一个背包问题。</strong></p>]]></description>
-</item>
-<item>
-  <title>BERT</title>
-  <link>/posts/bert/</link>
-  <pubDate>Wed, 06 Apr 2022 21:08:15 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/bert/</guid>
-  <description><![CDATA[前言 研究BERT（无果），记录些好的参考（减轻浏览器收藏夹的压力……）
-参考 论文解读:BERT模型及fine-tuning - 知乎 (zhihu.com)
-LeeMeng - 進擊的 BERT：NLP 界的巨人之力與遷移學習
-google-research/bert: TensorFlow code and pre-trained models for BERT (github.com)
-LeeMeng - 淺談神經機器翻譯 &amp; 用 Transformer 與 TensorFlow 2 英翻中]]></description>
-</item>
-<item>
-  <title>WSA 安装与使用</title>
-  <link>/posts/wsa-installation/</link>
-  <pubDate>Tue, 05 Apr 2022 22:45:04 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/wsa-installation/</guid>
-  <description><![CDATA[Installation 准备 启用Hyper-V 和 虚拟机平台 配置好 ADB 下载WSA package [Microsoft Store - Generation Project (v1.2.3) by @rgadguard &amp; mkuba50] (rg-adguard.net) https://www.microsoft.com/store/productId/9P3395VX91NR 下载最大的那个（1G+） 安装 截止日前，不需要修改区域（中国区），仅亚马逊商店不提供服务
-管理员运行Power Shell 1 Add-AppxPackage -Path &lt;path to downloaded file&gt; 在Windows中打开开发者模式 连接到ADB 1 adb connect [::1]:58526 安装程序 1 adb -s [::1]:58526 install &#34;D:\HandShaker.apk&#34; 推荐 Item Intro HandShaker 锤子遗产、子系统和电脑互传文件 权限狗 给应用添加权限，比如 Ｖ** 微软桌面 App 启动器 https://apkpure.com/ Apk 下载 代理 宿主机器安装应用，并allow lan，端口修改为自己的配置
-1 2 3 4 5 @echo off adb connect [::1]:58526 &amp;&amp; adb shell &#34;settings put global http_proxy `ip route list match 0 table all scope global | cut -F3`:7890&#34; pause Ref Windows11 安装 WSA 简单上手一试_姜戈12的博客-CSDN博客]]></description>
 </item>
 </channel>
 </rss>

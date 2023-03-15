@@ -3,7 +3,37 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux内核源码阅读、下载</title>
+  <link>/posts/linux-source/</link>
+  <pubDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/linux-source/</guid>
+  <description><![CDATA[在线阅读 https://elixir.bootlin.com/linux/0.11/source
+源码下载（Mirror） http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/Historic/old-versions/]]></description>
+</item>
+<item>
+  <title>Internet Protocol Stack</title>
+  <link>/posts/internet-protocol-stack/</link>
+  <pubDate>Wed, 15 Mar 2023 06:06:20 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/internet-protocol-stack/</guid>
+  <description><![CDATA[因特网协议栈中的层 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)
+人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
+7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
+4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 REF TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.]]></description>
+</item>
+<item>
+  <title>TUN TAP</title>
+  <link>/posts/tun-tap/</link>
+  <pubDate>Wed, 15 Mar 2023 05:56:20 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/tun-tap/</guid>
+  <description><![CDATA[TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
+REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
+TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)]]></description>
+</item>
+<item>
   <title>PVE编译Realtek网卡驱动</title>
   <link>/posts/pve-realtek-driver/</link>
   <pubDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</pubDate>
@@ -46,7 +76,7 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <pubDate>Sun, 05 Mar 2023 05:42:12 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/pve/</guid>
-  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html]]></description>
+  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html http://www.naxs.cn/zcjh/13705.html]]></description>
 </item>
 <item>
   <title>LXC容器</title>
@@ -54,7 +84,7 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <pubDate>Sat, 04 Mar 2023 05:19:31 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/lxc/</guid>
-  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg]]></description>
+  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container]]></description>
 </item>
 <item>
   <title>7z 命令行</title>
@@ -64,35 +94,6 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <guid>/posts/7zip/</guid>
   <description><![CDATA[命令行 7-zip │ 7z.exe │ 7zFM.exe │ 7zG.exe
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 C:\Program Files\7-Zip&gt;7z -h 7-Zip 21.]]></description>
-</item>
-<item>
-  <title>Docker</title>
-  <link>/posts/docker-basic/</link>
-  <pubDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/docker-basic/</guid>
-  <description><![CDATA[基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=unless-stopped [容器名] no/on-failure/always/unless-stopped 进入容器命令行 1 docker exec -it [containerid] /bin/bash 映射 Example:
-1 docker run -p 80:8080 -v local_path:container_path Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
-浅谈Linux Cgroups机制 - 知乎 (zhihu.com)
-docker Volume - 知乎 (zhihu.com)
-Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.]]></description>
-</item>
-<item>
-  <title>Windows 符号链接</title>
-  <link>/posts/mklink/</link>
-  <pubDate>Tue, 17 Jan 2023 22:54:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/mklink/</guid>
-  <description><![CDATA[ 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 ]]></description>
-</item>
-<item>
-  <title>Anaconda镜像</title>
-  <link>/posts/conda-source/</link>
-  <pubDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/conda-source/</guid>
-  <description><![CDATA[<p>修改用户目录下的 <code>.condarc</code> 文件；</p>
-<p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -3,7 +3,26 @@
     <title>Linux - 分类 - Cyan&#39;s Notebook</title>
     <link>/categories/linux/</link>
     <description>Linux - 分类 - Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</lastBuildDate><atom:link href="/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</lastBuildDate><atom:link href="/categories/linux/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux内核源码阅读、下载</title>
+  <link>/posts/linux-source/</link>
+  <pubDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/linux-source/</guid>
+  <description><![CDATA[在线阅读 https://elixir.bootlin.com/linux/0.11/source
+源码下载（Mirror） http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/Historic/old-versions/]]></description>
+</item>
+<item>
+  <title>TUN TAP</title>
+  <link>/posts/tun-tap/</link>
+  <pubDate>Wed, 15 Mar 2023 05:56:20 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/tun-tap/</guid>
+  <description><![CDATA[TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
+REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
+TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)]]></description>
+</item>
+<item>
   <title>Nginx</title>
   <link>/posts/nginx/</link>
   <pubDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</pubDate>
@@ -27,7 +46,7 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <pubDate>Sun, 05 Mar 2023 05:42:12 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/pve/</guid>
-  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html]]></description>
+  <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html http://www.naxs.cn/zcjh/13705.html]]></description>
 </item>
 <item>
   <title>LXC容器</title>
@@ -35,7 +54,7 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <pubDate>Sat, 04 Mar 2023 05:19:31 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/lxc/</guid>
-  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container http://futurist.se/gldt/wp-content/uploads/12.10/gldt1210.svg]]></description>
+  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container]]></description>
 </item>
 </channel>
 </rss>

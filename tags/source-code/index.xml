@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Source-Code - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/source-code/</link>
+    <description>Source-Code - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</lastBuildDate><atom:link href="/tags/source-code/" rel="self" type="application/rss+xml" /><item>
+  <title>Linux内核源码阅读、下载</title>
+  <link>/posts/linux-source/</link>
+  <pubDate>Wed, 15 Mar 2023 06:11:22 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/linux-source/</guid>
+  <description><![CDATA[在线阅读 https://elixir.bootlin.com/linux/0.11/source
+源码下载（Mirror） http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/Historic/old-versions/]]></description>
+</item>
+</channel>
+</rss>
