@@ -5,48 +5,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>PVE编译Realtek网卡驱动 - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+    <title>TUN TAP - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
-<meta name="description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
-关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
-PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
-ubuntu16.04驱动安装提示sign-file: certs/signing_key." /><meta name="keywords" content='Linux' /><meta itemprop="name" content="PVE编译Realtek网卡驱动">
-<meta itemprop="description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
-关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
-PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
-ubuntu16.04驱动安装提示sign-file: certs/signing_key."><meta itemprop="datePublished" content="2023-03-07T14:43:48+00:00" />
-<meta itemprop="dateModified" content="2023-03-07T14:46:12+00:00" />
-<meta itemprop="wordCount" content="76">
-<meta itemprop="keywords" content="Linux," /><meta property="og:title" content="PVE编译Realtek网卡驱动" />
-<meta property="og:description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
-关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
-PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
-ubuntu16.04驱动安装提示sign-file: certs/signing_key." />
+<meta name="description" content="TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
+REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
+TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)" /><meta name="keywords" content='Linux' /><meta itemprop="name" content="TUN TAP">
+<meta itemprop="description" content="TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
+REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
+TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)"><meta itemprop="datePublished" content="2023-03-15T05:56:20+00:00" />
+<meta itemprop="dateModified" content="2023-03-15T05:57:12+00:00" />
+<meta itemprop="wordCount" content="19">
+<meta itemprop="keywords" content="Linux," /><meta property="og:title" content="TUN TAP" />
+<meta property="og:description" content="TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
+REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
+TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/pve-realtek-driver/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-03-07T14:43:48+00:00" />
-<meta property="article:modified_time" content="2023-03-07T14:46:12+00:00" />
+<meta property="og:url" content="/posts/tun-tap/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-15T05:56:20+00:00" />
+<meta property="article:modified_time" content="2023-03-15T05:57:12+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PVE编译Realtek网卡驱动"/>
-<meta name="twitter:description" content="预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
-关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
-PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
-ubuntu16.04驱动安装提示sign-file: certs/signing_key."/>
+<meta name="twitter:title" content="TUN TAP"/>
+<meta name="twitter:description" content="TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
+REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
+TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)"/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/pve-realtek-driver/" /><link rel="prev" href="/posts/quick-server/" /><link rel="next" href="/posts/tun-tap/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/tun-tap/" /><link rel="prev" href="/posts/pve-realtek-driver/" /><link rel="next" href="/posts/internet-protocol-stack/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "PVE编译Realtek网卡驱动",
+    "headline": "TUN TAP",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "\/posts\/pve-realtek-driver\/"
-    },"genre": "posts","keywords": "Linux","wordcount":  76 ,
-    "url": "\/posts\/pve-realtek-driver\/","datePublished": "2023-03-07T14:43:48+00:00","dateModified": "2023-03-07T14:46:12+00:00","publisher": {
+      "@id": "\/posts\/tun-tap\/"
+    },"genre": "posts","keywords": "Linux","wordcount":  19 ,
+    "url": "\/posts\/tun-tap\/","datePublished": "2023-03-15T05:56:20+00:00","dateModified": "2023-03-15T05:57:12+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -154,7 +150,7 @@ ubuntu16.04驱动安装提示sign-file: certs/signing_key."/>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>PVE编译Realtek网卡驱动</span>
+        <span>TUN TAP</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -163,8 +159,9 @@ ubuntu16.04驱动安装提示sign-file: certs/signing_key."/>
     data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
     data-sizes="auto"
     alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span></div>
-      <div class="post-meta-line"><span title=2023-03-07&#32;14:43:48><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-07">2023-03-07</time></span>&nbsp;</div>
+    title="Cyan"/>&nbsp;Cyan</span></span>
+          <span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div>
+      <div class="post-meta-line"><span title=2023-03-15&#32;05:56:20><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-15">2023-03-15</time></span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -172,66 +169,30 @@ ubuntu16.04驱动安装提示sign-file: certs/signing_key."/>
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#预准备">预准备</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#下载内核源码">下载内核源码</a></li>
-            <li><a href="#创建链接">创建链接</a></li>
-            <li><a href="#生成证书">生成证书</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#tun--tap">TUN / TAP</a></li>
     <li><a href="#ref">REF</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><h2 id="预准备">预准备</h2>
-<h4 id="下载内核源码">下载内核源码</h4>
+      </div><div class="content" id="content"><h2 id="tun--tap">TUN / TAP</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get install linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># ls /dev/net</span>
+</span></span><span class="line"><span class="cl">tun
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="创建链接">创建链接</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s /boot/System.map-<span class="k">$(</span>uname -r<span class="k">)</span> /lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/build/System.map
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="生成证书">生成证书</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl req -new -nodes -utf8 -sha512 -days <span class="m">36500</span> -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp signing_key.pem signing_key.x509 /usr/src/linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span>/certs/
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="ref">REF</h2>
-<p><a href="https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software"target="_blank" rel="external nofollow noopener noreferrer">Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p><a href="https://blog.csdn.net/kuno_y/article/details/125407480"target="_blank" rel="external nofollow noopener noreferrer">关于 /lib/modules/<strong>内核版本号</strong>/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p><a href="https://www.cnblogs.com/ColoFly/p/17109514.html"target="_blank" rel="external nofollow noopener noreferrer">PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p><a href="https://blog.csdn.net/u011050845/article/details/125699628"target="_blank" rel="external nofollow noopener noreferrer">ubuntu16.04驱动安装提示sign-file: certs/signing_key.pem: No such file or directory_小码农9527的博客-CSDN博客<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+</div><p>TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。</p>
+<h2 id="ref">REF</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/260405786"target="_blank" rel="external nofollow noopener noreferrer">虚拟设备之TUN和TAP - 知乎 (zhihu.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://zh.wikipedia.org/wiki/TCP/IP%e5%8d%8f%e8%ae%ae%e6%97%8f#TCP/IP%e5%8d%94%e8%ad%b0%e6%a3%a7%e7%b5%84%e6%88%90"target="_blank" rel="external nofollow noopener noreferrer">TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-03-07&#32;14:46:12>更新于 2023-03-07&nbsp;</span>
+        <span title=2023-03-15&#32;05:57:12>更新于 2023-03-15&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -250,8 +211,8 @@ ubuntu16.04驱动安装提示sign-file: certs/signing_key."/>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/quick-server/" class="post-nav-item" rel="prev" title="快速创建临时服务器"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>快速创建临时服务器</a>
-      <a href="/posts/tun-tap/" class="post-nav-item" rel="next" title="TUN TAP">TUN TAP<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/pve-realtek-driver/" class="post-nav-item" rel="prev" title="PVE编译Realtek网卡驱动"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>PVE编译Realtek网卡驱动</a>
+      <a href="/posts/internet-protocol-stack/" class="post-nav-item" rel="next" title="Internet Protocol Stack">Internet Protocol Stack<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>
