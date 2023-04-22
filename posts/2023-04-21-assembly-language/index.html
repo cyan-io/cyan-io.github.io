@@ -5,36 +5,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Windows 符号链接 - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+    <title>Assembly Language - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
-<meta name="description" content=" 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 " /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="Windows 符号链接">
-<meta itemprop="description" content=" 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 "><meta itemprop="datePublished" content="2023-01-17T22:54:00+08:00" />
-<meta itemprop="dateModified" content="2023-01-17T22:54:00+08:00" />
-<meta itemprop="wordCount" content="34">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Windows 符号链接" />
-<meta property="og:description" content=" 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 " />
+<meta name="description" content=" 参考教材：《汇编语言》第4版 王爽，仅作有选择的摘要。
+一、基础知识 汇编语言组成 汇编指令（核心）：机器码的助记符，有对应机器码 伪指令：没有对应机器码，由编译器执行，计算机不执行 其他符号：如&#43;-*/，由编译器识别，没有对应机器码 指令和数据 应用上的概念，在内存或磁盘上没有任何区别（二进制信息）
+存储单元 单个单元：8bit =&gt; 1Byte
+CPU读写存储器 地址线 存储单元的地址（地址信息） 寻址能力：$2^{width} Byte$ 控制线 器件选择，读或写的命令（控制信息） 数据线 读或写的数据（数据信息） 一次数据传送量：$width\ bit$ 二、寄存器 " /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="Assembly Language">
+<meta itemprop="description" content=" 参考教材：《汇编语言》第4版 王爽，仅作有选择的摘要。
+一、基础知识 汇编语言组成 汇编指令（核心）：机器码的助记符，有对应机器码 伪指令：没有对应机器码，由编译器执行，计算机不执行 其他符号：如&#43;-*/，由编译器识别，没有对应机器码 指令和数据 应用上的概念，在内存或磁盘上没有任何区别（二进制信息）
+存储单元 单个单元：8bit =&gt; 1Byte
+CPU读写存储器 地址线 存储单元的地址（地址信息） 寻址能力：$2^{width} Byte$ 控制线 器件选择，读或写的命令（控制信息） 数据线 读或写的数据（数据信息） 一次数据传送量：$width\ bit$ 二、寄存器 "><meta itemprop="datePublished" content="2023-04-21T06:43:19+00:00" />
+<meta itemprop="dateModified" content="2023-04-21T06:43:19+00:00" />
+<meta itemprop="wordCount" content="25">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Assembly Language" />
+<meta property="og:description" content=" 参考教材：《汇编语言》第4版 王爽，仅作有选择的摘要。
+一、基础知识 汇编语言组成 汇编指令（核心）：机器码的助记符，有对应机器码 伪指令：没有对应机器码，由编译器执行，计算机不执行 其他符号：如&#43;-*/，由编译器识别，没有对应机器码 指令和数据 应用上的概念，在内存或磁盘上没有任何区别（二进制信息）
+存储单元 单个单元：8bit =&gt; 1Byte
+CPU读写存储器 地址线 存储单元的地址（地址信息） 寻址能力：$2^{width} Byte$ 控制线 器件选择，读或写的命令（控制信息） 数据线 读或写的数据（数据信息） 一次数据传送量：$width\ bit$ 二、寄存器 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/mklink/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-17T22:54:00+08:00" />
-<meta property="article:modified_time" content="2023-01-17T22:54:00+08:00" />
+<meta property="og:url" content="/posts/2023-04-21-assembly-language/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-21T06:43:19+00:00" />
+<meta property="article:modified_time" content="2023-04-21T06:43:19+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows 符号链接"/>
-<meta name="twitter:description" content=" 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 "/>
+<meta name="twitter:title" content="Assembly Language"/>
+<meta name="twitter:description" content=" 参考教材：《汇编语言》第4版 王爽，仅作有选择的摘要。
+一、基础知识 汇编语言组成 汇编指令（核心）：机器码的助记符，有对应机器码 伪指令：没有对应机器码，由编译器执行，计算机不执行 其他符号：如&#43;-*/，由编译器识别，没有对应机器码 指令和数据 应用上的概念，在内存或磁盘上没有任何区别（二进制信息）
+存储单元 单个单元：8bit =&gt; 1Byte
+CPU读写存储器 地址线 存储单元的地址（地址信息） 寻址能力：$2^{width} Byte$ 控制线 器件选择，读或写的命令（控制信息） 数据线 读或写的数据（数据信息） 一次数据传送量：$width\ bit$ 二、寄存器 "/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/mklink/" /><link rel="prev" href="/posts/conda-source/" /><link rel="next" href="/posts/docker-basic/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/2023-04-21-assembly-language/" /><link rel="prev" href="/posts/function-lambda/" /><link rel="next" href="/posts/2023-04-22-mini-vue-page/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Windows 符号链接",
+    "headline": "Assembly Language",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "\/posts\/mklink\/"
-    },"genre": "posts","wordcount":  34 ,
-    "url": "\/posts\/mklink\/","datePublished": "2023-01-17T22:54:00+08:00","dateModified": "2023-01-17T22:54:00+08:00","publisher": {
+      "@id": "\/posts\/2023-04-21-assembly-language\/"
+    },"genre": "posts","wordcount":  25 ,
+    "url": "\/posts\/2023-04-21-assembly-language\/","datePublished": "2023-04-21T06:43:19+00:00","dateModified": "2023-04-21T06:43:19+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -133,7 +145,8 @@
         </li></ul>
     </nav>
   </div>
-</header><main class="container-reverse" data-page-style="normal"><aside class="toc" id="toc-auto"></aside>
+</header><main class="container-reverse" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     <div class="profile-custom">
@@ -141,7 +154,7 @@
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>Windows 符号链接</span>
+        <span>Assembly Language</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -151,49 +164,70 @@
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span></div>
-      <div class="post-meta-line"><span title=2023-01-17&#32;22:54:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-17">2023-01-17</time></span>&nbsp;</div>
-    </div><div class="content" id="content"><div class="details admonition note open">
-      <div class="details-summary admonition-title">
-        <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-      </div>
-      <div class="details-content">
-        <div class="admonition-content">本文最后更新于 2023-01-17，文中内容可能已过时。</div>
-      </div>
-    </div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:\Windows\System32&gt;mklink
-</span></span><span class="line"><span class="cl">创建符号链接。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">MKLINK [[/D] | [/H] | [/J]] Link Target
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        /D      创建目录符号链接。默认为文件
-</span></span><span class="line"><span class="cl">                符号链接。
-</span></span><span class="line"><span class="cl">        /H      创建硬链接而非符号链接。
-</span></span><span class="line"><span class="cl">        /J      创建目录联接。
-</span></span><span class="line"><span class="cl">        Link    指定新的符号链接名称。
-</span></span><span class="line"><span class="cl">        Target  指定新链接引用的路径
-</span></span><span class="line"><span class="cl">                (相对或绝对)。
-</span></span></code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
+      <div class="post-meta-line"><span title=2023-04-21&#32;06:43:19><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-04-21">2023-04-21</time></span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一基础知识">一、基础知识</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#汇编语言组成">汇编语言组成</a></li>
+            <li><a href="#指令和数据">指令和数据</a></li>
+            <li><a href="#存储单元">存储单元</a></li>
+            <li><a href="#cpu读写存储器">CPU读写存储器</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#二寄存器">二、寄存器</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>参考教材：《汇编语言》第4版 王爽，仅作有选择的摘要。</p>
+</blockquote>
+<h2 id="一基础知识">一、基础知识</h2>
+<h4 id="汇编语言组成">汇编语言组成</h4>
+<ol>
+<li>汇编指令（核心）：机器码的助记符，有对应机器码</li>
+<li>伪指令：没有对应机器码，由编译器执行，计算机不执行</li>
+<li>其他符号：如+-*/，由编译器识别，没有对应机器码</li>
+</ol>
+<h4 id="指令和数据">指令和数据</h4>
+<p>应用上的概念，在内存或磁盘上没有任何区别（二进制信息）</p>
+<h4 id="存储单元">存储单元</h4>
+<p>单个单元：8bit =&gt; 1Byte</p>
+<h4 id="cpu读写存储器">CPU读写存储器</h4>
+<ul>
+<li>地址线
+<ul>
+<li>存储单元的地址（地址信息）</li>
+<li>寻址能力：$2^{width} Byte$</li>
+</ul>
+</li>
+<li>控制线
+<ul>
+<li>器件选择，读或写的命令（控制信息）</li>
+<li></li>
+</ul>
+</li>
+<li>数据线
+<ul>
+<li>读或写的数据（数据信息）</li>
+<li>一次数据传送量：$width\ bit$</li>
+</ul>
+</li>
+</ul>
+<h2 id="二寄存器">二、寄存器</h2>
+</div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-01-17&#32;22:54:00>更新于 2023-01-17&nbsp;</span>
+        <span title=2023-04-21&#32;06:43:19>更新于 2023-04-21&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -212,8 +246,8 @@
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/conda-source/" class="post-nav-item" rel="prev" title="Anaconda镜像"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Anaconda镜像</a>
-      <a href="/posts/docker-basic/" class="post-nav-item" rel="next" title="Docker">Docker<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/function-lambda/" class="post-nav-item" rel="prev" title="C&#43;&#43; Function Lambda"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>C&#43;&#43; Function Lambda</a>
+      <a href="/posts/2023-04-22-mini-vue-page/" class="post-nav-item" rel="next" title="Mini VUE Page">Mini VUE Page<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>

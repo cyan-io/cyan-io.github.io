@@ -10,18 +10,18 @@
 <meta name="description" content="因特网协议栈中的层 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)
 人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
 7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
-4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 REF TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia." /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="Internet Protocol Stack">
+4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 扩展阅读 一文一图搞懂OSI七层模型_long_songs的博客-CSDN博客" /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="Internet Protocol Stack">
 <meta itemprop="description" content="因特网协议栈中的层 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)
 人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
 7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
-4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 REF TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia."><meta itemprop="datePublished" content="2023-03-15T06:06:20+00:00" />
+4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 扩展阅读 一文一图搞懂OSI七层模型_long_songs的博客-CSDN博客"><meta itemprop="datePublished" content="2023-03-15T06:06:20+00:00" />
 <meta itemprop="dateModified" content="2023-03-15T06:06:33+00:00" />
-<meta itemprop="wordCount" content="83">
+<meta itemprop="wordCount" content="89">
 <meta itemprop="keywords" content="" /><meta property="og:title" content="Internet Protocol Stack" />
 <meta property="og:description" content="因特网协议栈中的层 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)
 人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
 7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
-4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 REF TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia." />
+4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 扩展阅读 一文一图搞懂OSI七层模型_long_songs的博客-CSDN博客" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/internet-protocol-stack/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-15T06:06:20+00:00" />
@@ -32,7 +32,7 @@
 <meta name="twitter:description" content="因特网协议栈中的层 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)
 人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
 7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
-4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 REF TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia."/>
+4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 扩展阅读 一文一图搞懂OSI七层模型_long_songs的博客-CSDN博客"/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -45,7 +45,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "\/posts\/internet-protocol-stack\/"
-    },"genre": "posts","wordcount":  83 ,
+    },"genre": "posts","wordcount":  89 ,
     "url": "\/posts\/internet-protocol-stack\/","datePublished": "2023-03-15T06:06:20+00:00","dateModified": "2023-03-15T06:06:33+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -173,6 +173,7 @@
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#因特网协议栈中的层">因特网协议栈中的层</a></li>
+    <li><a href="#扩展阅读">扩展阅读</a></li>
     <li><a href="#ref">REF</a></li>
   </ul>
 </nav></div>
@@ -259,6 +260,9 @@
 </tr>
 </tbody>
 </table>
+<h2 id="扩展阅读">扩展阅读</h2>
+<p><a href="https://blog.csdn.net/long_songs/article/details/129504534"target="_blank" rel="external nofollow noopener noreferrer">一文一图搞懂OSI七层模型_long_songs的博客-CSDN博客<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/143654140"target="_blank" rel="external nofollow noopener noreferrer">一文读懂OSI七层模型和TCP/IP五层模型 - 知乎 (zhihu.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <h2 id="ref">REF</h2>
 <p><a href="https://zh.wikipedia.org/wiki/TCP/IP%e5%8d%8f%e8%ae%ae%e6%97%8f#TCP/IP%e5%8d%94%e8%ad%b0%e6%a3%a7%e7%b5%84%e6%88%90"target="_blank" rel="external nofollow noopener noreferrer">TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 <p><a href="https://baike.baidu.com/item/%e4%ba%94%e5%b1%82%e5%9b%a0%e7%89%b9%e7%bd%91%e5%8d%8f%e8%ae%ae%e6%a0%88/8353884"target="_blank" rel="external nofollow noopener noreferrer">五层因特网协议栈_百度百科 (baidu.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>

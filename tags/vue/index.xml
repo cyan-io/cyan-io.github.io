@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>VUE - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/vue/</link>
+    <description>VUE - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 22 Apr 2023 06:19:00 &#43;0000</lastBuildDate><atom:link href="/tags/vue/" rel="self" type="application/rss+xml" /><item>
+  <title>Mini VUE Page</title>
+  <link>/posts/2023-04-22-mini-vue-page/</link>
+  <pubDate>Sat, 22 Apr 2023 06:19:00 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-04-22-mini-vue-page/</guid>
+  <description><![CDATA[ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 &lt;script src=&#34;https://unpkg.com/vue@3/dist/vue.global.js&#34;&gt;&lt;/script&gt; &lt;div id=&#34;app&#34;&gt;{{ message }}&lt;/div&gt; &lt;script&gt; const { createApp } = Vue createApp({ data() { return { message: &#39;Hello Vue!&#39; } } }).mount(&#39;#app&#39;) &lt;/script&gt; ]]></description>
+</item>
+</channel>
+</rss>
