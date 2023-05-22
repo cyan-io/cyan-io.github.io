@@ -3,9 +3,26 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 22 Apr 2023 06:19:00 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 22 May 2023 07:34:00 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>VUE x Tampermonkey</title>
+  <link>/posts/2023-05-22-vue-tampermonkey/</link>
+  <pubDate>Mon, 22 May 2023 07:34:00 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-05-22-vue-tampermonkey/</guid>
+  <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 // ==UserScript== // @name VUE测试 // @namespace http://tampermonkey.net/ // @version 0.1 // @description try to take over the world! // @author You // @match https://cyan-io.github.io/ // @icon data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== // @grant none // ==/UserScript== let script = document.]]></description>
+</item>
+<item>
+  <title>excel</title>
+  <link>/posts/2023-05-16-excel/</link>
+  <pubDate>Tue, 16 May 2023 13:22:20 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-05-16-excel/</guid>
+  <description><![CDATA[单元格格式设置后内容却不变
+点击数据 &raquo; 分列 &raquo; 完成]]></description>
+</item>
+<item>
   <title>Mini VUE Page</title>
   <link>/posts/2023-04-22-mini-vue-page/</link>
   <pubDate>Sat, 22 Apr 2023 06:19:00 &#43;0000</pubDate>
@@ -168,37 +185,6 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
   <author>Cyan</author>
   <guid>/posts/auto-clock-in/</guid>
   <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>CUDA、CUDNN</title>
-  <link>/posts/cuda-cudnn/</link>
-  <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/cuda-cudnn/</guid>
-  <description><![CDATA[CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
-CUDA_百度百科 (baidu.com)
-CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
-参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
-NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
-NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&gt;=runtime版本号
-多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
-安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
-手动安装 Linux建议直接CONDA安装
-下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
-CUDNN：NVIDIA cuDNN | NVIDIA Developer
-安装 建议看下面的博客，讲的很好
-cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
-使用CONDA安装 CUDA
-1 conda install cudatoolkit=&lt;版本&gt; cuDNN
-1 conda install cudnn=&lt;版本&gt; ]]></description>
-</item>
-<item>
-  <title>Python 常识入门(?)</title>
-  <link>/posts/python-builtin/</link>
-  <pubDate>Sat, 21 May 2022 19:21:32 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/python-builtin/</guid>
-  <description><![CDATA[list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.]]></description>
 </item>
 </channel>
 </rss>
