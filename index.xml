@@ -3,9 +3,20 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 22 May 2023 07:34:00 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>CUDA CUDNN</title>
+  <link>/posts/2023-06-24-cuda/</link>
+  <pubDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-06-24-cuda/</guid>
+  <description><![CDATA[Create Python Environment 1 cond create -n env_name python=3.x Torch Start Locally | PyTorch
+Check Installation 1 2 import torch torch.cuda.is_available() CUDA CUDA Toolkit Archive | NVIDIA Developer
+1 conda install cudatoolkit=x.x CUDNN cuDNN Archive | NVIDIA Developer
+1 conda install ]]></description>
+</item>
+<item>
   <title>VUE x Tampermonkey</title>
   <link>/posts/2023-05-22-vue-tampermonkey/</link>
   <pubDate>Mon, 22 May 2023 07:34:00 &#43;0000</pubDate>
@@ -177,14 +188,6 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
   <author>Cyan</author>
   <guid>/posts/clipboard/</guid>
   <description><![CDATA[去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.]]></description>
-</item>
-<item>
-  <title>自动打卡</title>
-  <link>/posts/auto-clock-in/</link>
-  <pubDate>Mon, 28 Nov 2022 12:16:58 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/auto-clock-in/</guid>
-  <description><![CDATA[]]></description>
 </item>
 </channel>
 </rss>
