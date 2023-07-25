@@ -3,9 +3,36 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>QEMU-CXL</title>
+  <link>/posts/2023-07-25-qemu-cxl/</link>
+  <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-25-qemu-cxl/</guid>
+  <description><![CDATA[1 qemu-img create -f qcow2 drive 16G 1 qemu-system-x86_64 -machine q35 -smp sockets=1,cores=4,threads=4 -m 4096 -usb -device usb-kbd -device usb-tablet -rtc base=localtime -net nic,model=virtio -drive file=drive,media=disk,if=virtio -drive file=ubuntu-22.04.2-live-server-amd64.iso,media=cdrom qemu-system-x86_64 -machine q35 -smp sockets=1,cores=4,threads=4 -m 4096 -usb -device usb-kbd -device usb-tablet -rtc base=localtime -net nic,model=virtio -drive file=drive,media=disk,if=virtio -drive file=ubuntu-22.04.2-live-server-amd64.iso,media=cdrom -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 -device cxl-type3,bus=root_port13,persistent-memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G
+1 2 3 4 5 6 -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.]]></description>
+</item>
+<item>
+  <title>VNC for PVE VM (not noVNC)</title>
+  <link>/posts/2023-07-25-vnc-for-pve-vm-not-novnc/</link>
+  <pubDate>Mon, 24 Jul 2023 23:56:10 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-25-vnc-for-pve-vm-not-novnc/</guid>
+  <description><![CDATA[VNC Client Access - Proxmox VE]]></description>
+</item>
+<item>
+  <title>Resize Linux LVM</title>
+  <link>/posts/resize-linux-lvm/</link>
+  <pubDate>Mon, 24 Jul 2023 23:54:30 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/resize-linux-lvm/</guid>
+  <description><![CDATA[How to resize a logical volume with 5 simple LVM commands | Enable Sysadmin (redhat.com)
+系统运维|如何在 Linux 中扩展/增加 LVM 大小（逻辑卷调整）
+解决 Linux /dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv 磁盘空间不足的问题_ubuntu vg 为什么不用满_fly-liuhao的博客-CSDN博客]]></description>
+</item>
+<item>
   <title>CUDA CUDNN</title>
   <link>/posts/2023-06-24-cuda/</link>
   <pubDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</pubDate>
@@ -163,31 +190,6 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
 浅谈Linux Cgroups机制 - 知乎 (zhihu.com)
 docker Volume - 知乎 (zhihu.com)
 Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.]]></description>
-</item>
-<item>
-  <title>Windows 符号链接</title>
-  <link>/posts/mklink/</link>
-  <pubDate>Tue, 17 Jan 2023 22:54:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/mklink/</guid>
-  <description><![CDATA[ 1 2 3 4 5 6 7 8 9 10 11 12 C:\Windows\System32&gt;mklink 创建符号链接。 MKLINK [[/D] | [/H] | [/J]] Link Target /D 创建目录符号链接。默认为文件 符号链接。 /H 创建硬链接而非符号链接。 /J 创建目录联接。 Link 指定新的符号链接名称。 Target 指定新链接引用的路径 (相对或绝对)。 ]]></description>
-</item>
-<item>
-  <title>Anaconda镜像</title>
-  <link>/posts/conda-source/</link>
-  <pubDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/conda-source/</guid>
-  <description><![CDATA[<p>修改用户目录下的 <code>.condarc</code> 文件；</p>
-<p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p>]]></description>
-</item>
-<item>
-  <title>Python处理剪贴板</title>
-  <link>/posts/clipboard/</link>
-  <pubDate>Tue, 29 Nov 2022 17:27:55 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/clipboard/</guid>
-  <description><![CDATA[去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.]]></description>
 </item>
 </channel>
 </rss>

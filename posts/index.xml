@@ -3,7 +3,34 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>QEMU-CXL</title>
+  <link>/posts/2023-07-25-qemu-cxl/</link>
+  <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-25-qemu-cxl/</guid>
+  <description><![CDATA[1 qemu-img create -f qcow2 drive 16G 1 qemu-system-x86_64 -machine q35 -smp sockets=1,cores=4,threads=4 -m 4096 -usb -device usb-kbd -device usb-tablet -rtc base=localtime -net nic,model=virtio -drive file=drive,media=disk,if=virtio -drive file=ubuntu-22.04.2-live-server-amd64.iso,media=cdrom qemu-system-x86_64 -machine q35 -smp sockets=1,cores=4,threads=4 -m 4096 -usb -device usb-kbd -device usb-tablet -rtc base=localtime -net nic,model=virtio -drive file=drive,media=disk,if=virtio -drive file=ubuntu-22.04.2-live-server-amd64.iso,media=cdrom -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 -device cxl-type3,bus=root_port13,persistent-memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G
+1 2 3 4 5 6 -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.]]></description>
+</item>
+<item>
+  <title>VNC for PVE VM (not noVNC)</title>
+  <link>/posts/2023-07-25-vnc-for-pve-vm-not-novnc/</link>
+  <pubDate>Mon, 24 Jul 2023 23:56:10 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-25-vnc-for-pve-vm-not-novnc/</guid>
+  <description><![CDATA[VNC Client Access - Proxmox VE]]></description>
+</item>
+<item>
+  <title>Resize Linux LVM</title>
+  <link>/posts/resize-linux-lvm/</link>
+  <pubDate>Mon, 24 Jul 2023 23:54:30 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/resize-linux-lvm/</guid>
+  <description><![CDATA[How to resize a logical volume with 5 simple LVM commands | Enable Sysadmin (redhat.com)
+系统运维|如何在 Linux 中扩展/增加 LVM 大小（逻辑卷调整）
+解决 Linux /dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv 磁盘空间不足的问题_ubuntu vg 为什么不用满_fly-liuhao的博客-CSDN博客]]></description>
+</item>
+<item>
   <title>CUDA CUDNN</title>
   <link>/posts/2023-06-24-cuda/</link>
   <pubDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</pubDate>
@@ -66,38 +93,6 @@ CPU读写存储器 地址线 存储单元的地址（地址信息） 寻址能�
   <guid>/posts/linux-source/</guid>
   <description><![CDATA[在线阅读 https://elixir.bootlin.com/linux/0.11/source
 源码下载（Mirror） http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/Historic/old-versions/]]></description>
-</item>
-<item>
-  <title>Internet Protocol Stack</title>
-  <link>/posts/internet-protocol-stack/</link>
-  <pubDate>Wed, 15 Mar 2023 06:06:20 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/internet-protocol-stack/</guid>
-  <description><![CDATA[因特网协议栈中的层 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)
-人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
-7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
-4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 扩展阅读 一文一图搞懂OSI七层模型_long_songs的博客-CSDN博客]]></description>
-</item>
-<item>
-  <title>TUN TAP</title>
-  <link>/posts/tun-tap/</link>
-  <pubDate>Wed, 15 Mar 2023 05:56:20 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/tun-tap/</guid>
-  <description><![CDATA[TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
-REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
-TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)]]></description>
-</item>
-<item>
-  <title>PVE编译Realtek网卡驱动</title>
-  <link>/posts/pve-realtek-driver/</link>
-  <pubDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/pve-realtek-driver/</guid>
-  <description><![CDATA[预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
-关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
-PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
-ubuntu16.04驱动安装提示sign-file: certs/signing_key.]]></description>
 </item>
 </channel>
 </rss>

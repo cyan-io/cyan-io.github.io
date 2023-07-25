@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "C:/Users/natsu/Desktop/hugo-site",
+	"sourceRoot": "C:/Users/natsu/Desktop/project/hugo-site",
 	"sources": [
 		"themes/FixIt-0.2.17/assets/css/style.scss",
 		"themes/FixIt-0.2.17/assets/css/_variables.scss",
