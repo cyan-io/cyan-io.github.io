@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>PVE - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/pve/</link>
+    <description>PVE - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 30 Jul 2023 13:38:05 &#43;0000</lastBuildDate><atom:link href="/tags/pve/" rel="self" type="application/rss+xml" /><item>
+  <title>PVE Souce</title>
+  <link>/posts/2023-07-30-pve/</link>
+  <pubDate>Sun, 30 Jul 2023 13:38:05 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-30-pve/</guid>
+  <description><![CDATA[PVE &amp; Debian pve 7.3.3基于debian 11 bullseye
+APT源 1 sudo apt install apt-transport-https ca-certificates 修改souces.list
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb https://mirrors.]]></description>
+</item>
+</channel>
+</rss>

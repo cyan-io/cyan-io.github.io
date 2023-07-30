@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>PVE Souce - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+<meta name="author-link" content="">
+<meta name="description" content="PVE &amp; Debian pve 7.3.3基于debian 11 bullseye
+APT源 1 sudo apt install apt-transport-https ca-certificates 修改souces.list
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb https://mirrors." /><meta name="keywords" content='PVE' /><meta itemprop="name" content="PVE Souce">
+<meta itemprop="description" content="PVE &amp; Debian pve 7.3.3基于debian 11 bullseye
+APT源 1 sudo apt install apt-transport-https ca-certificates 修改souces.list
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb https://mirrors."><meta itemprop="datePublished" content="2023-07-30T13:38:05+00:00" />
+<meta itemprop="dateModified" content="2023-07-30T13:38:05+00:00" />
+<meta itemprop="wordCount" content="130">
+<meta itemprop="keywords" content="PVE," /><meta property="og:title" content="PVE Souce" />
+<meta property="og:description" content="PVE &amp; Debian pve 7.3.3基于debian 11 bullseye
+APT源 1 sudo apt install apt-transport-https ca-certificates 修改souces.list
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb https://mirrors." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2023-07-30-pve/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-30T13:38:05+00:00" />
+<meta property="article:modified_time" content="2023-07-30T13:38:05+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PVE Souce"/>
+<meta name="twitter:description" content="PVE &amp; Debian pve 7.3.3基于debian 11 bullseye
+APT源 1 sudo apt install apt-transport-https ca-certificates 修改souces.list
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb https://mirrors."/>
+<meta name="application-name" content="Cyan&#39;s Notebook">
+<meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/2023-07-30-pve/" /><link rel="prev" href="/posts/2023-07-30-qemu-quickstart/" /><link rel="next" href="/posts/2023-07-30-lvm-linear-raid01/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "PVE Souce",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "\/posts\/2023-07-30-pve\/"
+    },"genre": "posts","keywords": "PVE","wordcount":  130 ,
+    "url": "\/posts\/2023-07-30-pve\/","datePublished": "2023-07-30T13:38:05+00:00","dateModified": "2023-07-30T13:38:05+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Cyan"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Cyan&#39;s Notebook"><span class="header-title-text">Cyan&#39;s Notebook</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Cyan&#39;s Notebook"><span class="header-title-text">Cyan&#39;s Notebook</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><main class="container-reverse" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    <div class="profile-custom">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>PVE Souce</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span></div>
+      <div class="post-meta-line"><span title=2023-07-30&#32;13:38:05><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-07-30">2023-07-30</time></span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#pve--debian">PVE &amp; Debian</a></li>
+    <li><a href="#apt源">APT源</a></li>
+    <li><a href="#无订阅源">无订阅源</a></li>
+    <li><a href="#ref">REF</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="pve--debian">PVE &amp; Debian</h2>
+<p>pve 7.3.3基于debian 11 bullseye</p>
+<h2 id="apt源">APT源</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install apt-transport-https ca-certificates
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改souces.list</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="c1"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>
+</span></span><span class="line"><span class="cl"><span class="na">deb</span> <span class="s">https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">deb</span> <span class="s">https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">deb</span> <span class="s">https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">deb</span> <span class="s">https://security.debian.org/debian-security bullseye-security main contrib non-free</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://security.debian.org/debian-security bullseye-security main contrib non-free</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="无订阅源">无订阅源</h2>
+<p>更改（新建）<code>/etc/apt/sources.list.d/pve-no-subscription.list</code>，内容为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="na">deb</span> <span class="s">https://mirrors.tuna.tsinghua.edu.cn/proxmox/debian/pve bullseye pve-no-subscription</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="ref">REF</h2>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/proxmox/"target="_blank" rel="external nofollow noopener noreferrer">proxmox | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/"target="_blank" rel="external nofollow noopener noreferrer">debian | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-07-30&#32;13:38:05>更新于 2023-07-30&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/pve/' class="post-tag">PVE</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/2023-07-30-qemu-quickstart/" class="post-nav-item" rel="prev" title="QEMU - QuickStart"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>QEMU - QuickStart</a>
+      <a href="/posts/2023-07-30-lvm-linear-raid01/" class="post-nav-item" rel="next" title="LVM, Linear, RAID[01]...">LVM, Linear, RAID[01]...<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

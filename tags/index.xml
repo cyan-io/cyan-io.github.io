@@ -3,20 +3,28 @@
     <title>Tags - 标签 - Cyan&#39;s Notebook</title>
     <link>/tags/</link>
     <description>Tags - 标签 - Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
-  <title>CXL</title>
-  <link>/tags/cxl/</link>
-  <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 30 Jul 2023 13:38:05 &#43;0000</lastBuildDate><atom:link href="/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>PVE</title>
+  <link>/tags/pve/</link>
+  <pubDate>Sun, 30 Jul 2023 13:38:05 &#43;0000</pubDate>
   <author>Cyan</author>
-  <guid>/tags/cxl/</guid>
+  <guid>/tags/pve/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>QEMU</title>
   <link>/tags/qemu/</link>
-  <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
+  <pubDate>Sun, 30 Jul 2023 12:57:10 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/tags/qemu/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>CXL</title>
+  <link>/tags/cxl/</link>
+  <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/cxl/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
@@ -73,14 +81,6 @@
   <pubDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</pubDate>
   <author>Cyan</author>
   <guid>/tags/7z/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>conda</title>
-  <link>/tags/conda/</link>
-  <pubDate>Fri, 06 Jan 2023 19:55:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/tags/conda/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

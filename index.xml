@@ -3,16 +3,60 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 30 Jul 2023 13:38:36 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>LVM, Linear, RAID[01]...</title>
+  <link>/posts/2023-07-30-lvm-linear-raid01/</link>
+  <pubDate>Sun, 30 Jul 2023 13:38:36 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-30-lvm-linear-raid01/</guid>
+  <description><![CDATA[有时间再写🌑
+REF 系统运维|Linux LVM简明教程
+(1条消息) Linux | LVM | 对比三种逻辑卷（Logic Volume）_Hello Hunk的博客-CSDN博客]]></description>
+</item>
+<item>
+  <title>PVE Souce</title>
+  <link>/posts/2023-07-30-pve/</link>
+  <pubDate>Sun, 30 Jul 2023 13:38:05 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-30-pve/</guid>
+  <description><![CDATA[PVE &amp; Debian pve 7.3.3基于debian 11 bullseye
+APT源 1 sudo apt install apt-transport-https ca-certificates 修改souces.list
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb https://mirrors.]]></description>
+</item>
+<item>
+  <title>QEMU - QuickStart</title>
+  <link>/posts/2023-07-30-qemu-quickstart/</link>
+  <pubDate>Sun, 30 Jul 2023 12:57:10 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-07-30-qemu-quickstart/</guid>
+  <description><![CDATA[Intro QEMU是一款跨平台的开源虚拟机工具，因为无GUI配置工具，有一定使用门槛
+根据冯诺依曼结构，一个计算机可分为：
+运算器 控制器 存储器 输入设备 输出设备 使用QEMU时，应该尽量往该模型联想
+创建存储器 创建一个16G的虚拟磁盘文件
+1 qemu-img create -f qcow2 drive 16G 虚拟硬件环境 运算器、控制器 -&gt; CPU、各种加速器* 输入、输出设备 -&gt; 网卡、CXL设备等 QEMU本身没有像VMware那样的GUI配置界面，所有配置通过命令行参数指定
+1 2 3 4 qemu-system-x86_64 -machine q35 \ -smp sockets=1,cores=4,threads=4 \ -m 4096 \ -net user 现在启动了一个机型为q35，处理器1插槽4核4线程，内存4096MB，使用默认网络配置的虚拟机，由于没有启动盘，并不会启动某个系统
+利用虚拟硬件环境启动系统 我们已经有了一块硬盘drive作为启动盘，指定给虚拟环境：
+1 2 3 4 5 qemu-system-x86_64 -machine q35 \ -smp sockets=1,cores=4,threads=4 \ -m 4096 \ -net user \ -drive file=drive 会发现，指定后并没有什么区别，是因为这个“硬盘”我们没有给它“安装”系统
+安装系统 参考为物理机安装系统：
+物理机硬盘 -&gt; 虚拟磁盘文件drive 安装媒介（写入了镜像的U盘） -&gt; 系统镜像文件 1 2 3 4 5 6 qemu-system-x86_64 -machine q35 \ -smp sockets=1,cores=4,threads=4 \ -m 4096 \ -net user \ -drive file=drive \ -drive file=【系统镜像，如ubuntu-22.]]></description>
+</item>
+<item>
   <title>QEMU-CXL</title>
   <link>/posts/2023-07-25-qemu-cxl/</link>
   <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/2023-07-25-qemu-cxl/</guid>
-  <description><![CDATA[1 qemu-img create -f qcow2 drive 16G 1 qemu-system-x86_64 -machine q35 -smp sockets=1,cores=4,threads=4 -m 4096 -usb -device usb-kbd -device usb-tablet -rtc base=localtime -net nic,model=virtio -drive file=drive,media=disk,if=virtio -drive file=ubuntu-22.04.2-live-server-amd64.iso,media=cdrom qemu-system-x86_64 -machine q35 -smp sockets=1,cores=4,threads=4 -m 4096 -usb -device usb-kbd -device usb-tablet -rtc base=localtime -net nic,model=virtio -drive file=drive,media=disk,if=virtio -drive file=ubuntu-22.04.2-live-server-amd64.iso,media=cdrom -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 -device cxl-type3,bus=root_port13,persistent-memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G
-1 2 3 4 5 6 -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.]]></description>
+  <description><![CDATA[Intro 文章不对CXL、Linux内核进行深究，可视为hello world研究
+对于QEMU基本的使用知识，节省篇幅不再赘述，并省略繁琐细节
+软件环境 宿主机&amp;客户机 ubuntu-22.04.2-live-server-amd64
+QEMU 8.0.3 https://download.qemu.org/qemu-8.0.3.tar.xz
+Download QEMU - QEMU
+按照官方流程进行编译
+启动虚拟机 1 2 3 4 5 6 7 8 9 qemu-system-x86_64 -M q35,cxl=on --enable-kvm -cpu host -m 4G,maxmem=8G,slots=8 -smp 4,sockets=1,cores=4 \ -net user \ -drive file=drive \ -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M \ -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 \ -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 \ -device cxl-type3,bus=root_port13,memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 \ -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G 启动后应该可以在/dev目录下找到CXL文件
+REF 在ubuntu上执行QEMU的编译安装_ubuntu安装qemu_田园诗人之园的博客-CSDN博客
+linux报错：/bin/sh: 1: flex: not found scripts/Makefile.host:9: recipe for target ‘scripts/kconfig/lexe_锅锅是锅锅的博客-CSDN博客]]></description>
 </item>
 <item>
   <title>VNC for PVE VM (not noVNC)</title>
@@ -33,15 +77,15 @@
 解决 Linux /dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv 磁盘空间不足的问题_ubuntu vg 为什么不用满_fly-liuhao的博客-CSDN博客]]></description>
 </item>
 <item>
-  <title>CUDA CUDNN</title>
+  <title>CUDA, CUDNN &amp; Installation</title>
   <link>/posts/2023-06-24-cuda/</link>
   <pubDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/2023-06-24-cuda/</guid>
   <description><![CDATA[Create Python Environment 1 cond create -n env_name python=3.x Torch Start Locally | PyTorch
 Check Installation 1 2 import torch torch.cuda.is_available() CUDA CUDA Toolkit Archive | NVIDIA Developer
-1 conda install cudatoolkit=x.x CUDNN cuDNN Archive | NVIDIA Developer
-1 conda install ]]></description>
+1 conda install cudatoolkit=x.x CUDNN 简单区分：CUDA为NV的计算框架，而CUDNN为NV为深度学习设计的计算库
+建议使用pytorch官方的conda指令一键安装]]></description>
 </item>
 <item>
   <title>VUE x Tampermonkey</title>
@@ -161,35 +205,6 @@ Nginx 配置详解 | 菜鸟教程 (runoob.]]></description>
   <author>Cyan</author>
   <guid>/posts/pve/</guid>
   <description><![CDATA[REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html http://www.naxs.cn/zcjh/13705.html]]></description>
-</item>
-<item>
-  <title>LXC容器</title>
-  <link>/posts/lxc/</link>
-  <pubDate>Sat, 04 Mar 2023 05:19:31 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/lxc/</guid>
-  <description><![CDATA[REF https://www.redhat.com/zh/topics/containers/whats-a-linux-container]]></description>
-</item>
-<item>
-  <title>7z 命令行</title>
-  <link>/posts/7zip/</link>
-  <pubDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/7zip/</guid>
-  <description><![CDATA[命令行 7-zip │ 7z.exe │ 7zFM.exe │ 7zG.exe
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 C:\Program Files\7-Zip&gt;7z -h 7-Zip 21.]]></description>
-</item>
-<item>
-  <title>Docker</title>
-  <link>/posts/docker-basic/</link>
-  <pubDate>Thu, 02 Feb 2023 03:28:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/docker-basic/</guid>
-  <description><![CDATA[基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=unless-stopped [容器名] no/on-failure/always/unless-stopped 进入容器命令行 1 docker exec -it [containerid] /bin/bash 映射 Example:
-1 docker run -p 80:8080 -v local_path:container_path Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
-浅谈Linux Cgroups机制 - 知乎 (zhihu.com)
-docker Volume - 知乎 (zhihu.com)
-Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.]]></description>
 </item>
 </channel>
 </rss>
