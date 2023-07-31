@@ -21,7 +21,7 @@
 物理机硬盘 -&gt; 虚拟磁盘文件drive 安装媒介（写入了镜像的U盘） -&gt; 系统镜像文件 1 2 3 4 5 6 qemu-system-x86_64 -machine q35 \ -smp sockets=1,cores=4,threads=4 \ -m 4096 \ -net user \ -drive file=drive \ -drive file=【系统镜像，如ubuntu-22.]]></description>
 </item>
 <item>
-  <title>QEMU-CXL</title>
+  <title>QEMU - CXL</title>
   <link>/posts/2023-07-25-qemu-cxl/</link>
   <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
   <author>Cyan</author>
