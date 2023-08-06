@@ -15,7 +15,7 @@
 By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
 What Is Hyper-Threading? - Intel
 当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
-为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+为虚拟机分配核心 QEMU使用-smp分配核心，使用方式：
 1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
 逻辑处理器数量：
 $$ n=sockets*dies*clusters*cores*threads $$
@@ -29,13 +29,13 @@ $$ n=sockets*dies*clusters*cores*threads $$
 By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
 What Is Hyper-Threading? - Intel
 当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
-为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+为虚拟机分配核心 QEMU使用-smp分配核心，使用方式：
 1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
 逻辑处理器数量：
 $$ n=sockets*dies*clusters*cores*threads $$
 其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
 参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法："><meta itemprop="datePublished" content="2023-08-05T04:50:30+00:00" />
-<meta itemprop="dateModified" content="2023-08-06T10:15:35+00:00" />
+<meta itemprop="dateModified" content="2023-08-06T15:11:41+00:00" />
 <meta itemprop="wordCount" content="164">
 <meta itemprop="keywords" content="CPU,QEMU,Threads," /><meta property="og:title" content="QEMU - smp (sockets, die, core, threads)" />
 <meta property="og:description" content="图片使用了catbox#moe图床，特殊网络下可能无法加载；
@@ -46,7 +46,7 @@ $$ n=sockets*dies*clusters*cores*threads $$
 By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
 What Is Hyper-Threading? - Intel
 当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
-为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+为虚拟机分配核心 QEMU使用-smp分配核心，使用方式：
 1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
 逻辑处理器数量：
 $$ n=sockets*dies*clusters*cores*threads $$
@@ -55,7 +55,7 @@ $$ n=sockets*dies*clusters*cores*threads $$
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/2023-08-05-qemu-smp-sockets-die-core-threads/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-05T04:50:30+00:00" />
-<meta property="article:modified_time" content="2023-08-06T10:15:35+00:00" />
+<meta property="article:modified_time" content="2023-08-06T15:11:41+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="QEMU - smp (sockets, die, core, threads)"/>
@@ -67,7 +67,7 @@ $$ n=sockets*dies*clusters*cores*threads $$
 By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
 What Is Hyper-Threading? - Intel
 当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
-为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+为虚拟机分配核心 QEMU使用-smp分配核心，使用方式：
 1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
 逻辑处理器数量：
 $$ n=sockets*dies*clusters*cores*threads $$
@@ -86,7 +86,7 @@ $$ n=sockets*dies*clusters*cores*threads $$
       "@type": "WebPage",
       "@id": "\/posts\/2023-08-05-qemu-smp-sockets-die-core-threads\/"
     },"genre": "posts","keywords": "CPU, QEMU, Threads","wordcount":  164 ,
-    "url": "\/posts\/2023-08-05-qemu-smp-sockets-die-core-threads\/","datePublished": "2023-08-05T04:50:30+00:00","dateModified": "2023-08-06T10:15:35+00:00","publisher": {
+    "url": "\/posts\/2023-08-05-qemu-smp-sockets-die-core-threads\/","datePublished": "2023-08-05T04:50:30+00:00","dateModified": "2023-08-06T15:11:41+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -255,7 +255,7 @@ $$ n=sockets*dies*clusters*cores*threads $$
 </blockquote>
 <p>当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。</p>
 <h2 id="为虚拟机分配核心">为虚拟机分配核心</h2>
-<p>QMEU使用<code>-smp</code>分配核心，使用方式：</p>
+<p>QEMU使用<code>-smp</code>分配核心，使用方式：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -412,7 +412,7 @@ $$</p>
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-08-06&#32;10:15:35>更新于 2023-08-06&nbsp;</span>
+        <span title=2023-08-06&#32;15:11:41>更新于 2023-08-06&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>

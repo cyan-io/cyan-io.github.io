@@ -28,7 +28,7 @@ This is used to enable an accelerator. Depending on the target architecture, kvm
 By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
 What Is Hyper-Threading? - Intel
 当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
-为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+为虚拟机分配核心 QEMU使用-smp分配核心，使用方式：
 1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
 逻辑处理器数量：
 $$ n=sockets*dies*clusters*cores*threads $$
