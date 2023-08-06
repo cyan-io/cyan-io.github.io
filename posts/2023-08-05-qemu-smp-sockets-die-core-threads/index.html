@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>QEMU - smp (sockets, die, core, threads) - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+<meta name="author-link" content="">
+<meta name="description" content="图片使用了catbox#moe图床，特殊网络下可能无法加载；
+更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
+1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
+是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
+当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
+By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
+What Is Hyper-Threading? - Intel
+当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
+为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
+逻辑处理器数量：
+$$ n=sockets*dies*clusters*cores*threads $$
+其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：" /><meta name="keywords" content='CPU, QEMU, Threads' /><meta itemprop="name" content="QEMU - smp (sockets, die, core, threads)">
+<meta itemprop="description" content="图片使用了catbox#moe图床，特殊网络下可能无法加载；
+更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
+1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
+是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
+当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
+By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
+What Is Hyper-Threading? - Intel
+当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
+为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
+逻辑处理器数量：
+$$ n=sockets*dies*clusters*cores*threads $$
+其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法："><meta itemprop="datePublished" content="2023-08-05T04:50:30+00:00" />
+<meta itemprop="dateModified" content="2023-08-06T10:15:35+00:00" />
+<meta itemprop="wordCount" content="164">
+<meta itemprop="keywords" content="CPU,QEMU,Threads," /><meta property="og:title" content="QEMU - smp (sockets, die, core, threads)" />
+<meta property="og:description" content="图片使用了catbox#moe图床，特殊网络下可能无法加载；
+更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
+1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
+是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
+当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
+By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
+What Is Hyper-Threading? - Intel
+当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
+为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
+逻辑处理器数量：
+$$ n=sockets*dies*clusters*cores*threads $$
+其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2023-08-05-qemu-smp-sockets-die-core-threads/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-05T04:50:30+00:00" />
+<meta property="article:modified_time" content="2023-08-06T10:15:35+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="QEMU - smp (sockets, die, core, threads)"/>
+<meta name="twitter:description" content="图片使用了catbox#moe图床，特殊网络下可能无法加载；
+更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
+1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
+是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
+当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
+By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
+What Is Hyper-Threading? - Intel
+当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
+为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
+逻辑处理器数量：
+$$ n=sockets*dies*clusters*cores*threads $$
+其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法："/>
+<meta name="application-name" content="Cyan&#39;s Notebook">
+<meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/2023-08-05-qemu-smp-sockets-die-core-threads/" /><link rel="prev" href="/posts/2023-07-30-lvm-linear-raid01/" /><link rel="next" href="/posts/2023-08-05-qemu-accel/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "QEMU - smp (sockets, die, core, threads)",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "\/posts\/2023-08-05-qemu-smp-sockets-die-core-threads\/"
+    },"genre": "posts","keywords": "CPU, QEMU, Threads","wordcount":  164 ,
+    "url": "\/posts\/2023-08-05-qemu-smp-sockets-die-core-threads\/","datePublished": "2023-08-05T04:50:30+00:00","dateModified": "2023-08-06T10:15:35+00:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Cyan"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Cyan&#39;s Notebook"><span class="header-title-text">Cyan&#39;s Notebook</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Cyan&#39;s Notebook"><span class="header-title-text">Cyan&#39;s Notebook</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-info-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><main class="container-reverse" data-page-style="normal"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    <div class="profile-custom">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>QEMU - smp (sockets, die, core, threads)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span></div>
+      <div class="post-meta-line"><span title=2023-08-05&#32;04:50:30><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-05">2023-08-05</time></span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前置知识超线程任务管理器里展示的并不是真正的cpu">前置知识：超线程——任务管理器里展示的并不是真正的CPU</a></li>
+    <li><a href="#为虚拟机分配核心">为虚拟机分配核心</a></li>
+    <li><a href="#分配多少核心合适一半的核心就是50性能吗">分配多少核心合适？一半的核心就是50%性能吗？</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#测试逻辑核心数对cpu性能的影响">测试逻辑核心数对CPU性能的影响：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>图片使用了catbox#moe图床，特殊网络下可能无法加载；</p>
+<p>更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">qemu-system-x86_64 -M q35 -accel kvm -cpu host -m <span class="m">4096</span> -smp <span class="m">4</span> -drive <span class="nv">file</span><span class="o">=</span>drive
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h2 id="前置知识超线程任务管理器里展示的并不是真正的cpu">前置知识：超线程——任务管理器里展示的并不是真正的CPU</h2>
+<p>测试使用的CPU为<a href="https://www.intel.cn/content/www/cn/zh/products/sku/134584/intel-core-i312100-processor-12m-cache-up-to-4-30-ghz/specifications.html"target="_blank" rel="external nofollow noopener noreferrer">英特尔® 酷睿™ i3-12100 处理器 (intel.cn)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，根据规格表，一共有4颗核心。而在<code>htop</code>中，可以看到8个CPU负载</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://files.catbox.moe/8l4c0t.png"
+    data-srcset="https://files.catbox.moe/8l4c0t.png, https://files.catbox.moe/8l4c0t.png 1.5x, https://files.catbox.moe/8l4c0t.png 2x"
+    data-sizes="auto"
+    alt="300d1338"
+    title="300d1338"/></p>
+<p>是因为<strong>操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心</strong>；</p>
+<p>当CPU启用超线程后，CPU 会在每个物理内核上公开<strong>两个执行上下文</strong>，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；</p>
+<blockquote>
+<p>By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）</p>
+<p><a href="https://www.intel.com/content/www/us/en/gaming/resources/hyper-threading.html?wapkw=hyper-threading"target="_blank" rel="external nofollow noopener noreferrer">What Is Hyper-Threading? - Intel<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+</blockquote>
+<p>当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。</p>
+<h2 id="为虚拟机分配核心">为虚拟机分配核心</h2>
+<p>QMEU使用<code>-smp</code>分配核心，使用方式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-smp <span class="o">[[</span><span class="nv">cpus</span><span class="o">=]</span>n<span class="o">][</span>,maxcpus<span class="o">=</span>maxcpus<span class="o">][</span>,sockets<span class="o">=</span>sockets<span class="o">][</span>,dies<span class="o">=</span>dies<span class="o">][</span>,clusters<span class="o">=</span>clusters<span class="o">][</span>,cores<span class="o">=</span>cores<span class="o">][</span>,threads<span class="o">=</span>threads<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://files.catbox.moe/vf15rr.png"
+    data-srcset="https://files.catbox.moe/vf15rr.png, https://files.catbox.moe/vf15rr.png 1.5x, https://files.catbox.moe/vf15rr.png 2x"
+    data-sizes="auto"
+    alt="image-20230806170050541"
+    title="image-20230806170050541"/></p>
+<p>逻辑处理器数量：</p>
+<p>$$
+n=sockets*dies*clusters*cores*threads
+$$</p>
+<p>其中，<code>maxcpus</code>是QEMU为<strong>热插拔</strong>设置的属性，在此不展开；</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">对应的物理对象</th>
+<th style="text-align:left">参数作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sockets</td>
+<td style="text-align:center">CPU插槽</td>
+<td style="text-align:left">CPU插槽数目</td>
+</tr>
+<tr>
+<td style="text-align:center">dies</td>
+<td style="text-align:center">CPU晶片</td>
+<td style="text-align:left">每个CPU有几块承载核心的晶片</td>
+</tr>
+<tr>
+<td style="text-align:center">clusters</td>
+<td style="text-align:center">镜片上的</td>
+<td style="text-align:left">每个晶片将CPU分为几簇</td>
+</tr>
+<tr>
+<td style="text-align:center">cores</td>
+<td style="text-align:center">CPU核心</td>
+<td style="text-align:left">每簇包含几个CPU</td>
+</tr>
+<tr>
+<td style="text-align:center">threads</td>
+<td style="text-align:center">/</td>
+<td style="text-align:left">每个CPU核心通过超线程支持的线程数</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>常见写法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-smp 8,sockets<span class="o">=</span>2,cores<span class="o">=</span>2,threads<span class="o">=</span>2,maxcpus<span class="o">=</span><span class="m">8</span>
+</span></span><span class="line"><span class="cl">-smp 16,sockets<span class="o">=</span>2,dies<span class="o">=</span>2,cores<span class="o">=</span>2,threads<span class="o">=</span>2,maxcpus<span class="o">=</span><span class="m">16</span>
+</span></span><span class="line"><span class="cl">-smp 16,sockets<span class="o">=</span>2,clusters<span class="o">=</span>2,cores<span class="o">=</span>2,threads<span class="o">=</span>2,maxcpus<span class="o">=</span><span class="m">16</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>如果不是特殊用途，可以不考虑那么多，直接指定逻辑核心数：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-smp <span class="m">8</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="分配多少核心合适一半的核心就是50性能吗">分配多少核心合适？一半的核心就是50%性能吗？</h2>
+<blockquote>
+<p>硬件：Intel 12100（4核8线程，无E核）， DDR4  32G 3200Mhz RAM</p>
+<p>软件：GeekBench 6.1.0</p>
+<p>宿主机：PVE运行的QEMU Ubuntu 22.04，分配8核心、10G RAM</p>
+<p>客户机：（嵌套虚拟化） Ubuntu 22.04，4G RAM，KVM，HOST</p>
+</blockquote>
+<blockquote>
+<p>宿主机测试性能：单核2265、多核7711，<a href="https://browser.geekbench.com/v6/cpu/2156257"target="_blank" rel="external nofollow noopener noreferrer">QEMU Standard PC (i440FX + PIIX, 1996) - Geekbench<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+</blockquote>
+<h4 id="测试逻辑核心数对cpu性能的影响">测试逻辑核心数对CPU性能的影响：</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">n</th>
+<th style="text-align:center">single core</th>
+<th style="text-align:center">multi core</th>
+<th style="text-align:left">url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2219</td>
+<td style="text-align:center">3951</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2163160"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2163160<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2211</td>
+<td style="text-align:center">5393</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2155331"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2155331<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2229</td>
+<td style="text-align:center">6621</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2162777"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2162777<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">2211</td>
+<td style="text-align:center">6804</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2166785"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2166785<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">2227</td>
+<td style="text-align:center">7000</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2163264"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2163264<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">2222</td>
+<td style="text-align:center">7302</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2163313"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2163313<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">2210</td>
+<td style="text-align:center">7478</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2155189"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2155189<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center">2204</td>
+<td style="text-align:center">5938</td>
+<td style="text-align:left"><a href="https://browser.geekbench.com/v6/cpu/2155391"target="_blank" rel="external nofollow noopener noreferrer">https://browser.geekbench.com/v6/cpu/2155391<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-08-06&#32;10:15:35>更新于 2023-08-06&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/cpu/' class="post-tag">CPU</a><a href='/tags/qemu/' class="post-tag">QEMU</a><a href='/tags/threads/' class="post-tag">Threads</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/2023-07-30-lvm-linear-raid01/" class="post-nav-item" rel="prev" title="LVM, Linear, RAID[01]..."><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>LVM, Linear, RAID[01]...</a>
+      <a href="/posts/2023-08-05-qemu-accel/" class="post-nav-item" rel="next" title="QEMU - accel">QEMU - accel<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":200},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

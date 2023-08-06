@@ -2,16 +2,21 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
-      <loc>/</loc><lastmod>2023-08-05T04:20:42&#43;00:00</lastmod></url><url>
+      <loc>/</loc><lastmod>2023-08-06T10:15:35&#43;00:00</lastmod></url><url>
+      <loc>/posts/</loc><lastmod>2023-08-06T10:15:35&#43;00:00</lastmod></url><url>
+      <loc>/posts/2023-08-06-qemu-cpu-model/</loc><lastmod>2023-08-06T10:08:01&#43;00:00</lastmod></url><url>
+      <loc>/tags/qemu/</loc><lastmod>2023-08-06T10:15:35&#43;00:00</lastmod></url><url>
+      <loc>/posts/2023-08-05-qemu-accel/</loc><lastmod>2023-08-05T13:55:45&#43;00:00</lastmod></url><url>
+      <loc>/tags/</loc><lastmod>2023-08-06T10:15:35&#43;00:00</lastmod></url><url>
+      <loc>/tags/cpu/</loc><lastmod>2023-08-06T10:15:35&#43;00:00</lastmod></url><url>
+      <loc>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</loc><lastmod>2023-08-06T10:15:35&#43;00:00</lastmod></url><url>
+      <loc>/tags/threads/</loc><lastmod>2023-08-06T10:15:35&#43;00:00</lastmod></url><url>
       <loc>/posts/2023-07-30-lvm-linear-raid01/</loc><lastmod>2023-07-30T13:38:36&#43;00:00</lastmod></url><url>
-      <loc>/posts/</loc><lastmod>2023-08-05T04:20:42&#43;00:00</lastmod></url><url>
       <loc>/tags/pve/</loc><lastmod>2023-07-30T13:38:05&#43;00:00</lastmod></url><url>
       <loc>/posts/2023-07-30-pve/</loc><lastmod>2023-07-30T13:38:05&#43;00:00</lastmod></url><url>
-      <loc>/tags/</loc><lastmod>2023-08-05T04:20:42&#43;00:00</lastmod></url><url>
-      <loc>/tags/qemu/</loc><lastmod>2023-08-05T04:20:42&#43;00:00</lastmod></url><url>
       <loc>/posts/2023-07-30-qemu-quickstart/</loc><lastmod>2023-08-05T04:20:42&#43;00:00</lastmod></url><url>
-      <loc>/tags/cxl/</loc><lastmod>2023-07-25T00:00:57&#43;00:00</lastmod></url><url>
-      <loc>/posts/2023-07-25-qemu-cxl/</loc><lastmod>2023-07-25T00:00:57&#43;00:00</lastmod></url><url>
+      <loc>/tags/cxl/</loc><lastmod>2023-08-05T13:47:02&#43;00:00</lastmod></url><url>
+      <loc>/posts/2023-07-25-qemu-cxl/</loc><lastmod>2023-08-05T13:47:02&#43;00:00</lastmod></url><url>
       <loc>/posts/2023-07-25-vnc-for-pve-vm-not-novnc/</loc><lastmod>2023-07-24T23:56:10&#43;00:00</lastmod></url><url>
       <loc>/categories/</loc><lastmod>2023-07-24T23:54:30&#43;00:00</lastmod></url><url>
       <loc>/tags/linux/</loc><lastmod>2023-07-24T23:54:30&#43;00:00</lastmod></url><url>

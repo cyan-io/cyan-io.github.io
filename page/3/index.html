@@ -146,6 +146,44 @@
   }
 </style></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/nginx/">Nginx</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-03-06 15:11:39'>发布于 <time datetime="2023-03-06">2023-03-06</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div><div class="content">ABCD 在Docker中部署 先运行一下 1 docker run --name nginx nginx CtrlC
+创建卷 1 2 mkdir -p /home/docker-nginx mkdir -p /home/docker-nginx/html 复制配置文件 1 2 docker cp nginx:/etc/nginx /var mv /var/nginx /home/docker-nginx/conf 过河拆桥 1 2 docker stop nginx docker rm nginx 运行 1 2 3 4 docker run -p 80:80 -p 443:443 --name nginx --restart=unless-stopped \ -v /home/docker-nginx/conf:/etc/nginx \ -v /home/docker-nginx/html:/usr/share/nginx/html \ -d nginx REF docker nginx -v 挂载配置文件问题_很懒的十六的博客-CSDN博客
+Nginx 配置详解 | 菜鸟教程 (runoob.</div><div class="post-footer">
+    <a href="/posts/nginx/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/docker/' class="post-tag">Docker</a><a href='/tags/nginx/' class="post-tag">Nginx</a><a href='/tags/linux/' class="post-tag">Linux</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/linux-timeline/">Linux Timeline</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-03-06 13:18:58'>发布于 <time datetime="2023-03-06">2023-03-06</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div><div class="content"></div><div class="post-footer">
+    <a href="/posts/linux-timeline/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">Linux</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/pve/">PVE</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-03-05 05:42:12'>发布于 <time datetime="2023-03-05">2023-03-05</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a>&ensp;<a href="/categories/pve/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> PVE</a></span></div><div class="content">REF https://www.right.com.cn/FORUM/thread-8231970-1-1.html http://www.naxs.cn/zcjh/13705.html</div><div class="post-footer">
+    <a href="/posts/pve/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">Linux</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/lxc/">LXC容器</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -234,60 +272,6 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-11-28 12:16:58'>发布于 <time datetime="2022-11-28">2022-11-28</time></span></div><div class="content"></div><div class="post-footer">
     <a href="/posts/auto-clock-in/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/cuda-cudnn/">CUDA、CUDNN</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-05-21 19:21:32'>发布于 <time datetime="2022-05-21">2022-05-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/dl/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DL</a></span></div><div class="content">CUDA与CUDNN CUDA CUDA（Compute Unified Device Architecture），是显卡厂商NVIDIA推出的运算平台。 CUDA™是一种由NVIDIA推出的通用并行计算架构，该架构使GPU能够解决复杂的计算问题。
-CUDA_百度百科 (baidu.com)
-CUDNN NVIDIA cuDNN是用于深度神经网络的GPU加速库。它强调性能、易用性和低内存开销。NVIDIA cuDNN可以集成到更高级别的机器学习框架中，如谷歌的Tensorflow、加州大学伯克利分校的流行caffe软件。简单的插入式设计可以让开发人员专注于设计和实现神经网络模型，而不是简单调整性能，同时还可以在GPU上实现高性能现代并行计算。
-参考（强烈推荐）：CUDA与cuDNN - 简书 (jianshu.com)
-NVIDIA的驱动与CUDA版本 在第一次装的时候，满脑子？？？
-NVDIA驱动安装的有个CUDA了，版本和需要的不对怎么办，难道重装驱动吗？ 需要多个CUDA怎么办？ 驱动版本与CUDA版本 随驱动安装的叫做driver版本，自己后续安装的叫做runtime版本，可以随意安装多个版本的CUDA，但是保证driver版本号&gt;=runtime版本号
-多版本共存 程序在调用CUDA的时候一般是利用path（或者说是windows环境变量）去加载dll等，保证每个版本的文件完整，并且在path中能够搜索到即可（windows也就是配置好环境变量）。
-安装 首先要确定需要安装的版本。tensorflow可以在从源代码构建 | TensorFlow (google.cn)查看
-手动安装 Linux建议直接CONDA安装
-下载地址 CUDA：CUDA Toolkit Archive | NVIDIA Developer
-CUDNN：NVIDIA cuDNN | NVIDIA Developer
-安装 建议看下面的博客，讲的很好
-cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
-使用CONDA安装 CUDA
-1 conda install cudatoolkit=&lt;版本&gt; cuDNN
-1 conda install cudnn=&lt;版本&gt; </div><div class="post-footer">
-    <a href="/posts/cuda-cudnn/">阅读全文</a></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/python-builtin/">Python 常识入门(?)</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-05-21 19:21:32'>发布于 <time datetime="2022-05-21">2022-05-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content">list, tuple, set, dict 1 2 3 4 [i for i in range(10)] (i for i in range(10)) {i for i in range(10)} {i:i for i in range(10)} lambda 1 2 3 4 lambda arguments : expression x = lambda a : a + 10 print(x(5)) sort 1 2 3 4 arr=[1,8,3,6,5,4,7,2,9] sorted(arr) list.sort(reverse=True|False, key=myFunc) 1 2 3 4 5 6 7 8 9 10 11 12 def myFunc(e): return e[&#39;year&#39;] cars = [ {&#39;car&#39;: &#39;Porsche&#39;, &#39;year&#39;: 1963}, {&#39;car&#39;: &#39;Audi&#39;, &#39;year&#39;: 2010}, {&#39;car&#39;: &#39;BMW&#39;, &#39;year&#39;: 2019}, {&#39;car&#39;: &#39;Volvo&#39;, &#39;year&#39;: 2013} ] cars.</div><div class="post-footer">
-    <a href="/posts/python-builtin/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a><a href='/tags/oi/' class="post-tag">OI</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/dp/">动态规划</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-05-21 18:57:41'>发布于 <time datetime="2022-05-21">2022-05-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content"><h2 id="动规解题的一般思路">动规解题的一般思路</h2>
-<p><strong>将原问题分解为子问题</strong></p>
-<p>把原问题分解为若干个子问题，子问题和原问题形式相同或类似，只不过规模变小了。子问题都解决，原问题即解决(数字三角形例）。
-子问题的解一旦求出就会被保存，所以每个子问题只需求解一次。</p></div><div class="post-footer">
-    <a href="/posts/dp/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a><a href='/tags/oi/' class="post-tag">OI</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">

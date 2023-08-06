@@ -3,7 +3,39 @@
     <title>QEMU - 标签 - Cyan&#39;s Notebook</title>
     <link>/tags/qemu/</link>
     <description>QEMU - 标签 - Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 30 Jul 2023 12:57:10 &#43;0000</lastBuildDate><atom:link href="/tags/qemu/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Aug 2023 13:44:16 &#43;0000</lastBuildDate><atom:link href="/tags/qemu/" rel="self" type="application/rss+xml" /><item>
+  <title>QEMU - accel</title>
+  <link>/posts/2023-08-05-qemu-accel/</link>
+  <pubDate>Sat, 05 Aug 2023 13:44:16 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-08-05-qemu-accel/</guid>
+  <description><![CDATA[Intro 查看QEMU文档，对Accelerator（加速器）的介绍如下：
+This is used to enable an accelerator. Depending on the target architecture, kvm, xen, hax, hvf, nvmm, whpx or tcg can be available. By default, tcg is used. If there is more than one accelerator specified, the next one is used if the previous one fails to initialize.
+关于kvm, xen, hax, hvf, nvmm, whpx, tcg，以下内容总结自ChatGPT 3.5（Emmm，真好用）：
+技术/软件 描述 平台支持 虚拟化方式 KVM (Kernel-based Virtual Machine) 开源虚拟化解决方案，利用Linux内核虚拟化功能，在Linux上运行虚拟机 Linux 硬件虚拟化 Xen 基于微内核架构的开源虚拟化系统，支持多种客户机操作系统 多平台（特别在x86上常用） 硬件虚拟化或直接运行 HAX (Hardware Accelerated Execution) Intel提供的硬件加速执行技术，用于Android模拟器中的虚拟机 x86主机上运行ARM虚拟机 硬件加速虚拟化 HVF (Hypervisor.]]></description>
+</item>
+<item>
+  <title>QEMU - smp (sockets, die, core, threads)</title>
+  <link>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</link>
+  <pubDate>Sat, 05 Aug 2023 04:50:30 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</guid>
+  <description><![CDATA[图片使用了catbox#moe图床，特殊网络下可能无法加载；
+更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
+1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
+是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
+当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
+By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
+What Is Hyper-Threading? - Intel
+当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
+为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
+逻辑处理器数量：
+$$ n=sockets*dies*clusters*cores*threads $$
+其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：]]></description>
+</item>
+<item>
   <title>QEMU - QuickStart</title>
   <link>/posts/2023-07-30-qemu-quickstart/</link>
   <pubDate>Sun, 30 Jul 2023 12:57:10 &#43;0000</pubDate>
@@ -34,9 +66,10 @@ Intro QEMU是一款跨平台的开源虚拟机工具，因为无GUI配置工具�
 QEMU 8.0.3 https://download.qemu.org/qemu-8.0.3.tar.xz
 Download QEMU - QEMU
 按照官方流程进行编译
-启动虚拟机 1 2 3 4 5 6 7 8 9 qemu-system-x86_64 -M q35,cxl=on --enable-kvm -cpu host -m 4G,maxmem=8G,slots=8 -smp 4,sockets=1,cores=4 \ -net user \ -drive file=drive \ -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M \ -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 \ -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 \ -device cxl-type3,bus=root_port13,memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 \ -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G 启动后应该可以在/dev目录下找到CXL文件
+启动虚拟机 1 2 3 4 5 6 7 qemu-system-x86_64 -M q35,cxl=on -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive \ -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M \ -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 \ -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 \ -device cxl-type3,bus=root_port13,memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 \ -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G 启动后应该可以在/dev目录下找到CXL文件
 REF 在ubuntu上执行QEMU的编译安装_ubuntu安装qemu_田园诗人之园的博客-CSDN博客
-linux报错：/bin/sh: 1: flex: not found scripts/Makefile.host:9: recipe for target ‘scripts/kconfig/lexe_锅锅是锅锅的博客-CSDN博客]]></description>
+linux报错：/bin/sh: 1: flex: not found scripts/Makefile.host:9: recipe for target ‘scripts/kconfig/lexe_锅锅是锅锅的博客-CSDN博客
+How To Emulate CXL Devices using KVM and QEMU - Steve Scargall]]></description>
 </item>
 </channel>
 </rss>

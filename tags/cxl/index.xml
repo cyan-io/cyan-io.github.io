@@ -15,9 +15,10 @@
 QEMU 8.0.3 https://download.qemu.org/qemu-8.0.3.tar.xz
 Download QEMU - QEMU
 按照官方流程进行编译
-启动虚拟机 1 2 3 4 5 6 7 8 9 qemu-system-x86_64 -M q35,cxl=on --enable-kvm -cpu host -m 4G,maxmem=8G,slots=8 -smp 4,sockets=1,cores=4 \ -net user \ -drive file=drive \ -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M \ -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 \ -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 \ -device cxl-type3,bus=root_port13,memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 \ -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G 启动后应该可以在/dev目录下找到CXL文件
+启动虚拟机 1 2 3 4 5 6 7 qemu-system-x86_64 -M q35,cxl=on -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive \ -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M \ -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 \ -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 \ -device cxl-type3,bus=root_port13,memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 \ -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G 启动后应该可以在/dev目录下找到CXL文件
 REF 在ubuntu上执行QEMU的编译安装_ubuntu安装qemu_田园诗人之园的博客-CSDN博客
-linux报错：/bin/sh: 1: flex: not found scripts/Makefile.host:9: recipe for target ‘scripts/kconfig/lexe_锅锅是锅锅的博客-CSDN博客]]></description>
+linux报错：/bin/sh: 1: flex: not found scripts/Makefile.host:9: recipe for target ‘scripts/kconfig/lexe_锅锅是锅锅的博客-CSDN博客
+How To Emulate CXL Devices using KVM and QEMU - Steve Scargall]]></description>
 </item>
 </channel>
 </rss>

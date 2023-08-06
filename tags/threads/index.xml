@@ -1,0 +1,28 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Threads - 标签 - Cyan&#39;s Notebook</title>
+    <link>/tags/threads/</link>
+    <description>Threads - 标签 - Cyan&#39;s Notebook</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Aug 2023 04:50:30 &#43;0000</lastBuildDate><atom:link href="/tags/threads/" rel="self" type="application/rss+xml" /><item>
+  <title>QEMU - smp (sockets, die, core, threads)</title>
+  <link>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</link>
+  <pubDate>Sat, 05 Aug 2023 04:50:30 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</guid>
+  <description><![CDATA[图片使用了catbox#moe图床，特殊网络下可能无法加载；
+更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
+1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
+是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
+当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
+By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
+What Is Hyper-Threading? - Intel
+当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
+为虚拟机分配核心 QMEU使用-smp分配核心，使用方式：
+1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
+逻辑处理器数量：
+$$ n=sockets*dies*clusters*cores*threads $$
+其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：]]></description>
+</item>
+</channel>
+</rss>

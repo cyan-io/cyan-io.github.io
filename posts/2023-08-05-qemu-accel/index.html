@@ -5,44 +5,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>LVM, Linear, RAID[01]... - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+    <title>QEMU - accel - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
-<meta name="description" content="有时间再写🌑
-REF 系统运维|Linux LVM简明教程
-(1条消息) Linux | LVM | 对比三种逻辑卷（Logic Volume）_Hello Hunk的博客-CSDN博客" /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="LVM, Linear, RAID[01]...">
-<meta itemprop="description" content="有时间再写🌑
-REF 系统运维|Linux LVM简明教程
-(1条消息) Linux | LVM | 对比三种逻辑卷（Logic Volume）_Hello Hunk的博客-CSDN博客"><meta itemprop="datePublished" content="2023-07-30T13:38:36+00:00" />
-<meta itemprop="dateModified" content="2023-07-30T13:38:36+00:00" />
-<meta itemprop="wordCount" content="12">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="LVM, Linear, RAID[01]..." />
-<meta property="og:description" content="有时间再写🌑
-REF 系统运维|Linux LVM简明教程
-(1条消息) Linux | LVM | 对比三种逻辑卷（Logic Volume）_Hello Hunk的博客-CSDN博客" />
+<meta name="description" content="Intro 查看QEMU文档，对Accelerator（加速器）的介绍如下：
+This is used to enable an accelerator. Depending on the target architecture, kvm, xen, hax, hvf, nvmm, whpx or tcg can be available. By default, tcg is used. If there is more than one accelerator specified, the next one is used if the previous one fails to initialize.
+关于kvm, xen, hax, hvf, nvmm, whpx, tcg，以下内容总结自ChatGPT 3.5（Emmm，真好用）：
+技术/软件 描述 平台支持 虚拟化方式 KVM (Kernel-based Virtual Machine) 开源虚拟化解决方案，利用Linux内核虚拟化功能，在Linux上运行虚拟机 Linux 硬件虚拟化 Xen 基于微内核架构的开源虚拟化系统，支持多种客户机操作系统 多平台（特别在x86上常用） 硬件虚拟化或直接运行 HAX (Hardware Accelerated Execution) Intel提供的硬件加速执行技术，用于Android模拟器中的虚拟机 x86主机上运行ARM虚拟机 硬件加速虚拟化 HVF (Hypervisor." /><meta name="keywords" content='QEMU' /><meta itemprop="name" content="QEMU - accel">
+<meta itemprop="description" content="Intro 查看QEMU文档，对Accelerator（加速器）的介绍如下：
+This is used to enable an accelerator. Depending on the target architecture, kvm, xen, hax, hvf, nvmm, whpx or tcg can be available. By default, tcg is used. If there is more than one accelerator specified, the next one is used if the previous one fails to initialize.
+关于kvm, xen, hax, hvf, nvmm, whpx, tcg，以下内容总结自ChatGPT 3.5（Emmm，真好用）：
+技术/软件 描述 平台支持 虚拟化方式 KVM (Kernel-based Virtual Machine) 开源虚拟化解决方案，利用Linux内核虚拟化功能，在Linux上运行虚拟机 Linux 硬件虚拟化 Xen 基于微内核架构的开源虚拟化系统，支持多种客户机操作系统 多平台（特别在x86上常用） 硬件虚拟化或直接运行 HAX (Hardware Accelerated Execution) Intel提供的硬件加速执行技术，用于Android模拟器中的虚拟机 x86主机上运行ARM虚拟机 硬件加速虚拟化 HVF (Hypervisor."><meta itemprop="datePublished" content="2023-08-05T13:44:16+00:00" />
+<meta itemprop="dateModified" content="2023-08-05T13:55:45+00:00" />
+<meta itemprop="wordCount" content="114">
+<meta itemprop="keywords" content="QEMU," /><meta property="og:title" content="QEMU - accel" />
+<meta property="og:description" content="Intro 查看QEMU文档，对Accelerator（加速器）的介绍如下：
+This is used to enable an accelerator. Depending on the target architecture, kvm, xen, hax, hvf, nvmm, whpx or tcg can be available. By default, tcg is used. If there is more than one accelerator specified, the next one is used if the previous one fails to initialize.
+关于kvm, xen, hax, hvf, nvmm, whpx, tcg，以下内容总结自ChatGPT 3.5（Emmm，真好用）：
+技术/软件 描述 平台支持 虚拟化方式 KVM (Kernel-based Virtual Machine) 开源虚拟化解决方案，利用Linux内核虚拟化功能，在Linux上运行虚拟机 Linux 硬件虚拟化 Xen 基于微内核架构的开源虚拟化系统，支持多种客户机操作系统 多平台（特别在x86上常用） 硬件虚拟化或直接运行 HAX (Hardware Accelerated Execution) Intel提供的硬件加速执行技术，用于Android模拟器中的虚拟机 x86主机上运行ARM虚拟机 硬件加速虚拟化 HVF (Hypervisor." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/2023-07-30-lvm-linear-raid01/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-07-30T13:38:36+00:00" />
-<meta property="article:modified_time" content="2023-07-30T13:38:36+00:00" />
+<meta property="og:url" content="/posts/2023-08-05-qemu-accel/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-05T13:44:16+00:00" />
+<meta property="article:modified_time" content="2023-08-05T13:55:45+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="LVM, Linear, RAID[01]..."/>
-<meta name="twitter:description" content="有时间再写🌑
-REF 系统运维|Linux LVM简明教程
-(1条消息) Linux | LVM | 对比三种逻辑卷（Logic Volume）_Hello Hunk的博客-CSDN博客"/>
+<meta name="twitter:title" content="QEMU - accel"/>
+<meta name="twitter:description" content="Intro 查看QEMU文档，对Accelerator（加速器）的介绍如下：
+This is used to enable an accelerator. Depending on the target architecture, kvm, xen, hax, hvf, nvmm, whpx or tcg can be available. By default, tcg is used. If there is more than one accelerator specified, the next one is used if the previous one fails to initialize.
+关于kvm, xen, hax, hvf, nvmm, whpx, tcg，以下内容总结自ChatGPT 3.5（Emmm，真好用）：
+技术/软件 描述 平台支持 虚拟化方式 KVM (Kernel-based Virtual Machine) 开源虚拟化解决方案，利用Linux内核虚拟化功能，在Linux上运行虚拟机 Linux 硬件虚拟化 Xen 基于微内核架构的开源虚拟化系统，支持多种客户机操作系统 多平台（特别在x86上常用） 硬件虚拟化或直接运行 HAX (Hardware Accelerated Execution) Intel提供的硬件加速执行技术，用于Android模拟器中的虚拟机 x86主机上运行ARM虚拟机 硬件加速虚拟化 HVF (Hypervisor."/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/2023-07-30-lvm-linear-raid01/" /><link rel="prev" href="/posts/2023-07-30-pve/" /><link rel="next" href="/posts/2023-08-05-qemu-smp-sockets-die-core-threads/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/2023-08-05-qemu-accel/" /><link rel="prev" href="/posts/2023-08-05-qemu-smp-sockets-die-core-threads/" /><link rel="next" href="/posts/2023-08-06-qemu-cpu-model/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "LVM, Linear, RAID[01]...",
+    "headline": "QEMU - accel",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "\/posts\/2023-07-30-lvm-linear-raid01\/"
-    },"genre": "posts","wordcount":  12 ,
-    "url": "\/posts\/2023-07-30-lvm-linear-raid01\/","datePublished": "2023-07-30T13:38:36+00:00","dateModified": "2023-07-30T13:38:36+00:00","publisher": {
+      "@id": "\/posts\/2023-08-05-qemu-accel\/"
+    },"genre": "posts","keywords": "QEMU","wordcount":  114 ,
+    "url": "\/posts\/2023-08-05-qemu-accel\/","datePublished": "2023-08-05T13:44:16+00:00","dateModified": "2023-08-05T13:55:45+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -150,7 +154,7 @@ REF 系统运维|Linux LVM简明教程
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>LVM, Linear, RAID[01]...</span>
+        <span>QEMU - accel</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -160,7 +164,7 @@ REF 系统运维|Linux LVM简明教程
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span></div>
-      <div class="post-meta-line"><span title=2023-07-30&#32;13:38:36><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-07-30">2023-07-30</time></span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2023-08-05&#32;13:44:16><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-05">2023-08-05</time></span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -168,20 +172,76 @@ REF 系统运维|Linux LVM简明教程
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#ref">REF</a></li>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#命令行使用">命令行使用</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><blockquote>
-<p>有时间再写🌑</p>
-</blockquote>
-<h2 id="ref">REF</h2>
-<p><a href="https://linux.cn/article-3218-1.html"target="_blank" rel="external nofollow noopener noreferrer">系统运维|Linux LVM简明教程<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p><a href="https://blog.csdn.net/u012299594/article/details/84551722"target="_blank" rel="external nofollow noopener noreferrer">(1条消息) Linux | LVM | 对比三种逻辑卷（Logic Volume）_Hello Hunk的博客-CSDN博客<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+      </div><div class="content" id="content"><h2 id="intro">Intro</h2>
+<p>查看QEMU文档，对Accelerator（加速器）的介绍如下：</p>
+<p><em>This is used to enable an accelerator. Depending on the target architecture, <strong>kvm, xen, hax, hvf, nvmm, whpx or tcg can be available</strong>. By default, tcg is used. If there is more than one accelerator specified, the next one is used if the previous one fails to initialize.</em></p>
+<hr>
+<p>关于<code>kvm, xen, hax, hvf, nvmm, whpx, tcg</code>，以下内容总结自ChatGPT 3.5（Emmm，真好用）：</p>
+<table>
+<thead>
+<tr>
+<th>技术/软件</th>
+<th>描述</th>
+<th>平台支持</th>
+<th>虚拟化方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KVM (Kernel-based Virtual Machine)</td>
+<td>开源虚拟化解决方案，利用Linux内核虚拟化功能，在Linux上运行虚拟机</td>
+<td>Linux</td>
+<td>硬件虚拟化</td>
+</tr>
+<tr>
+<td>Xen</td>
+<td>基于微内核架构的开源虚拟化系统，支持多种客户机操作系统</td>
+<td>多平台（特别在x86上常用）</td>
+<td>硬件虚拟化或直接运行</td>
+</tr>
+<tr>
+<td>HAX (Hardware Accelerated Execution)</td>
+<td>Intel提供的硬件加速执行技术，用于Android模拟器中的虚拟机</td>
+<td>x86主机上运行ARM虚拟机</td>
+<td>硬件加速虚拟化</td>
+</tr>
+<tr>
+<td>HVF (Hypervisor.framework)</td>
+<td>苹果公司提供的虚拟化解决方案，用于在Mac上运行虚拟机</td>
+<td>macOS</td>
+<td>硬件虚拟化</td>
+</tr>
+<tr>
+<td>NVMM (NetBSD Virtual Machine Monitor)</td>
+<td>NetBSD操作系统中的虚拟机监控器，用于多个虚拟机的管理和控制</td>
+<td>NetBSD</td>
+<td>硬件虚拟化</td>
+</tr>
+<tr>
+<td>WHPX (Windows Hypervisor Platform Accelerator)</td>
+<td>Windows 10引入的虚拟化加速技术，提高Windows Hypervisor Platform性能</td>
+<td>Windows</td>
+<td>硬件虚拟化</td>
+</tr>
+<tr>
+<td>TCG (Tiny Code Generator)</td>
+<td>QEMU项目中的组件，用于动态编译和执行客户机指令</td>
+<td>多平台</td>
+<td>基于二进制翻译的软件虚拟化</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令行使用">命令行使用</h2>
+<p>如果是Linux平台，在支持的情况下，加入<code>-accel kvm</code>即可，其他平台可以在搜索引擎查找，<del>甚至可以全部加上，答错不扣分（</del></p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-07-30&#32;13:38:36>更新于 2023-07-30&nbsp;</span>
+        <span title=2023-08-05&#32;13:55:45>更新于 2023-08-05&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -194,14 +254,14 @@ REF 系统运维|Linux LVM简明教程
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/qemu/' class="post-tag">QEMU</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/2023-07-30-pve/" class="post-nav-item" rel="prev" title="PVE Souce"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>PVE Souce</a>
-      <a href="/posts/2023-08-05-qemu-smp-sockets-die-core-threads/" class="post-nav-item" rel="next" title="QEMU - smp (sockets, die, core, threads)">QEMU - smp (sockets, die, core, threads)<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/2023-08-05-qemu-smp-sockets-die-core-threads/" class="post-nav-item" rel="prev" title="QEMU - smp (sockets, die, core, threads)"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>QEMU - smp (sockets, die, core, threads)</a>
+      <a href="/posts/2023-08-06-qemu-cpu-model/" class="post-nav-item" rel="next" title="QEMU CPU Model">QEMU CPU Model<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>
