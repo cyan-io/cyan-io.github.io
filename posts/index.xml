@@ -32,6 +32,27 @@ This is used to enable an accelerator. Depending on the target architecture, kvm
 技术/软件 描述 平台支持 虚拟化方式 KVM (Kernel-based Virtual Machine) 开源虚拟化解决方案，利用Linux内核虚拟化功能，在Linux上运行虚拟机 Linux 硬件虚拟化 Xen 基于微内核架构的开源虚拟化系统，支持多种客户机操作系统 多平台（特别在x86上常用） 硬件虚拟化或直接运行 HAX (Hardware Accelerated Execution) Intel提供的硬件加速执行技术，用于Android模拟器中的虚拟机 x86主机上运行ARM虚拟机 硬件加速虚拟化 HVF (Hypervisor.]]></description>
 </item>
 <item>
+  <title>QEMU - smp (sockets, die, core, threads)</title>
+  <link>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</link>
+  <pubDate>Sat, 05 Aug 2023 04:50:30 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</guid>
+  <description><![CDATA[图片使用了smms图床，特殊网络下可能无法加载；
+更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
+1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
+是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
+当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
+By taking advantage of idle time when the core would formerly be waiting for other tasks to complete, Intel® Hyper-Threading Technology improves CPU throughput.（协程和这个理念基本相同）
+What Is Hyper-Threading? - Intel
+当然，超线程技术并不能让多核性能简单的x2，理想情况下可以带来20%至30%左右的性能（吞吐量）提升。
+为虚拟机分配核心 QEMU使用-smp分配核心，使用方式：
+1 -smp [[cpus=]n][,maxcpus=maxcpus][,sockets=sockets][,dies=dies][,clusters=clusters][,cores=cores][,threads=threads] 可以简单理解为一颗叶子节点为线程（逻辑核心）的满二叉树：
+逻辑处理器数量：
+$$ n=sockets*dies*clusters*cores*threads $$
+其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 晶片上的CPU簇 / cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：]]></description>
+</item>
+<item>
   <title>LVM, Linear, RAID[01]...</title>
   <link>/posts/2023-07-30-lvm-linear-raid01/</link>
   <pubDate>Sun, 30 Jul 2023 13:38:36 &#43;0000</pubDate>
@@ -115,14 +136,6 @@ How To Emulate CXL Devices using KVM and QEMU - Steve Scargall]]></description>
 Check Installation 1 2 import torch torch.cuda.is_available() CUDA CUDA Toolkit Archive | NVIDIA Developer
 1 conda install cudatoolkit=x.x CUDNN 简单区分：CUDA为NV的计算框架，而CUDNN为NV为深度学习设计的计算库
 建议使用pytorch官方的conda指令一键安装]]></description>
-</item>
-<item>
-  <title>VUE x Tampermonkey</title>
-  <link>/posts/2023-05-22-vue-tampermonkey/</link>
-  <pubDate>Mon, 22 May 2023 07:34:00 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/2023-05-22-vue-tampermonkey/</guid>
-  <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 // ==UserScript== // @name VUE测试 // @namespace http://tampermonkey.net/ // @version 0.1 // @description try to take over the world! // @author You // @match https://cyan-io.github.io/ // @icon data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== // @grant none // ==/UserScript== let script = document.]]></description>
 </item>
 </channel>
 </rss>

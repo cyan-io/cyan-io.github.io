@@ -12,6 +12,22 @@
   <description><![CDATA[]]></description>
 </item>
 <item>
+  <title>CPU</title>
+  <link>/tags/cpu/</link>
+  <pubDate>Sat, 05 Aug 2023 04:50:30 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/cpu/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Threads</title>
+  <link>/tags/threads/</link>
+  <pubDate>Sat, 05 Aug 2023 04:50:30 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/tags/threads/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>PVE</title>
   <link>/tags/pve/</link>
   <pubDate>Sun, 30 Jul 2023 13:38:05 &#43;0000</pubDate>
@@ -65,22 +81,6 @@
   <pubDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/tags/docker/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>Nginx</title>
-  <link>/tags/nginx/</link>
-  <pubDate>Mon, 06 Mar 2023 15:11:39 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/tags/nginx/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>7z</title>
-  <link>/tags/7z/</link>
-  <pubDate>Sat, 11 Feb 2023 16:58:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/tags/7z/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

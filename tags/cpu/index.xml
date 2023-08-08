@@ -22,7 +22,7 @@ What Is Hyper-Threading? - Intel
 逻辑处理器数量：
 $$ n=sockets*dies*clusters*cores*threads $$
 其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
-参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 镜片上的 每个晶片将CPU分为几簇 cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：]]></description>
+参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 晶片上的CPU簇 / cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：]]></description>
 </item>
 </channel>
 </rss>
