@@ -8,7 +8,6 @@
     <title>QEMU - smp (sockets, die, core, threads) - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
 <meta name="description" content="图片使用了smms图床，特殊网络下可能无法加载；
-更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
 1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
 是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
 当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
@@ -22,7 +21,6 @@ $$ n=sockets*dies*clusters*cores*threads $$
 其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
 参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 晶片上的CPU簇 / cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法：" /><meta name="keywords" content='CPU, QEMU, Threads' /><meta itemprop="name" content="QEMU - smp (sockets, die, core, threads)">
 <meta itemprop="description" content="图片使用了smms图床，特殊网络下可能无法加载；
-更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
 1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
 是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
 当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
@@ -36,10 +34,9 @@ $$ n=sockets*dies*clusters*cores*threads $$
 其中，maxcpus是QEMU为热插拔设置的属性，在此不展开；
 参数 对应的物理对象 参数作用 sockets CPU插槽 CPU插槽数目 dies CPU晶片 每个CPU有几块承载核心的晶片 clusters 晶片上的CPU簇 / cores CPU核心 每簇包含几个CPU threads / 每个CPU核心通过超线程支持的线程数 常见写法："><meta itemprop="datePublished" content="2023-08-05T04:50:30+00:00" />
 <meta itemprop="dateModified" content="2023-08-08T06:05:20+00:00" />
-<meta itemprop="wordCount" content="164">
+<meta itemprop="wordCount" content="162">
 <meta itemprop="keywords" content="CPU,QEMU,Threads," /><meta property="og:title" content="QEMU - smp (sockets, die, core, threads)" />
 <meta property="og:description" content="图片使用了smms图床，特殊网络下可能无法加载；
-更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
 1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
 是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
 当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
@@ -60,7 +57,6 @@ $$ n=sockets*dies*clusters*cores*threads $$
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="QEMU - smp (sockets, die, core, threads)"/>
 <meta name="twitter:description" content="图片使用了smms图床，特殊网络下可能无法加载；
-更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
 1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
 是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
 当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
@@ -85,7 +81,7 @@ $$ n=sockets*dies*clusters*cores*threads $$
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "\/posts\/2023-08-05-qemu-smp-sockets-die-core-threads\/"
-    },"genre": "posts","keywords": "CPU, QEMU, Threads","wordcount":  164 ,
+    },"genre": "posts","keywords": "CPU, QEMU, Threads","wordcount":  162 ,
     "url": "\/posts\/2023-08-05-qemu-smp-sockets-die-core-threads\/","datePublished": "2023-08-05T04:50:30+00:00","dateModified": "2023-08-08T06:05:20+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -227,7 +223,6 @@ $$ n=sockets*dies*clusters*cores*threads $$
 </nav></div>
       </div><div class="content" id="content"><blockquote>
 <p>图片使用了smms图床，特殊网络下可能无法加载；</p>
-<p>更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1

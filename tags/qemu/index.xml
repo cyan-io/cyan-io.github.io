@@ -21,7 +21,6 @@ This is used to enable an accelerator. Depending on the target architecture, kvm
   <author>Cyan</author>
   <guid>/posts/2023-08-05-qemu-smp-sockets-die-core-threads/</guid>
   <description><![CDATA[图片使用了smms图床，特殊网络下可能无法加载；
-更像是在讨论CPU ;-)，不想听王八念经？直接魔改这条就可以了：
 1 qemu-system-x86_64 -M q35 -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive 前置知识：超线程——任务管理器里展示的并不是真正的CPU 测试使用的CPU为英特尔® 酷睿™ i3-12100 处理器 (intel.cn)，根据规格表，一共有4颗核心。而在htop中，可以看到8个CPU负载
 是因为操作系统以CPU支持的线程数，作为逻辑核心展示，而不是物理核心；
 当CPU启用超线程后，CPU 会在每个物理内核上公开两个执行上下文，一个物理内核现在就像两个“逻辑内核”一样，可以处理不同的软件线程；
