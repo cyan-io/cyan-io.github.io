@@ -3,7 +3,20 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 06 Aug 2023 10:03:35 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>常用计算机工具索引</title>
+  <link>/posts/2023-11-05-tools/</link>
+  <pubDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-11-05-tools/</guid>
+  <description><![CDATA[Conda Index of /anaconda/archive/ | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror
+anaconda | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror
+Visual Studio Code Visual Studio Code - Code Editing. Redefined
+Ubuntu Ubuntu Releases
+Ubuntu 源使用帮助 — USTC Mirror Help 文档
+Git Git (git-scm.com)]]></description>
+</item>
+<item>
   <title>QEMU CPU Model</title>
   <link>/posts/2023-08-06-qemu-cpu-model/</link>
   <pubDate>Sun, 06 Aug 2023 10:03:35 &#43;0000</pubDate>
@@ -123,17 +136,6 @@ How To Emulate CXL Devices using KVM and QEMU - Steve Scargall]]></description>
   <description><![CDATA[How to resize a logical volume with 5 simple LVM commands | Enable Sysadmin (redhat.com)
 系统运维|如何在 Linux 中扩展/增加 LVM 大小（逻辑卷调整）
 解决 Linux /dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv 磁盘空间不足的问题_ubuntu vg 为什么不用满_fly-liuhao的博客-CSDN博客]]></description>
-</item>
-<item>
-  <title>CUDA, CUDNN &amp; Installation</title>
-  <link>/posts/2023-06-24-cuda/</link>
-  <pubDate>Sat, 24 Jun 2023 08:06:21 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/2023-06-24-cuda/</guid>
-  <description><![CDATA[Create Python Environment 1 cond create -n env_name python=3.x Torch Start Locally | PyTorch
-Check Installation 1 2 import torch torch.cuda.is_available() CUDA CUDA Toolkit Archive | NVIDIA Developer
-1 conda install cudatoolkit=x.x CUDNN 简单区分：CUDA为NV的计算框架，而CUDNN为NV为深度学习设计的计算库
-建议使用pytorch官方的conda指令一键安装]]></description>
 </item>
 </channel>
 </rss>

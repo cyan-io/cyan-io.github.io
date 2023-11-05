@@ -3,9 +3,22 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 06 Aug 2023 10:03:35 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>常用计算机工具索引</title>
+  <link>/posts/2023-11-05-tools/</link>
+  <pubDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-11-05-tools/</guid>
+  <description><![CDATA[Conda Index of /anaconda/archive/ | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror
+anaconda | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror
+Visual Studio Code Visual Studio Code - Code Editing. Redefined
+Ubuntu Ubuntu Releases
+Ubuntu 源使用帮助 — USTC Mirror Help 文档
+Git Git (git-scm.com)]]></description>
+</item>
+<item>
   <title>QEMU CPU Model</title>
   <link>/posts/2023-08-06-qemu-cpu-model/</link>
   <pubDate>Sun, 06 Aug 2023 10:03:35 &#43;0000</pubDate>
@@ -221,14 +234,6 @@ TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)]]></descr
 关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
 PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
 ubuntu16.04驱动安装提示sign-file: certs/signing_key.]]></description>
-</item>
-<item>
-  <title>快速创建临时服务器</title>
-  <link>/posts/quick-server/</link>
-  <pubDate>Mon, 06 Mar 2023 16:48:58 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/quick-server/</guid>
-  <description><![CDATA[Node.js http 1 2 npm install -g serve serve folder_name Python http 1 python -m http.server port ftp 1 2 pip install pyftpdlib python -m pyftpdlib -p 21 REF Python一秒搭建ftp服务器，帮助你在局域网共享文件 - 知乎 (zhihu.com)]]></description>
 </item>
 </channel>
 </rss>

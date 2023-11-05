@@ -146,6 +146,19 @@
   }
 </style></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/prime-number/">素数</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-01-17 14:09:06'>发布于 <time datetime="2022-01-17">2022-01-17</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content">检验 1 2 3 4 5 6 7 8 9 10 from math import * def is_prime(n): if n &lt; 2: return False for i in range(2, int(sqrt(n))+1): if n % i == 0: return False return True 打表(欧式筛法) 0、1不是素数，素数的倍数不是素数（质因数分解）
+1 2 3 4 5 6 7 8 9 def prime(MAX_N): lst = [True for _ in range(MAX_N+1)] lst[0] = lst[1] = False for i in range(2, MAX_N//2): if lst[i]: for j in range(2*i, MAX_N+1, i): lst[j] = False return lst 1 2 3 4 5 6 7 8 9 10 11 12 13 #define MAX 10005 bool prime[MAX]; void init_prime(){ memset(prime,true,sizeof(prime)); prime[0]=prime[1]=false; for(int i=2;i&lt;=MAX/2;i++){ if(!</div><div class="post-footer">
+    <a href="/posts/prime-number/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/rdp/">Win清理Remote Desktop记录</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
