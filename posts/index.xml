@@ -3,7 +3,18 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Nov 2023 10:48:29 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>模型参数量估算</title>
+  <link>/posts/2023-11-07-llm-memory-usage/</link>
+  <pubDate>Tue, 07 Nov 2023 10:48:29 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-11-07-llm-memory-usage/</guid>
+  <description><![CDATA[Calc 1b = 十亿 = 1e9
+1 2 &gt;&gt;&gt; 1e9/1024/1024/1024 0.9313225746154785 float32 的7b参数量：7*0.93*32/8=26.04GB
+REF vLLM推理性能鉴赏 - 知乎 (zhihu.com)
+huggingface.co]]></description>
+</item>
+<item>
   <title>常用计算机工具索引</title>
   <link>/posts/2023-11-05-tools/</link>
   <pubDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</pubDate>
@@ -126,16 +137,6 @@ How To Emulate CXL Devices using KVM and QEMU - Steve Scargall]]></description>
   <author>Cyan</author>
   <guid>/posts/2023-07-25-vnc-for-pve-vm-not-novnc/</guid>
   <description><![CDATA[VNC Client Access - Proxmox VE]]></description>
-</item>
-<item>
-  <title>Resize Linux LVM</title>
-  <link>/posts/resize-linux-lvm/</link>
-  <pubDate>Mon, 24 Jul 2023 23:54:30 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/resize-linux-lvm/</guid>
-  <description><![CDATA[How to resize a logical volume with 5 simple LVM commands | Enable Sysadmin (redhat.com)
-系统运维|如何在 Linux 中扩展/增加 LVM 大小（逻辑卷调整）
-解决 Linux /dev/mapper/ubuntu&ndash;vg-ubuntu&ndash;lv 磁盘空间不足的问题_ubuntu vg 为什么不用满_fly-liuhao的博客-CSDN博客]]></description>
 </item>
 </channel>
 </rss>

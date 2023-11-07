@@ -146,6 +146,21 @@
   }
 </style></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/pve-realtek-driver/">PVE编译Realtek网卡驱动</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-03-07 14:43:48'>发布于 <time datetime="2023-03-07">2023-03-07</time></span></div><div class="content">预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
+关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
+PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
+ubuntu16.04驱动安装提示sign-file: certs/signing_key.</div><div class="post-footer">
+    <a href="/posts/pve-realtek-driver/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/linux/' class="post-tag">Linux</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/quick-server/">快速创建临时服务器</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -260,18 +275,6 @@ Link jesseduffield/lazydocker: The lazier way to manage everything docker (githu
     title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-01-06 19:55:00'>发布于 <time datetime="2023-01-06">2023-01-06</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Python</a></span></div><div class="content"><p>修改用户目录下的 <code>.condarc</code> 文件；</p>
 <p>没有则执行 <code>conda config --set show_channel_urls yes</code> 生成。</p></div><div class="post-footer">
     <a href="/posts/conda-source/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/conda/' class="post-tag">conda</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/clipboard/">Python处理剪贴板</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-11-29 17:27:55'>发布于 <time datetime="2022-11-29">2022-11-29</time></span></div><div class="content">去除换行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 import time import os import pyperclip def exec(): &#34;&#34;&#34;logic&#34;&#34;&#34; content = pyperclip.paste().replace(&#39;\r\n&#39;, &#39;&#39;).replace(&#39;\n&#39;, &#39;&#39;) pyperclip.copy(content) return content if __name__ == &#39;__main__&#39;: try: res = exec() os.system(&#34;color 27&#34;) print(res) except AttributeError: os.system(&#34;color 47&#34;) time.sleep(1) 保存图片 1 2 3 4 5 6 7 8 9 10 11 12 13 import time import os from PIL import ImageGrab try: img = ImageGrab.</div><div class="post-footer">
-    <a href="/posts/clipboard/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/python/' class="post-tag">Python</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">

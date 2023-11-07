@@ -3,9 +3,20 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Nov 2023 10:48:29 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>模型参数量估算</title>
+  <link>/posts/2023-11-07-llm-memory-usage/</link>
+  <pubDate>Tue, 07 Nov 2023 10:48:29 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-11-07-llm-memory-usage/</guid>
+  <description><![CDATA[Calc 1b = 十亿 = 1e9
+1 2 &gt;&gt;&gt; 1e9/1024/1024/1024 0.9313225746154785 float32 的7b参数量：7*0.93*32/8=26.04GB
+REF vLLM推理性能鉴赏 - 知乎 (zhihu.com)
+huggingface.co]]></description>
+</item>
+<item>
   <title>常用计算机工具索引</title>
   <link>/posts/2023-11-05-tools/</link>
   <pubDate>Sun, 05 Nov 2023 04:58:14 &#43;0000</pubDate>
@@ -223,17 +234,6 @@ CPU读写存储器 地址线 存储单元的地址（地址信息） 寻址能�
   <description><![CDATA[TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
 REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
 TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)]]></description>
-</item>
-<item>
-  <title>PVE编译Realtek网卡驱动</title>
-  <link>/posts/pve-realtek-driver/</link>
-  <pubDate>Tue, 07 Mar 2023 14:43:48 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/pve-realtek-driver/</guid>
-  <description><![CDATA[预准备 下载内核源码 1 sudo apt-get install linux-headers-$(uname -r) 创建链接 1 ln -s /boot/System.map-$(uname -r) /lib/modules/$(uname -r)/build/System.map 生成证书 1 openssl req -new -nodes -utf8 -sha512 -days 36500 -batch -x509 -config x509.genkey -outform DER -out signing_key.x509 -keyout signing_key.pem 1 cp signing_key.pem signing_key.x509 /usr/src/linux-headers-$(uname -r)/certs/ REF Realtek PCIe FE / GBE / 2.5G / Gaming Ethernet Family Controller Software - REALTEK
-关于 /lib/modules/内核版本号/ build 和 /source_/lib/modules/build_小羊苏C的博客-CSDN博客
-PVE默认R8169网卡驱动不兼容RTL8111/8168/8411问题记录 - ColoFly - 博客园 (cnblogs.com)
-ubuntu16.04驱动安装提示sign-file: certs/signing_key.]]></description>
 </item>
 </channel>
 </rss>
