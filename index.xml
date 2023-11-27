@@ -3,9 +3,18 @@
     <title>Cyan&#39;s Notebook</title>
     <link>/</link>
     <description>Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Nov 2023 10:48:29 &#43;0000</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Nov 2023 19:41:54 &#43;0000</lastBuildDate>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>conda source &amp; torch</title>
+  <link>/posts/2023-11-28-conda-source--torch/</link>
+  <pubDate>Mon, 27 Nov 2023 19:41:54 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-11-28-conda-source--torch/</guid>
+  <description><![CDATA[Start Locally | PyTorch
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 channels: - defaults show_channel_urls: true default_channels: - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud pytorch-lts: https://mirrors.bfsu.edu.cn/anaconda/cloud simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud deepmodeling: https://mirrors.bfsu.edu.cn/anaconda/cloud/ anaconda | 镜像站使用帮助 | 北京外国语大学开源软件镜像站 | BFSU Open Source Mirror]]></description>
+</item>
+<item>
   <title>模型参数量估算</title>
   <link>/posts/2023-11-07-llm-memory-usage/</link>
   <pubDate>Tue, 07 Nov 2023 10:48:29 &#43;0000</pubDate>
@@ -224,16 +233,6 @@ CPU读写存储器 地址线 存储单元的地址（地址信息） 寻址能�
 人们已经进行一些讨论关于如何将TCP/IP参考模型映射到OSI模型。由于TCP/IP和OSI模型组不能精确地匹配，还没有一个完全正确的答案。 另外，OSI模型下层还不具备能够真正占据真正层的位置的能力；在传输层和网络层之间还需要另外一个层（网络互连层）。特定网络类型专用的一些协议应该运行在网络层上，但是却运行在基本的硬件帧交换上。类似协议的例子有ARP和STP（用来保持冗余网桥的空闲状态直到真正需要它们）。然而，它们是本地协议并且在网络互连功能下面运行。不可否认，将两个组（更不用说它们只是运行在如ICMP等不同的互连网络协议上的逻辑上的网络层的一部分）整个放在同一层会引起混淆，但是OSI模型还没有复杂到能够做更好的工作。 下面的图表试图显示不同的TCP/IP和其他的协议在最初OSI模型中的位置：
 7 应用层 application layer 例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP、TLS 6 表示层 presentation layer 例如XDR、ASN.1、NCP、TLS、ASCII 5 会话层 session layer 例如ASAP、ISO 8327 / CCITT X.225、RPC、NetBIOS、Winsock、BSD sockets、SOCKS、PAP 4 传输层 transport layer 例如TCP、UDP、RTP、SCTP、SPX、ATP、IL 3 网络层 network layer 例如IP、ICMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25 2 数据链路层 data link layer 例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP 1 物理层 physical layer 例如调制解调器、无线电、光纤 通常人们认为OSI模型的最上面三层（应用层、表示层和会话层）在TCP/IP组中是一个应用层。由于TCP/IP有一个相对较弱的会话层，由TCP和RTP下的打开和关闭连接组成，并且在TCP和UDP下的各种应用提供不同的端口号，这些功能能够由单个的应用程序（或者那些应用程序所使用的库）增加。与此相似的是，IP是按照将它下面的网络当作一个黑盒子的思想设计的，这样在讨论TCP/IP的时候就可以把它当作一个独立的层。
 4 应用层 application layer 例如HTTP、FTP、DNS （如BGP和RIP这样的路由协议，尽管由于各种各样的原因它们分别运行在TCP和UDP上，仍然可以将它们看作网络层的一部分） 3 传输层 transport layer 例如TCP、UDP、RTP、SCTP （如OSPF这样的路由协议，尽管运行在IP上也可以看作是网络层的一部分） 2 网络互连层 internet layer 对于TCP/IP来说这是因特网协议（IP） （如ICMP和IGMP这样的必须协议尽管运行在IP上，也仍然可以看作是网络互连层的一部分；ARP不运行在IP上） 1 网络访问（链接）层 Network Access (link) layer 例如以太网、Wi-Fi、MPLS等。 扩展阅读 一文一图搞懂OSI七层模型_long_songs的博客-CSDN博客]]></description>
-</item>
-<item>
-  <title>TUN TAP</title>
-  <link>/posts/tun-tap/</link>
-  <pubDate>Wed, 15 Mar 2023 05:56:20 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/tun-tap/</guid>
-  <description><![CDATA[TUN / TAP 1 2 # ls /dev/net tun TAP模拟2层设备（MAC），TUN模拟3层设备（IP）。
-REF 虚拟设备之TUN和TAP - 知乎 (zhihu.com)
-TCP/IP协议族 - 维基百科，自由的百科全书 (wikipedia.org)]]></description>
 </item>
 </channel>
 </rss>
