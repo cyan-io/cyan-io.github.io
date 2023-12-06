@@ -5,52 +5,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>WSL2 Tips - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
+    <title>NP - Cyan&#39;s Notebook</title><meta name="author" content="Cyan">
 <meta name="author-link" content="">
-<meta name="description" content="注意，WSL2与WSL使用完全不同的实现
-WSL2是如何运行的 当开启Hyper-V后，Windows系统相当于一个VM，而WSL2相当于另一个VM
-WSL2与Win的文件访问效率 WSL2与Win通过TCP传输文件，相当于通过网络连接，文件互访效率大打折扣
-WSL2运行CUDA程序 https://docs.nvidia.com/cuda/wsl-user-guide/index.html
-WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大幅变化，见：https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/" /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="WSL2 Tips">
-<meta itemprop="description" content="注意，WSL2与WSL使用完全不同的实现
-WSL2是如何运行的 当开启Hyper-V后，Windows系统相当于一个VM，而WSL2相当于另一个VM
-WSL2与Win的文件访问效率 WSL2与Win通过TCP传输文件，相当于通过网络连接，文件互访效率大打折扣
-WSL2运行CUDA程序 https://docs.nvidia.com/cuda/wsl-user-guide/index.html
-WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大幅变化，见：https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/"><meta itemprop="datePublished" content="2023-12-06T07:04:11+00:00" />
-<meta itemprop="dateModified" content="2023-12-06T07:16:41+00:00" />
-<meta itemprop="wordCount" content="9">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="WSL2 Tips" />
-<meta property="og:description" content="注意，WSL2与WSL使用完全不同的实现
-WSL2是如何运行的 当开启Hyper-V后，Windows系统相当于一个VM，而WSL2相当于另一个VM
-WSL2与Win的文件访问效率 WSL2与Win通过TCP传输文件，相当于通过网络连接，文件互访效率大打折扣
-WSL2运行CUDA程序 https://docs.nvidia.com/cuda/wsl-user-guide/index.html
-WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大幅变化，见：https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/" />
+<meta name="description" content="Summary 1 2 3 4 5 6 7 8 ____________________________________________________________ | Problem Type | Verifiable in P time | Solvable in P time | Increasing Difficulty ___________________________________________________________| | | P | Yes | Yes | | | NP | Yes | Yes or No * | | | NP-Complete | Yes | Unknown | | | NP-Hard | Yes or No ** | Unknown *** | | ____________________________________________________________ V * An NP problem that is also P is solvable in P time." /><meta name="keywords" content='Hugo, FixIt' /><meta itemprop="name" content="NP">
+<meta itemprop="description" content="Summary 1 2 3 4 5 6 7 8 ____________________________________________________________ | Problem Type | Verifiable in P time | Solvable in P time | Increasing Difficulty ___________________________________________________________| | | P | Yes | Yes | | | NP | Yes | Yes or No * | | | NP-Complete | Yes | Unknown | | | NP-Hard | Yes or No ** | Unknown *** | | ____________________________________________________________ V * An NP problem that is also P is solvable in P time."><meta itemprop="datePublished" content="2023-12-06T08:46:42+00:00" />
+<meta itemprop="dateModified" content="2023-12-06T08:46:53+00:00" />
+<meta itemprop="wordCount" content="147">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="NP" />
+<meta property="og:description" content="Summary 1 2 3 4 5 6 7 8 ____________________________________________________________ | Problem Type | Verifiable in P time | Solvable in P time | Increasing Difficulty ___________________________________________________________| | | P | Yes | Yes | | | NP | Yes | Yes or No * | | | NP-Complete | Yes | Unknown | | | NP-Hard | Yes or No ** | Unknown *** | | ____________________________________________________________ V * An NP problem that is also P is solvable in P time." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/2023-12-06-wsl2-tips/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-12-06T07:04:11+00:00" />
-<meta property="article:modified_time" content="2023-12-06T07:16:41+00:00" />
+<meta property="og:url" content="/posts/2023-12-06-np/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-06T08:46:42+00:00" />
+<meta property="article:modified_time" content="2023-12-06T08:46:53+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="WSL2 Tips"/>
-<meta name="twitter:description" content="注意，WSL2与WSL使用完全不同的实现
-WSL2是如何运行的 当开启Hyper-V后，Windows系统相当于一个VM，而WSL2相当于另一个VM
-WSL2与Win的文件访问效率 WSL2与Win通过TCP传输文件，相当于通过网络连接，文件互访效率大打折扣
-WSL2运行CUDA程序 https://docs.nvidia.com/cuda/wsl-user-guide/index.html
-WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大幅变化，见：https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/"/>
+<meta name="twitter:title" content="NP"/>
+<meta name="twitter:description" content="Summary 1 2 3 4 5 6 7 8 ____________________________________________________________ | Problem Type | Verifiable in P time | Solvable in P time | Increasing Difficulty ___________________________________________________________| | | P | Yes | Yes | | | NP | Yes | Yes or No * | | | NP-Complete | Yes | Unknown | | | NP-Hard | Yes or No ** | Unknown *** | | ____________________________________________________________ V * An NP problem that is also P is solvable in P time."/>
 <meta name="application-name" content="Cyan&#39;s Notebook">
 <meta name="apple-mobile-web-app-title" content="Cyan&#39;s Notebook"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/2023-12-06-wsl2-tips/" /><link rel="prev" href="/posts/2023-11-28-conda-source--torch/" /><link rel="next" href="/posts/2023-12-06-np/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/posts/2023-12-06-np/" /><link rel="prev" href="/posts/2023-12-06-wsl2-tips/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "WSL2 Tips",
+    "headline": "NP",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "\/posts\/2023-12-06-wsl2-tips\/"
-    },"genre": "posts","wordcount":  9 ,
-    "url": "\/posts\/2023-12-06-wsl2-tips\/","datePublished": "2023-12-06T07:04:11+00:00","dateModified": "2023-12-06T07:16:41+00:00","publisher": {
+      "@id": "\/posts\/2023-12-06-np\/"
+    },"genre": "posts","wordcount":  147 ,
+    "url": "\/posts\/2023-12-06-np\/","datePublished": "2023-12-06T08:46:42+00:00","dateModified": "2023-12-06T08:46:53+00:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -158,7 +142,7 @@ WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大�
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>WSL2 Tips</span>
+        <span>NP</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -168,7 +152,7 @@ WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大�
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span></div>
-      <div class="post-meta-line"><span title=2023-12-06&#32;07:04:11><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-06">2023-12-06</time></span>&nbsp;</div>
+      <div class="post-meta-line"><span title=2023-12-06&#32;08:46:42><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-06">2023-12-06</time></span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
@@ -180,32 +164,76 @@ WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大�
       <ul>
         <li>
           <ul>
-            <li><a href="#wsl2是如何运行的">WSL2是如何运行的</a></li>
-            <li><a href="#wsl2与win的文件访问效率">WSL2与Win的文件访问效率</a></li>
-            <li><a href="#wsl2运行cuda程序">WSL2运行CUDA程序</a></li>
-            <li><a href="#wsl2运行cuda的性能损失">WSL2运行CUDA的性能损失</a></li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#p">P</a></li>
+            <li><a href="#np">NP</a></li>
+            <li><a href="#np-complete">NP-Complete</a></li>
+            <li><a href="#np-hard">NP-Hard</a></li>
           </ul>
         </li>
       </ul>
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><blockquote>
-<p>注意，WSL2与WSL使用完全不同的实现</p>
-</blockquote>
-<h4 id="wsl2是如何运行的">WSL2是如何运行的</h4>
-<p>当开启Hyper-V后，Windows系统相当于一个VM，而WSL2相当于另一个VM</p>
-<h4 id="wsl2与win的文件访问效率">WSL2与Win的文件访问效率</h4>
-<p>WSL2与Win通过TCP传输文件，相当于通过网络连接，文件互访效率大打折扣</p>
-<h4 id="wsl2运行cuda程序">WSL2运行CUDA程序</h4>
-<p><a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html"target="_blank" rel="external nofollow noopener noreferrer">https://docs.nvidia.com/cuda/wsl-user-guide/index.html<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<h4 id="wsl2运行cuda的性能损失">WSL2运行CUDA的性能损失</h4>
-<p>根据任务负载，CUDA性能损失也会有大幅变化，见：https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/</p>
+      </div><div class="content" id="content"><h4 id="summary">Summary</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">____________________________________________________________
+</span></span><span class="line"><span class="cl">| Problem Type | Verifiable in P time | Solvable in P time | Increasing Difficulty
+</span></span><span class="line"><span class="cl">___________________________________________________________|           |
+</span></span><span class="line"><span class="cl">| P            |        Yes           |        Yes         |           |
+</span></span><span class="line"><span class="cl">| NP           |        Yes           |     Yes or No *    |           |
+</span></span><span class="line"><span class="cl">| NP-Complete  |        Yes           |      Unknown       |           |
+</span></span><span class="line"><span class="cl">| NP-Hard      |     Yes or No **     |      Unknown ***   |           |
+</span></span><span class="line"><span class="cl">____________________________________________________________           V
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>* An NP problem that is also P is solvable in P time.</li>
+<li>** An NP-Hard problem that is also NP-Complete is verifiable in P time.</li>
+<li>*** NP-Complete problems (all of which form a subset of NP-hard) might be. The rest of NP hard is not.</li>
+</ul>
+<p><a href="https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard"target="_blank" rel="external nofollow noopener noreferrer">computer science - What are the differences between NP, NP-Complete and NP-Hard? - Stack Overflow<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h4 id="p">P</h4>
+<ol>
+<li>能在多项式时间内解决</li>
+</ol>
+<h4 id="np">NP</h4>
+<ol>
+<li><strong>无法确定是否</strong>能在多项式时间内解决</li>
+<li>能够在多项式时间内验证</li>
+</ol>
+<h4 id="np-complete">NP-Complete</h4>
+<ul>
+<li>它是一个NP问题
+<ul>
+<li><strong>无法确定是否</strong>能在多项式时间内解决</li>
+<li>能够在多项式时间内验证</li>
+</ul>
+</li>
+<li>其他所有属于NP的问题都可以规约成它</li>
+</ul>
+<h4 id="np-hard">NP-Hard</h4>
+<ul>
+<li><strong>不一定</strong>是一个NP问题</li>
+<li>所有的NP问题都能约化到它</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/433308577"target="_blank" rel="external nofollow noopener noreferrer">浅谈P、NP、NP-Complate和NP-Hard问题 - 知乎 (zhihu.com)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2023-12-06&#32;07:16:41>更新于 2023-12-06&nbsp;</span>
+        <span title=2023-12-06&#32;08:46:53>更新于 2023-12-06&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -224,8 +252,7 @@ WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大�
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/2023-11-28-conda-source--torch/" class="post-nav-item" rel="prev" title="conda source &amp; torch"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>conda source &amp; torch</a>
-      <a href="/posts/2023-12-06-np/" class="post-nav-item" rel="next" title="NP">NP<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/2023-12-06-wsl2-tips/" class="post-nav-item" rel="prev" title="WSL2 Tips"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>WSL2 Tips</a></div>
 </div>
 </article></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>

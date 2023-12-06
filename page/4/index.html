@@ -146,6 +146,22 @@
   }
 </style></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/docker-basic/">Docker</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-02-02 03:28:00'>发布于 <time datetime="2023-02-02">2023-02-02</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tool/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Tool</a></span></div><div class="content">基本概念 docker 说明 Image 源文件 Container Image的一个运行实例 Volume Container的虚拟存储卷 常用命令 相互复制文件 1 docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH 1 docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH 1 docker cp [OPTIONS] CONTAINER:SRC_PATH CONTAINER:DEST_PATH 更新container自启动状态 1 2 3 docker update --restart=unless-stopped [容器名] no/on-failure/always/unless-stopped 进入容器命令行 1 docker exec -it [containerid] /bin/bash 映射 Example:
+1 docker run -p 80:8080 -v local_path:container_path Ref 什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)
+浅谈Linux Cgroups机制 - 知乎 (zhihu.com)
+docker Volume - 知乎 (zhihu.com)
+Link jesseduffield/lazydocker: The lazier way to manage everything docker (github.</div><div class="post-footer">
+    <a href="/posts/docker-basic/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/mklink/">Windows 符号链接</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -276,20 +292,6 @@ apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal mai
 1 python script.py &lt; input &gt; output Python 与 STL Python 标准库 — Python 3.</div><div class="post-footer">
     <a href="/posts/python-oi-basis/">阅读全文</a></div>
 </article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/knapsack-problem/">背包问题</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2022-04-08 21:35:22'>发布于 <time datetime="2022-04-08">2022-04-08</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/oi/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> OI</a></span></div><div class="content"><h2 id="前言">前言</h2>
-<p>在21年我第一次学习动态规划算法的时候，HQ学长安排的入门题目即是背包。直至前不久我只把背包当成一种有限的题目来看，未想还有如此讲究。</p>
-<p><strong>实际上，有很多问题可以规约为一个背包问题。</strong></p></div><div class="post-footer">
-    <a href="/posts/knapsack-problem/">阅读全文</a></div>
-</article>
 <ul class="pagination"><li class="page-item">
           <span class="page-link">
             <a href="/">1</a>
@@ -309,6 +311,10 @@ apt源 1 2 3 4 5 deb https://mirror.tuna.tsinghua.edu.cn/ubuntu-ports/ focal mai
         </li><li class="page-item">
           <span class="page-link">
             <a href="/page/5/">5</a>
+          </span>
+        </li><li class="page-item">
+          <span class="page-link">
+            <a href="/page/6/">6</a>
           </span>
         </li></ul></div></main></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><noscript>

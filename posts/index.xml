@@ -3,7 +3,15 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Dec 2023 07:04:11 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Dec 2023 08:46:42 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>NP</title>
+  <link>/posts/2023-12-06-np/</link>
+  <pubDate>Wed, 06 Dec 2023 08:46:42 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-12-06-np/</guid>
+  <description><![CDATA[Summary 1 2 3 4 5 6 7 8 ____________________________________________________________ | Problem Type | Verifiable in P time | Solvable in P time | Increasing Difficulty ___________________________________________________________| | | P | Yes | Yes | | | NP | Yes | Yes or No * | | | NP-Complete | Yes | Unknown | | | NP-Hard | Yes or No ** | Unknown *** | | ____________________________________________________________ V * An NP problem that is also P is solvable in P time.]]></description>
+</item>
+<item>
   <title>WSL2 Tips</title>
   <link>/posts/2023-12-06-wsl2-tips/</link>
   <pubDate>Wed, 06 Dec 2023 07:04:11 &#43;0000</pubDate>
@@ -114,25 +122,6 @@ REF 系统运维|Linux LVM简明教程
   <description><![CDATA[PVE &amp; Debian pve 7.3.3基于debian 11 bullseye
 APT源 1 sudo apt install apt-transport-https ca-certificates 修改souces.list
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-backports main contrib non-free # deb https://mirrors.]]></description>
-</item>
-<item>
-  <title>QEMU - QuickStart</title>
-  <link>/posts/2023-07-30-qemu-quickstart/</link>
-  <pubDate>Sun, 30 Jul 2023 12:57:10 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/2023-07-30-qemu-quickstart/</guid>
-  <description><![CDATA[文章于2023年8月5日进行勘误，修正内容：
--smp sockets=1,cores=4,threads=4 =&gt; -smp 4,sockets=1,cores=4,threads=1 原因：threads参数表示每核心多少线程
-删除-net user
-Intro QEMU是一款跨平台的开源虚拟机工具，因为无GUI配置工具，有一定使用门槛
-根据冯诺依曼结构，一个计算机可分为：
-运算器 控制器 存储器 输入设备 输出设备 使用QEMU时，应该尽量往该模型联想
-创建存储器 创建一个16G的虚拟磁盘文件
-1 qemu-img create -f qcow2 drive 16G 虚拟硬件环境 运算器、控制器 -&gt; CPU、各种加速器* 输入、输出设备 -&gt; 网卡、CXL设备等 QEMU本身没有像VMware那样的GUI配置界面，所有配置通过命令行参数指定
-1 2 3 qemu-system-x86_64 -machine q35 \ -smp 4,sockets=1,cores=4,threads=1 \ -m 4096 现在启动了一个机型为q35，处理器1插槽4核4线程，内存4096MB，使用默认网络配置的虚拟机，由于没有启动盘，并不会启动某个系统
-利用虚拟硬件环境启动系统 我们已经有了一块硬盘drive作为启动盘，指定给虚拟环境：
-1 2 3 4 qemu-system-x86_64 -machine q35 \ -smp 4,sockets=1,cores=4,threads=1 \ -m 4096 \ -drive file=drive 会发现，指定后并没有什么区别，是因为这个“硬盘”我们没有给它“安装”系统
-安装系统 参考为物理机安装系统：]]></description>
 </item>
 </channel>
 </rss>
