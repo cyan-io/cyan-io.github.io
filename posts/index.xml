@@ -3,7 +3,19 @@
     <title>所有文章 - Cyan&#39;s Notebook</title>
     <link>/posts/</link>
     <description>所有文章 | Cyan&#39;s Notebook</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 27 Nov 2023 19:41:54 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Dec 2023 07:04:11 &#43;0000</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>WSL2 Tips</title>
+  <link>/posts/2023-12-06-wsl2-tips/</link>
+  <pubDate>Wed, 06 Dec 2023 07:04:11 &#43;0000</pubDate>
+  <author>Cyan</author>
+  <guid>/posts/2023-12-06-wsl2-tips/</guid>
+  <description><![CDATA[注意，WSL2与WSL使用完全不同的实现
+WSL2是如何运行的 当开启Hyper-V后，Windows系统相当于一个VM，而WSL2相当于另一个VM
+WSL2与Win的文件访问效率 WSL2与Win通过TCP传输文件，相当于通过网络连接，文件互访效率大打折扣
+WSL2运行CUDA程序 https://docs.nvidia.com/cuda/wsl-user-guide/index.html
+WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大幅变化，见：https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/]]></description>
+</item>
+<item>
   <title>conda source &amp; torch</title>
   <link>/posts/2023-11-28-conda-source--torch/</link>
   <pubDate>Mon, 27 Nov 2023 19:41:54 &#43;0000</pubDate>
@@ -13,13 +25,13 @@
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 channels: - defaults show_channel_urls: true default_channels: - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud pytorch-lts: https://mirrors.bfsu.edu.cn/anaconda/cloud simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud deepmodeling: https://mirrors.bfsu.edu.cn/anaconda/cloud/ anaconda | 镜像站使用帮助 | 北京外国语大学开源软件镜像站 | BFSU Open Source Mirror]]></description>
 </item>
 <item>
-  <title>模型参数量估算</title>
+  <title>模型推理内存估算</title>
   <link>/posts/2023-11-07-llm-memory-usage/</link>
   <pubDate>Tue, 07 Nov 2023 10:48:29 &#43;0000</pubDate>
   <author>Cyan</author>
   <guid>/posts/2023-11-07-llm-memory-usage/</guid>
   <description><![CDATA[Calc 1b = 十亿 = 1e9
-1 2 &gt;&gt;&gt; 1e9/1024/1024/1024 0.9313225746154785 float32 的7b参数量：7*0.93*32/8=26.04GB
+1 2 &gt;&gt;&gt; 1e9/1024/1024/1024 0.9313225746154785 例: FP32 7B参数量：7 * 0.93 * (32/8)=26.04GB
 REF vLLM推理性能鉴赏 - 知乎 (zhihu.com)
 huggingface.co]]></description>
 </item>
@@ -121,23 +133,6 @@ Intro QEMU是一款跨平台的开源虚拟机工具，因为无GUI配置工具�
 利用虚拟硬件环境启动系统 我们已经有了一块硬盘drive作为启动盘，指定给虚拟环境：
 1 2 3 4 qemu-system-x86_64 -machine q35 \ -smp 4,sockets=1,cores=4,threads=1 \ -m 4096 \ -drive file=drive 会发现，指定后并没有什么区别，是因为这个“硬盘”我们没有给它“安装”系统
 安装系统 参考为物理机安装系统：]]></description>
-</item>
-<item>
-  <title>QEMU - CXL</title>
-  <link>/posts/2023-07-25-qemu-cxl/</link>
-  <pubDate>Tue, 25 Jul 2023 00:00:57 &#43;0000</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/2023-07-25-qemu-cxl/</guid>
-  <description><![CDATA[Intro 文章不对CXL、Linux内核进行深究，可视为hello world研究
-对于QEMU基本的使用知识，节省篇幅不再赘述，并省略繁琐细节
-软件环境 宿主机&amp;客户机 ubuntu-22.04.2-live-server-amd64
-QEMU 8.0.3 https://download.qemu.org/qemu-8.0.3.tar.xz
-Download QEMU - QEMU
-按照官方流程进行编译
-启动虚拟机 1 2 3 4 5 6 7 qemu-system-x86_64 -M q35,cxl=on -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive \ -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M \ -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 \ -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 \ -device cxl-type3,bus=root_port13,memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 \ -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G 启动后应该可以在/dev目录下找到CXL文件
-REF 在ubuntu上执行QEMU的编译安装_ubuntu安装qemu_田园诗人之园的博客-CSDN博客
-linux报错：/bin/sh: 1: flex: not found scripts/Makefile.host:9: recipe for target ‘scripts/kconfig/lexe_锅锅是锅锅的博客-CSDN博客
-How To Emulate CXL Devices using KVM and QEMU - Steve Scargall]]></description>
 </item>
 </channel>
 </rss>

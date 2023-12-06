@@ -146,6 +146,22 @@
   }
 </style></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+    <a href="/posts/2023-12-06-wsl2-tips/">WSL2 Tips</a>
+  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="/avatar.jpg"
+    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
+    data-sizes="auto"
+    alt="Cyan"
+    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-12-06 07:04:11'>发布于 <time datetime="2023-12-06">2023-12-06</time></span></div><div class="content">注意，WSL2与WSL使用完全不同的实现
+WSL2是如何运行的 当开启Hyper-V后，Windows系统相当于一个VM，而WSL2相当于另一个VM
+WSL2与Win的文件访问效率 WSL2与Win通过TCP传输文件，相当于通过网络连接，文件互访效率大打折扣
+WSL2运行CUDA程序 https://docs.nvidia.com/cuda/wsl-user-guide/index.html
+WSL2运行CUDA的性能损失 根据任务负载，CUDA性能损失也会有大幅变化，见：https://developer.nvidia.com/blog/leveling-up-cuda-performance-on-wsl2-with-new-enhancements/</div><div class="post-footer">
+    <a href="/posts/2023-12-06-wsl2-tips/">阅读全文</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
     <a href="/posts/2023-11-28-conda-source--torch/">conda source &amp; torch</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
@@ -159,7 +175,7 @@
     <a href="/posts/2023-11-28-conda-source--torch/">阅读全文</a></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/2023-11-07-llm-memory-usage/">模型参数量估算</a>
+    <a href="/posts/2023-11-07-llm-memory-usage/">模型推理内存估算</a>
   </h1><div class="post-meta"><span class="post-author"><span class="author"><img
     class="lazyload avatar"
     src="/svg/loading.min.svg"
@@ -168,7 +184,7 @@
     data-sizes="auto"
     alt="Cyan"
     title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-11-07 10:48:29'>发布于 <time datetime="2023-11-07">2023-11-07</time></span></div><div class="content">Calc 1b = 十亿 = 1e9
-1 2 &gt;&gt;&gt; 1e9/1024/1024/1024 0.9313225746154785 float32 的7b参数量：7*0.93*32/8=26.04GB
+1 2 &gt;&gt;&gt; 1e9/1024/1024/1024 0.9313225746154785 例: FP32 7B参数量：7 * 0.93 * (32/8)=26.04GB
 REF vLLM推理性能鉴赏 - 知乎 (zhihu.com)
 huggingface.co</div><div class="post-footer">
     <a href="/posts/2023-11-07-llm-memory-usage/">阅读全文</a></div>
@@ -299,27 +315,6 @@ Intro QEMU是一款跨平台的开源虚拟机工具，因为无GUI配置工具�
 1 2 3 4 qemu-system-x86_64 -machine q35 \ -smp 4,sockets=1,cores=4,threads=1 \ -m 4096 \ -drive file=drive 会发现，指定后并没有什么区别，是因为这个“硬盘”我们没有给它“安装”系统
 安装系统 参考为物理机安装系统：</div><div class="post-footer">
     <a href="/posts/2023-07-30-qemu-quickstart/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/qemu/' class="post-tag">QEMU</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-    <a href="/posts/2023-07-25-qemu-cxl/">QEMU - CXL</a>
-  </h1><div class="post-meta"><span class="post-author"><span class="author"><img
-    class="lazyload avatar"
-    src="/svg/loading.min.svg"
-    data-src="/avatar.jpg"
-    data-srcset="/avatar.jpg, /avatar.jpg 1.5x, /avatar.jpg 2x"
-    data-sizes="auto"
-    alt="Cyan"
-    title="Cyan"/>&nbsp;Cyan</span></span>&nbsp;<span class="post-publish" title='2023-07-25 00:00:57'>发布于 <time datetime="2023-07-25">2023-07-25</time></span></div><div class="content">Intro 文章不对CXL、Linux内核进行深究，可视为hello world研究
-对于QEMU基本的使用知识，节省篇幅不再赘述，并省略繁琐细节
-软件环境 宿主机&amp;客户机 ubuntu-22.04.2-live-server-amd64
-QEMU 8.0.3 https://download.qemu.org/qemu-8.0.3.tar.xz
-Download QEMU - QEMU
-按照官方流程进行编译
-启动虚拟机 1 2 3 4 5 6 7 qemu-system-x86_64 -M q35,cxl=on -accel kvm -cpu host -m 4096 -smp 4 -drive file=drive \ -object memory-backend-file,id=cxl-mem1,share=on,mem-path=/tmp/cxltest.raw,size=256M \ -object memory-backend-file,id=cxl-lsa1,share=on,mem-path=/tmp/lsa.raw,size=256M \ -device pxb-cxl,bus_nr=12,bus=pcie.0,id=cxl.1 \ -device cxl-rp,port=0,bus=cxl.1,id=root_port13,chassis=0,slot=2 \ -device cxl-type3,bus=root_port13,memdev=cxl-mem1,lsa=cxl-lsa1,id=cxl-pmem0 \ -M cxl-fmw.0.targets.0=cxl.1,cxl-fmw.0.size=4G 启动后应该可以在/dev目录下找到CXL文件
-REF 在ubuntu上执行QEMU的编译安装_ubuntu安装qemu_田园诗人之园的博客-CSDN博客
-linux报错：/bin/sh: 1: flex: not found scripts/Makefile.host:9: recipe for target ‘scripts/kconfig/lexe_锅锅是锅锅的博客-CSDN博客
-How To Emulate CXL Devices using KVM and QEMU - Steve Scargall</div><div class="post-footer">
-    <a href="/posts/2023-07-25-qemu-cxl/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/qemu/' class="post-tag">QEMU</a><a href='/tags/cxl/' class="post-tag">CXL</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item active">
           <span class="page-link">
