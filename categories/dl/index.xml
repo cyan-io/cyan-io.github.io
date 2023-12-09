@@ -35,13 +35,5 @@ cuda安装教程+cudnn安装教程_sinat_23619409的博客-CSDN博客_cuda安装
   <description><![CDATA[<h2 id="前言">前言</h2>
 <p>参考的资料和自己在进行炼丹（姑且这么称作）的时候，经常使用的是Adam，在尝试了learning_rate, schedule等方法（无果，大概…）后，突然想到要去了解一下其中的原理。</p>]]></description>
 </item>
-<item>
-  <title>tensorflow1、2设置不占满显存</title>
-  <link>/posts/tf-gpu-memory/</link>
-  <pubDate>Thu, 16 Sep 2021 18:46:00 &#43;0800</pubDate>
-  <author>Cyan</author>
-  <guid>/posts/tf-gpu-memory/</guid>
-  <description><![CDATA[<p>tensorflow的默认调度策略是吃满显存，如果我们模型较小、显存较大、占用率不足40%（自己估计的）时，是可以利用GPU同时训练两个模型的。</p>]]></description>
-</item>
 </channel>
 </rss>
